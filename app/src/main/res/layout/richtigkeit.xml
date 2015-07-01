@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Kontrolle der Richtigkeit der Lösung (Prozent der Übereinstimmung mit der Muster-Lösung d.h. Anyahl von richtig durch die komplette Anzahl von richtig und falsch dividieren, dann mal 100%"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+     <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/gradient"
+        android:layout_height="5dp"></View>
+
+    <ImageView
+        android:id="@+id/mloesung"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="matrix"
+        />
+
+    <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/gradient"
+        android:layout_height="5dp">
+    </View>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioGroup
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radioGrup2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/radio20"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/radio_button"
+                android:text="[0% ; 20%]" />
+
+            <RadioButton
+                android:id="@+id/radio40"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/radio_button"
+                android:text="[21% ; 40%]" />
+
+            <RadioButton
+                android:id="@+id/radio60"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/radio_button"
+                android:text="[41% ; 60%]" />
+
+            <RadioButton
+                android:id="@+id/radio80"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/radio_button"
+                android:text="[61% ; 80%]" />
+
+            <RadioButton
+                android:id="@+id/radio100"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/radio_button"
+                android:text="[81% ; 100%]" />
+        </RadioGroup>
+    </LinearLayout>
+      <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/gradient"
+        android:layout_height="0dp"></View>
+
+</LinearLayout>

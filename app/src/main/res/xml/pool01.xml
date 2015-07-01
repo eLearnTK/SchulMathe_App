@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <!DOCTYPE test SYSTEM "test.dtd"> -->
+<test id="1" lang="deutsch">
+	<aufgaben>
+		<aufgabe id="1">
+			<text>Berechnen Sie:</text>
+			<bild>pool01aufgabe001</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>pool01loesung001</loesung>
+			<time>1.5</time>
+		</aufgabe>
+		<aufgabe id="2">
+			<text>Lösen Sie die folgenden quadratischen Gleichungen:</text>
+			<bild>pool01aufgabe002</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>pool01loesung002</loesung>
+			<time>1.6</time>
+		</aufgabe>
+        <aufgabe id="3">
+            <text>Elementare Geometrie</text>
+            <bild>pool01aufgabe003</bild>
+            <hilfe>
+                <value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+                <value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+            </hilfe>
+            <loesung>pool01loesung003</loesung>
+            <time>3.0</time>
+        </aufgabe>
+	</aufgaben>
+</test>

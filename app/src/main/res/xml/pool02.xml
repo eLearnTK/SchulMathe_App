@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE test SYSTEM "test.dtd"> -->
+<test id="1" lang="deutsch">
+	<aufgaben>
+		<aufgabe id="1">
+			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<bild>pool02aufgabe001</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>pool02loesung001</loesung>
+			<time>3.0</time>
+		</aufgabe>
+		<aufgabe id="2">
+			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<bild>pool02aufgabe002</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>pool02loesung002</loesung>
+			<time>3.0</time>
+		</aufgabe>
+	    <aufgabe id="3">
+			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<bild>pool02aufgabe003</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>pool02loesung003</loesung>
+			<time>3.0</time>
+		</aufgabe>
+		<aufgabe id="4">
+			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<bild>pool02aufgabe004</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>pool02loesung004</loesung>
+			<time>3.0</time>
+		</aufgabe>
+		<aufgabe id="5">
+			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<bild>pool02aufgabe005</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>pool02loesung005</loesung>
+			<time>3.0</time>
+		</aufgabe>
+	</aufgaben>
+</test>

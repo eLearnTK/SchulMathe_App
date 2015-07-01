@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test2 id="1" lang="deutsch">
+	<aufgaben>
+		<aufgabe id="1">
+			<text>
+				Formen Sie die folgenden Terme in möglichst einfache Ausdrücken:
+			</text>
+			<bild>
+				test02aufgabe001
+			</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			    <value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test02loesung001</loesung>
+            <time>1.0</time>
+		</aufgabe>
+
+		<aufgabe id="2">
+			<text>
+				Bestimmen Sie die Gleichung der Tangente im Punkt P(0) und die Parabel:
+			</text>
+			<bild>
+				test02aufgabe002
+			</bild>
+			<hilfe>
+			    <value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test02loesung002</loesung>
+            <time>2.0</time>
+		</aufgabe>
+	</aufgaben>
+</test2>

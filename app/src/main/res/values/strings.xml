@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SchuleMathe_App</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <string name="Beenden">Beenden</string>
+    <string name="Weiter">Weiter</string>
+    <string name="hello">Beschreibung des Programmes!</string>
+    <string name="title_activity_test_aufgabe">TestAufgabe</string>
+    <string name="chk_ios">OK</string>
+</resources>

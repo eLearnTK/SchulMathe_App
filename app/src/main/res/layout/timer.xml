@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/lineartimer"
+    android:orientation="vertical"
+    android:screenOrientation="portrait">
+
+    <TextView
+        android:id="@+id/testView01"
+        android:textSize="1pt"
+        android:gravity="center_horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text=""/>
+    
+    <TextView
+        android:id="@+id/textViewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:text="--:--:--"
+        android:textSize="25dp"
+        android:layout_gravity="center_horizontal" />
+
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20pt"
+        android:layout_marginTop="1dp"
+        android:visibility="gone"
+        android:gravity="center_horizontal"
+    />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_margin="10dp"
+    />
+            <!--SeekBar
+            style="?android:attr/progressBarStyleHorizontal"
+                android:id="@+id/ProgressBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" /-->
+             <!-- TextView   
+    android:id="@+id/counter"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="hhhhhhhhhhhhhhh"
+    /-->
+            
+</LinearLayout>
+
+   

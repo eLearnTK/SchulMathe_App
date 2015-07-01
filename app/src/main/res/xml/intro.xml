@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instruction>
+  <head>Anleitung</head>
+	<intro>Ablauf des lernprogramms wird in folgenden Schritten detailliert</intro>
+	<step id="1">
+		Der Benutzer nimmt Zettel und Stift
+	</step>
+	<step id="2">
+		Programm starten
+	</step>
+	<step id="3">
+		Aufgabe aussuchen und ggf. Online-Hilfe für Aufgaben ansehen
+	</step>
+	<step id="4">
+		Der Benutzer beginnt die Aufgabe zu lösen. Gleichzeitig wird der Timer gestartet. Je größer der Schwierigkeitsgrad der Aufgabe ist, desto mehr Zeit hat man zur Verfügung.
+	</step>
+	<step id="5">
+		Persöhnliche Einschätzung: Der Nutzer muss selbst auf einer ganzzahligen fünf-stufigen Skala beurteilen, ob er bei der Lösung der Aufgabe völlig unsicher (-2) bis völlig sicher (+2) gefühlt hat.
+	</step>
+	<step id="6">
+		Abgleich mit der Muster Lösung
+	</step>
+	<step id="7">
+		Richtigkeit: Prozent der Übereinstimmung mit der Muster-Lösung
+	</step>
+	<step id="8">
+		Statistik: Erhaltene Ergebnisse werden in Form einer Tabelle (Zeit, Anzahl der Hilfenutzung, Note bei der Selbstbeurteilung) ausgegeben
+	</step>
+</instruction>

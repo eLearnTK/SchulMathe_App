@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE test SYSTEM "test.dtd"> -->
+<test id="1" lang="deutsch">
+	<aufgaben>
+		<aufgabe id="1">
+			<text>Loesen Sie die folgenden quadratischen Gleichungen:</text>
+			<bild>test01aufgabe001</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://www.frustfrei-lernen.de/mathematik/pq-formel-quadratische-gleichungen-mathematik.html</value>
+        		<value>http://www.mathepower.com/qgleich.php</value>
+			</hilfe>
+			<loesung>test01loesung001</loesung>
+			<time>1.0</time>
+		</aufgabe>
+		<aufgabe id="2">
+			<text>Bestimmen Sie die Lösungsmenge der folgenden Wurzelgleichung:</text>
+			<bild>test01aufgabe002</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://www.arndt-bruenner.de/mathe/pdf/wurzelgleichungen1.pdf</value>
+        		<value>http://www.frustfrei-lernen.de/mathematik/wurzelgleichungen.html</value>
+        		<value>http://www.mathepower.com/wurzelgleichungen.php</value>
+			</hilfe>
+			<loesung>test01loesung002</loesung>
+			<time>3.0</time>
+		</aufgabe>
+		<aufgabe id="3">
+			<text>Berechnen Sie:</text>
+			<bild>test01aufgabe003</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test01loesung003</loesung>
+			<time>3.0</time>
+		</aufgabe>
+		<aufgabe id="4">
+			<text>Formen Sie die folgenden Terme in möglichst einfache Ausdrücke um:</text>
+			<bild>test01aufgabe004</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test01loesung004</loesung>
+			<time>3.0</time>
+		</aufgabe>
+		<aufgabe id="5">
+			<text>Bestimmen Sie den Schnittpunkt der Geraden:</text>
+			<bild>test01aufgabe005</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test01loesung005</loesung>
+			<time>3.0</time>
+		</aufgabe>
+	</aufgaben>
+</test>

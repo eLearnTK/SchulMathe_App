@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="false"
+    android:id="@+id/teinschaetzung"
+    android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/teinschaetzung1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Meine persönliche Einschätzung: Während der Lösung dieser Aufgabe habe ich mich "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            />
+         <!--TextView
+        android:id="@+id/teinschaetzung2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textStyle="bold"
+            -->
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:background="@drawable/gradient" >
+        </View>
+
+        <RadioGroup
+            android:id="@+id/radioGrup1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/radio_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:button="@drawable/radio_button"
+                android:text="voll unsicher" />
+
+            <RadioButton
+                android:id="@+id/radio_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:button="@drawable/radio_button"
+                android:text="unsicher" />
+
+            <RadioButton
+                android:id="@+id/radio0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:button="@drawable/radio_button"
+                android:text="neutral" />
+
+            <RadioButton
+                android:id="@+id/radio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:button="@drawable/radio_button"
+                android:text="sicher" />
+
+            <RadioButton
+                android:id="@+id/radio2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:button="@drawable/radio_button"
+                android:text="sehr sicher" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:background="@drawable/gradient" >
+        </View>
+
+        <TextView
+            android:id="@+id/teinschaetzung4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="gefühlt"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+</LinearLayout>

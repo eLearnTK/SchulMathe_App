@@ -1,0 +1,223 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center_vertical"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:layout_alignParentTop="true"
+        android:id="@+id/layTop"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/hello"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white"
+            android:text="@string/hello" />
+
+        <LinearLayout
+            android:id="@+id/linearMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/bmbf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:src="@drawable/logobmbf" />
+
+            <ImageView
+                android:id="@+id/btu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:src="@drawable/logobtu" />
+
+            <ImageView
+                android:id="@+id/elern"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:src="@drawable/logoelearning" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:background="@drawable/gradient" >
+        </View>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layTop"
+        android:layout_above="@+id/LayBottom">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@android:style/ButtonBar"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/black"
+                android:orientation="vertical" >
+                <TextView
+                    android:id="@+id/intro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Ablauf des lernprogramms wird in folgenden Schritten detailliert"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/step1"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:text="Der Benutzer nimmt Zettel und Stift"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/step2"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:text="Programm starten"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/step3"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:text="Aufgabe aussuchen und ggf. Online-Hilfe für Aufgaben ansehen"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/step4"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:text="Der Benutzer beginnt die Aufgabe zu lösen. Gleichzeitig wird der Timer gestartet. Je größer der Schwierigkeitsgrad der Aufgabe ist, desto mehr Zeit hat man zur Verfügung."
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/step5"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:text="Persöhnliche Einschätzung: Der Nutzer muss selbst auf einer ganzzahligen fünf-stufigen Skala beurteilen, ob er bei der Lösung der Aufgabe völlig unsicher (-2) bis völlig sicher (+2) gefühlt hat."
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/step6"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:text="Abgleich mit der Muster Lösung"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/step7"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:text="Richtigkeit: Prozent der Übereinstimmung mit der Muster-Lösung"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/step8"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:text="Statistik: Erhaltene Ergebnisse werden in Form einer Tabelle (Zeit, Anzahl der Hilfenutzung, Note bei der Selbstbeurteilung) ausgegeben"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+    <LinearLayout
+        style="@android:style/ButtonBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/LayBottom"
+        android:background="@color/black"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:background="@drawable/gradient" >
+        </View>
+
+        <LinearLayout
+            style="@android:style/ButtonBar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btnAbbrechnen"
+                android:textColor="@color/white"
+                android:background="@drawable/custom_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/Beenden"
+                android:onClick="exitSystem"/>
+
+            <Button
+                android:id="@+id/btnWeiter"
+                android:background="@drawable/custom_button"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/Weiter"
+                android:onClick="CallFirstTask" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@android:style/ButtonBar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/black"
+            android:id="@+id/buttons2">
+
+            <Button
+                android:background="@drawable/custom_button"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:text="Neu"
+                android:onClick="clearFiles"
+                android:id="@+id/button" />
+
+            <Button
+                android:background="@drawable/custom_button"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="0"
+                android:text="Statistik"
+                android:visibility="invisible"
+                android:id="@+id/button4" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+

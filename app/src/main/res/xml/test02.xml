@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE test SYSTEM "test.dtd"> -->
+<test id="1" lang="deutsch">
+	<aufgaben>
+    <aufgabe id="1">
+      <text>Formen Sie die folgenden Terme in moeglichst einfache Ausdrücken:</text>
+      <bild>test02aufgabe001</bild>
+      <hilfe>
+        <value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+        <value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+      </hilfe>
+      <loesung>test02loesung001</loesung>
+      <time>3.0</time>
+    </aufgabe>
+		<aufgabe id="2">
+			<text>Bestimmen Sie die Gleichung der Tangente im Punkt P(0) und die Parabel:</text>
+			<bild>test02aufgabe002</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test02loesung002</loesung>
+			<time>3.0</time>
+		</aufgabe>
+		<aufgabe id="3">
+			<text>Bestimmen Sie den Schnittpunkt P(0) der Parabel Y(1) und der Geraden Y(2):</text>
+			<bild>test02aufgabe003</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test02loesung003</loesung>
+			<time>3.0</time>
+		</aufgabe>
+		<aufgabe id="4">
+			<text>Bestimmen Sie die Nullstellen der folgenden Funktion:</text>
+			<bild>test02aufgabe004</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test02loesung004</loesung>
+			<time>3.0</time>
+		</aufgabe>
+		<aufgabe id="5">
+			<text>Bestimmen Sie die Extremstellen und die Wendepunkte der folgenden Funktion:</text>
+			<bild>test02aufgabe005</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test02loesung005</loesung>
+			<time>3.0</time>
+		</aufgabe>
+	</aufgaben>
+</test>

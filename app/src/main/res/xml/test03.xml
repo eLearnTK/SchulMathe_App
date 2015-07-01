@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE test SYSTEM "test.dtd"> -->
+<test id="1" lang="deutsch">
+	<aufgaben>
+		<aufgabe id="1">
+			<text>Geben Sie die Lösung für diese Aufgabe:</text>
+			<bild>test03aufgabe001</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test03loesung001</loesung>
+			<time>3.0</time>
+		</aufgabe>
+		<aufgabe id="2">
+			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<bild>test03aufgabe002</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test03loesung002</loesung>
+			<time>3.0</time>
+		</aufgabe>
+		<aufgabe id="3">
+			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<bild>test03aufgabe003</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test03loesung003</loesung>
+			<time>3.0</time>
+		</aufgabe>
+		<aufgabe id="4">
+			<text>Bestimmen Sie die Extremstellen und die Wendepunkte der folgenden Funktion:</text>
+			<bild>test03aufgabe004</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test03loesung004</loesung>
+			<time>3.0</time>
+		</aufgabe>
+		<aufgabe id="5">
+			<text>Bestimmen Sie die Nullstellen der folgenden Funktion:</text>
+			<bild>test03aufgabe005</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test03loesung005</loesung>
+			<time>3.0</time>
+		</aufgabe>
+	</aufgaben>
+</test>

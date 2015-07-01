@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:background="#ff000000"
+    android:id="@+id/scroll"
+    android:layout_height="fill_parent" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:layout_alignParentTop="true"
+            android:id="@+id/layPrincipal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:layout_alignParentTop="true"
+                android:id="@+id/layTop"
+                android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:id="@+id/haupt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.15"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/textAuf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <TextView
+                            android:id="@+id/textAufNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textAllCaps="true"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="@drawable/gradient" >
+                    </View>
+
+                    <TextView
+                        android:id="@+id/textAufComment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="@drawable/gradient" >
+                    </View>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/layTop"
+                android:layout_weight="0.5"
+                android:layout_above="@+id/LayBottom">
+
+                <ScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        style="@android:style/ButtonBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@color/black"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="matrix" />
+                    </LinearLayout>
+                </ScrollView>
+            </FrameLayout>
+
+            <LinearLayout
+                style="@android:style/ButtonBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/LayBottom"
+                android:background="@color/black"
+                android:layout_weight="0.5"
+                android:orientation="vertical" >
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="5dp"
+                    android:background="@drawable/gradient" >
+                </View>
+
+                <LinearLayout
+                    android:id="@+id/item"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.15"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/hilfeButton1"
+                        android:textColor="@color/white"
+                        android:layout_width="fill_parent"
+                        android:layout_height="5dp"
+                        android:text=""
+                        android:visibility="invisible"
+                        android:onClick="openHilfe" />
+
+                    <Button
+                        android:id="@+id/hilfeButton2"
+                        android:textColor="@color/white"
+                        android:layout_width="fill_parent"
+                        android:layout_height="5dp"
+                        android:text=""
+                        android:visibility="invisible"
+                        android:onClick="openHilfe" />
+
+                    <Button
+                        android:id="@+id/hilfeButton3"
+                        android:textColor="@color/white"
+                        android:layout_width="fill_parent"
+                        android:layout_height="5dp"
+                        android:text=""
+                        android:visibility="invisible"
+                        android:onClick="openHilfe" />
+
+                    <Button
+                        android:id="@+id/hilfeButton4"
+                        android:textColor="@color/white"
+                        android:layout_width="fill_parent"
+                        android:layout_height="5dp"
+                        android:text=""
+                        android:visibility="invisible"
+                        android:onClick="openHilfe" />
+
+                    <Button
+                        android:id="@+id/hilfeButton5"
+                        android:textColor="@color/white"
+                        android:layout_width="fill_parent"
+                        android:layout_height="5dp"
+                        android:text=""
+                        android:visibility="invisible"
+                        android:onClick="openHilfe" />
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="@drawable/gradient" >
+                    </View>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        style="@android:style/ButtonBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/black"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btnAkt1"
+            android:background="@drawable/custom_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:text="" />
+
+        <Button
+            android:id="@+id/btnAkt2"
+            android:background="@drawable/custom_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:text="" />
+    </LinearLayout>
+</RelativeLayout>
