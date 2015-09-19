@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Matrix;
+import android.graphics.Point;
 import android.graphics.PointF;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -18,6 +19,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.FloatMath;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,6 +31,7 @@ import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Chronometer;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -53,6 +56,8 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 
 
+
+
 public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
     public String message;
     public int cntntVw; // content View
@@ -74,7 +79,6 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
     private String str4 = "80";
     private String str5 = "100";
     public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
-    private Button btnPrueba; //_/_/_/ PRUEBA _/_/_/
 
     // Variables for Zoom
     private float scale = 1f;
@@ -93,7 +97,8 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
     PointF start = new PointF();
     PointF mid = new PointF();
     float oldDist = 1f;
-
+    boolean valMatrix = true;
+    int screenWidth, screenHeight;
 
     // parseNext variables
     private static String currentTag = null;
@@ -113,6 +118,9 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
     String timeString;
     float pgsBarInc;
     float pgsBarSum;
+
+    //Variables for Statistic
+    boolean bool_showsGraph = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,7 +147,13 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
         // zoom elements
         //img = (ImageView)findViewById(R.id.mloesung);
         //SGD = new ScaleGestureDetector(this,new ScaleListener());
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        screenWidth = size.x;
+        screenHeight = size.y;
 
+        image.setScaleType(ImageView.ScaleType.FIT_CENTER);
         btnAkt1.setText("Zurück zum Start");
 
         // Creates the click listener
@@ -198,12 +212,6 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
         }
         createHelpButtons();
     } // onCreate
-
-    @Override
-    public boolean onTouchEvent(MotionEvent ev) {
-        SGD.onTouchEvent(ev);
-        return true;
-    }
 
     public void evaluateAufgabe() {
         // When the score is < than the value of MainActivity.score2pool, goes to the respective pool exercises
@@ -264,16 +272,8 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                         MainActivity.sumQualfktion = 0;
                         break;
                     case 3:
-                        //LineGraph line = new LineGraph();
-                        //Intent lineIntent = line.getIntent(this);
 
-                        //layout = (LinearLayout) findViewById(R.id.haupt);
-                        //layout.removeAllViewsInLayout();
-                        //ViewGroup vg1 = (ViewGroup) inflater.inflate(R.layout.richtigkeit, null);
-                        //layout.addView(vg1);
-                        //layout.invalidate();
 
-                        //startActivity(lineIntent);
                         break;
                 } // switch
 
@@ -300,6 +300,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
             if (MainActivity.aufgb2Eval.size() > MainActivity.n_QntityAufEval) {
                 MainActivity.aufLoad = MainActivity.aufgb2Eval.get(numAufgabe);
 
+                image.setScaleType(ImageView.ScaleType.FIT_CENTER);
                 imageAufgabe = MainActivity.aufLoad.getImageAufgabe();
                 // Turns the String imageAufgabe into an int with the value R.drawable.image.
                 image2Disp = getResources().getIdentifier(imageAufgabe, "drawable", getPackageName());
@@ -316,7 +317,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                 aufNumbr = MainActivity.n_Aufgbe + 1;
                 txtAufNum.setText(" TEST " + MainActivity.n_Test + " Aufgabe " + aufNumbr);
 
-                btnAkt2.setText("Mit der Lösung beginnen");
+                btnAkt2.setText("Lösung beginnen");
 
             } // if
         } catch (Exception e) {
@@ -339,6 +340,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                 MainActivity.aufPoolLoad = MainActivity.poolAfgb2Eval.get(numPoolAufgabe);
                 imageAufgabe = MainActivity.aufPoolLoad.getImagePool();
 
+                image.setScaleType(ImageView.ScaleType.FIT_CENTER);
                 // Turns the String imageAufgabe into an int with the value R.drawable.image.
                 image2Disp = getResources().getIdentifier(imageAufgabe, "drawable", getPackageName());
                 Resources res = getResources();
@@ -354,7 +356,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                 aufPoolNumbr = MainActivity.n_poolAufgb + 1;
                 txtAufNum.setText(" POOL " + MainActivity.n_poolTest + " Aufgabe " + aufPoolNumbr);
 
-                btnAkt2.setText("Mit der Lösung beginnen");
+                btnAkt2.setText("Lösung beginnen");
             } // if
         } catch (Exception e) {
             System.out.println("ERROR ???: TestAufgabe.loadPoolScreen --> " + e);
@@ -497,7 +499,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                             System.out.println("0 task started");
                             MainActivity.startsFromSavedPoolInfo = false;
 
-                            btnAkt2.setText("Meine Lösung ist fertig");
+                            btnAkt2.setText("Lösung ist fertig");
                             layout = (LinearLayout) findViewById(R.id.item);
                             layout.removeAllViewsInLayout();
 
@@ -556,7 +558,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                             }
 
                             System.out.println("1 task performed");
-                            btnAkt2.setText("Weiter zum Abgleich mit der Muster-Lösung");
+                            btnAkt2.setText("Zur Lösung");
                             layout = (LinearLayout) findViewById(R.id.item);
                             layout.removeAllViewsInLayout();
 
@@ -635,6 +637,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                                     imageAufgabe = MainActivity.aufLoad.getImageLoesung();
                                 }
 
+                                image.setScaleType(ImageView.ScaleType.FIT_CENTER);
                                 // Turns the String imageAufgabe into an int with the value R.drawable.image.
                                 image2Disp = getResources().getIdentifier(imageAufgabe, "drawable", getPackageName());
                                 Resources res = getResources();
@@ -653,14 +656,14 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                                 layout.addView(vg);
                                 layout.invalidate();
                                 TextView txt = (TextView) findViewById(R.id.textAufComment);
-
-                                int n_poolAufgb_4display = MainActivity.n_poolAufgb + 1;
+                                txt.setText("");
+                                /*int n_poolAufgb_4display = MainActivity.n_poolAufgb + 1;
                                 int n_testAufgb_4display = MainActivity.n_Aufgbe + 1;
                                 if (MainActivity.poolActivated) {
                                     txt.setText(" POOL " + MainActivity.n_poolTest + " Aufgabe " + n_poolAufgb_4display);
                                 } else {
                                     txt.setText(" TEST " + MainActivity.n_Test + " Aufgabe " + n_testAufgb_4display);
-                                }
+                                }*/
 
                                 btnAkt2.setEnabled(false);
                                 CheckBox box = (CheckBox) findViewById(R.id.chkIos);
@@ -699,6 +702,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                                 imageAufgabe = MainActivity.aufLoad.getImageLoesung();
                             }
 
+                            image.setScaleType(ImageView.ScaleType.FIT_CENTER);
                             // Turns the String imageAufgabe into an int with the value R.drawable.image.
                             image2Disp = getResources().getIdentifier(imageAufgabe, "drawable", getPackageName());
                             Resources res = getResources();
@@ -710,7 +714,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
 
                             System.out.println("3 answer compared");
                             // Toast.makeText(getApplicationContext(), "msg msg4", Toast.LENGTH_SHORT).show();
-                            btnAkt2.setText("weiter");
+                            btnAkt2.setText("Weiter");
                             layout = (LinearLayout) findViewById(R.id.item);
                             layout.removeAllViewsInLayout();
                             ViewGroup vg1 = (ViewGroup) inflater.inflate(R.layout.richtigkeit, null);
@@ -725,14 +729,16 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                                 MainActivity.aufLoad.setZustand(4); // % Evaluated
                             }
 
-                            TextView txt = (TextView) findViewById(R.id.textAufComment);
+                            /*TextView txt = (TextView) findViewById(R.id.textAufComment);
                             int n_poolAufgb_4display = MainActivity.n_poolAufgb + 1;
                             int n_testAufgb_4display = MainActivity.n_Aufgbe + 1;
+
+
                             if (MainActivity.poolActivated) {
                                 txt.setText(" POOL " + MainActivity.n_poolTest + " Aufgabe " + n_poolAufgb_4display);
                             } else {
                                 txt.setText(" TEST " + MainActivity.n_Test + " Aufgabe " + n_testAufgb_4display);
-                            }
+                            }*/
 
                             rGroup = (RadioGroup) findViewById(R.id.radioGrup2);
                             RadioButton list = (RadioButton) rGroup.findViewById(rGroup.getCheckedRadioButtonId());
@@ -796,9 +802,11 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                             if (MainActivity.poolActivated) {
                                 MainActivity.n_poolAufgb++; //the next Pool-Aufgabe is going to be evaluated
                                 MainActivity.n_poolQntAufEvl++; // Increments the number of Aufgabe evaluated from the list Aufgb2Eval
+                                MainActivity.vecTest.add("Pool " + MainActivity.n_poolTest);
                             } else {
                                 MainActivity.n_Aufgbe++; //the next Aufgabe is going to be evaluated
                                 MainActivity.n_QntityAufEval++; // Increments the number of Aufgabe evaluated from the list Aufgb2Eval
+                                MainActivity.vecTest.add("Test " + MainActivity.n_Test);
                             }
 
                             MainActivity.sumQualfktion = MainActivity.sumQualfktion + intZahl1;
@@ -824,6 +832,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                             intent.putExtra(EXTRA_MESSAGE, xmlScreen);
                             startActivity(intent);
                             finish();
+
                             break;
                     } // switch
             } // switch
@@ -831,6 +840,14 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
             System.out.println("ERROR ???: TestAufgabe.java onClickBtnAkt --> " + e);
         } // try
     } // onClickBtnAkt
+
+    private void showsGraph() {
+        layout = (LinearLayout) findViewById(R.id.item);
+        layout.removeAllViewsInLayout();
+        ViewGroup vg2 = (ViewGroup) inflater.inflate(R.layout.activity_statistic, null);
+        layout.addView(vg2);
+        layout.invalidate();
+    }
 
     private Runnable myThread = new Runnable() {
         @Override
@@ -1303,7 +1320,13 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
         ImageView view = (ImageView) v;
 
         // Dump touch event to log
-        dumpEvent(event);
+        //dumpEvent(event);
+
+        if (valMatrix) {
+            image.setScaleType(ImageView.ScaleType.MATRIX);
+
+            valMatrix = false;
+        }
 
         // Handle touch events here...
         switch (event.getAction() & MotionEvent.ACTION_MASK) {
@@ -1349,33 +1372,6 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
 
         view.setImageMatrix(matrix);
         return true; // indicate event was handled
-    }
-
-    /** Show an event in the LogCat view, for debugging */
-    private void dumpEvent(MotionEvent event) {
-        String names[] = { "DOWN", "UP", "MOVE", "CANCEL", "OUTSIDE",
-                "POINTER_DOWN", "POINTER_UP", "7?", "8?", "9?" };
-        StringBuilder sb = new StringBuilder();
-        int action = event.getAction();
-        int actionCode = action & MotionEvent.ACTION_MASK;
-        sb.append("event ACTION_").append(names[actionCode]);
-        if (actionCode == MotionEvent.ACTION_POINTER_DOWN
-                || actionCode == MotionEvent.ACTION_POINTER_UP) {
-            sb.append("(pid ").append(
-                    action >> MotionEvent.ACTION_POINTER_ID_SHIFT);
-            sb.append(")");
-        }
-        sb.append("[");
-        for (int i = 0; i < event.getPointerCount(); i++) {
-            sb.append("#").append(i);
-            sb.append("(pid ").append(event.getPointerId(i));
-            sb.append(")=").append((int) event.getX(i));
-            sb.append(",").append((int) event.getY(i));
-            if (i + 1 < event.getPointerCount())
-                sb.append(";");
-        }
-        sb.append("]");
-        Log.d(TAG, sb.toString());
     }
 
     /** Determine the space between the first two fingers */

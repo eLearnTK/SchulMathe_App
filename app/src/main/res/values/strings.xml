@@ -12,4 +12,8 @@
     <string name="hello">Beschreibung des Programmes!</string>
     <string name="title_activity_test_aufgabe">TestAufgabe</string>
     <string name="chk_ios">OK</string>
+    <string name="title_activity_graph_view">GraphView</string>
+    <string name="title_activity_statistic">Statistic</string>
+    <string name="button_next_task">Nexte</string>
+    <string name="button_prev_task">Vor</string>
 </resources>

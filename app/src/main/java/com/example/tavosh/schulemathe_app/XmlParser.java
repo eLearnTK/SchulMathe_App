@@ -9,6 +9,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.Vector;
 
 public class XmlParser {
@@ -514,5 +515,46 @@ public class XmlParser {
             System.out.println("ERROR ???: XmlParser.java lectorDarchivos --> " + e);
         } // try
     } // Lector de archivos
+
+    public static int fillsTest2Eval() {
+        Enumeration vEnumTest = MainActivity.vecTest.elements();
+        Enumeration vEnumComp = MainActivity.vecTest.elements();
+        String j, h = "";
+        int count = 0;
+        int e_row=0;
+
+        while(vEnumTest.hasMoreElements()) {
+            j = vEnumTest.nextElement().toString();
+            vEnumComp = MainActivity.vecTest.elements();
+
+            if (j != h){
+                while (vEnumComp.hasMoreElements()) {
+                    h = vEnumTest.nextElement().toString();
+                    if (h == j) {
+                        count++;
+                    }
+                }// while
+
+            }
+        } // while
+
+        return 0;
+    }
+
+    public static int evalQtest(String h) {
+        Enumeration vEnumTest = MainActivity.vecTest.elements();
+        String j = "";
+        int count = 0;
+
+        while(vEnumTest.hasMoreElements()) {
+            j = vEnumTest.nextElement().toString();
+
+            if (j == h){
+                        count++;
+            }
+        } // while
+
+        return count;
+    }
 
 } // XmlParser

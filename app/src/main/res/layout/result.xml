@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Kontrolle der Richtigkeit der Lösung (Prozent der Übereinstimmung mit der Muster-Lösung d.h. Anyahl von richtig durch die komplette Anzahl von richtig und falsch dividieren, dann mal 100%"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+     <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/gradient"
+        android:layout_height="5dp"></View>
+
+    <ImageView
+        android:id="@+id/mloesung"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="matrix"
+        />
+
+    <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/gradient"
+        android:layout_height="5dp">
+    </View>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <com.jjoe64.graphview.GraphView
+            android:layout_width="match_parent"
+            android:layout_height="200dip"
+            android:id="@+id/graph" />
+    </LinearLayout>
+      <View
+        android:layout_width="wrap_content"
+        android:background="@drawable/gradient"
+        android:layout_height="0dp"></View>
+
+</LinearLayout>
