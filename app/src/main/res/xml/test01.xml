@@ -11,7 +11,7 @@
         		<value>http://www.mathepower.com/qgleich.php</value>
 			</hilfe>
 			<loesung>test01loesung001</loesung>
-			<time>1.0</time>
+			<time>2.0</time>
 		</aufgabe>
 		<aufgabe id="2">
 			<text>Bestimmen Sie die Lösungsmenge der folgenden Wurzelgleichung:</text>
@@ -23,7 +23,7 @@
         		<value>http://www.mathepower.com/wurzelgleichungen.php</value>
 			</hilfe>
 			<loesung>test01loesung002</loesung>
-			<time>3.0</time>
+			<time>6.0</time>
 		</aufgabe>
 		<aufgabe id="3">
 			<text>Berechnen Sie:</text>
@@ -33,7 +33,7 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>test01loesung003</loesung>
-			<time>3.0</time>
+			<time>6.0</time>
 		</aufgabe>
 		<aufgabe id="4">
 			<text>Formen Sie die folgenden Terme in möglichst einfache Ausdrücke um:</text>
@@ -43,7 +43,7 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>test01loesung004</loesung>
-			<time>3.0</time>
+			<time>6.0</time>
 		</aufgabe>
 		<aufgabe id="5">
 			<text>Bestimmen Sie den Schnittpunkt der Geraden:</text>
@@ -53,7 +53,7 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>test01loesung005</loesung>
-			<time>3.0</time>
+			<time>6.0</time>
 		</aufgabe>
 	</aufgaben>
 </test>

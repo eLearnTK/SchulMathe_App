@@ -272,8 +272,9 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                         MainActivity.sumQualfktion = 0;
                         break;
                     case 3:
-
-
+                        /* Calls to the Statistic screen */
+                        Intent intent = new Intent(this, Statistic.class);
+                        startActivity(intent);
                         break;
                 } // switch
 

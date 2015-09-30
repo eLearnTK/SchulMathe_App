@@ -10,7 +10,7 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>pool01loesung001</loesung>
-			<time>1.5</time>
+			<time>3</time>
 		</aufgabe>
 		<aufgabe id="2">
 			<text>Lösen Sie die folgenden quadratischen Gleichungen:</text>
@@ -20,7 +20,7 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>pool01loesung002</loesung>
-			<time>1.6</time>
+			<time>3.2</time>
 		</aufgabe>
         <aufgabe id="3">
             <text>Elementare Geometrie</text>
@@ -30,7 +30,7 @@
                 <value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
             </hilfe>
             <loesung>pool01loesung003</loesung>
-            <time>3.0</time>
+            <time>6.0</time>
         </aufgabe>
 	</aufgaben>
 </test>

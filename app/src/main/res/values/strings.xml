@@ -16,4 +16,6 @@
     <string name="title_activity_statistic">Statistic</string>
     <string name="button_next_task">Nexte</string>
     <string name="button_prev_task">Vor</string>
+
+    <string name="zuruck">Zum Start</string>
 </resources>

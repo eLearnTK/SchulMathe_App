@@ -10,7 +10,7 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>test03loesung001</loesung>
-			<time>3.0</time>
+			<time>6.0</time>
 		</aufgabe>
 		<aufgabe id="2">
 			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
@@ -20,7 +20,7 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>test03loesung002</loesung>
-			<time>3.0</time>
+			<time>6.0</time>
 		</aufgabe>
 		<aufgabe id="3">
 			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
@@ -30,7 +30,7 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>test03loesung003</loesung>
-			<time>3.0</time>
+			<time>6.0</time>
 		</aufgabe>
 		<aufgabe id="4">
 			<text>Bestimmen Sie die Extremstellen und die Wendepunkte der folgenden Funktion:</text>
@@ -40,7 +40,7 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>test03loesung004</loesung>
-			<time>3.0</time>
+			<time>6.0</time>
 		</aufgabe>
 		<aufgabe id="5">
 			<text>Bestimmen Sie die Nullstellen der folgenden Funktion:</text>
@@ -50,7 +50,7 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>test03loesung005</loesung>
-			<time>3.0</time>
+			<time>6.0</time>
 		</aufgabe>
 	</aufgaben>
 </test>

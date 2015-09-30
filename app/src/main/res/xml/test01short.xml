@@ -11,7 +11,7 @@
         		<value>http://www.mathepower.com/qgleich.php</value>
 			</hilfe>
 			<loesung>test01loesung001</loesung>
-			<time>1.0</time>
+			<time>2.0</time>
 		</aufgabe>
 		<aufgabe id="2">
 			<text>Bestimmen Sie die Lösungsmenge der folgenden Wurzelgleichung:</text>
@@ -23,7 +23,7 @@
         <value>http://www.mathepower.com/wurzelgleichungen.php</value>
 			</hilfe>
 			<loesung>test01loesung002</loesung>
-			<time>3.0</time>
+			<time>6.0</time>
 		</aufgabe>
 	</aufgaben>
 </test>

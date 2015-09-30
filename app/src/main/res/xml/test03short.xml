@@ -10,7 +10,7 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>test03loesung001</loesung>
-			<time>3.0</time>
+			<time>6.0</time>
 		</aufgabe>
 		<aufgabe id="2">
 			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
@@ -20,7 +20,7 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>test03loesung002</loesung>
-			<time>3.0</time>
+			<time>6.0</time>
 		</aufgabe>
 	</aufgaben>
 </test>

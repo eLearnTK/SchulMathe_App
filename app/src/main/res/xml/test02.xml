@@ -10,7 +10,7 @@
         <value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
       </hilfe>
       <loesung>test02loesung001</loesung>
-      <time>3.0</time>
+      <time>6.0</time>
     </aufgabe>
 		<aufgabe id="2">
 			<text>Bestimmen Sie die Gleichung der Tangente im Punkt P(0) und die Parabel:</text>
@@ -20,7 +20,7 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>test02loesung002</loesung>
-			<time>3.0</time>
+			<time>6.0</time>
 		</aufgabe>
 		<aufgabe id="3">
 			<text>Bestimmen Sie den Schnittpunkt P(0) der Parabel Y(1) und der Geraden Y(2):</text>
@@ -30,7 +30,7 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>test02loesung003</loesung>
-			<time>3.0</time>
+			<time>6.0</time>
 		</aufgabe>
 		<aufgabe id="4">
 			<text>Bestimmen Sie die Nullstellen der folgenden Funktion:</text>
@@ -40,7 +40,7 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>test02loesung004</loesung>
-			<time>3.0</time>
+			<time>6.0</time>
 		</aufgabe>
 		<aufgabe id="5">
 			<text>Bestimmen Sie die Extremstellen und die Wendepunkte der folgenden Funktion:</text>
@@ -50,7 +50,7 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>test02loesung005</loesung>
-			<time>3.0</time>
+			<time>6.0</time>
 		</aufgabe>
 	</aufgaben>
 </test>

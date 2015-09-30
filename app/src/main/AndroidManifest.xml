@@ -23,6 +23,10 @@
             android:label="@string/title_activity_test_aufgabe"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name=".Statistic"
+            android:label="@string/title_activity_statistic" >
+        </activity>
     </application>
 
 </manifest>
