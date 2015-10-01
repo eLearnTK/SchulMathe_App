@@ -12,6 +12,7 @@ import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import org.achartengine.ChartFactory;
@@ -53,6 +54,9 @@ public class Statistic extends ActionBarActivity {
     XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
     XYMultipleSeriesRenderer mRenderer = new XYMultipleSeriesRenderer();
 
+    Button btnRew;
+    Button btnFwd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +68,10 @@ public class Statistic extends ActionBarActivity {
         layout = (LinearLayout) findViewById(R.id.BarGraph);
         gView = getViewFwd(this);
         layout.addView(gView);
+
+        btnRew = (Button) findViewById(R.id.btnAktBack);
+        btnFwd = (Button) findViewById(R.id.btnAktFwd);
+        btnRew.setEnabled(false);
     }
 
     /* This function generates all the values and format for the chart */
@@ -243,6 +251,11 @@ public class Statistic extends ActionBarActivity {
             h2++;
         } // while*/
 
+        if (MainActivity.vecQualifikation.size() == indx_graph) {
+            btnFwd.setEnabled(false);
+        }
+        if (indx_graph > 0) btnRew.setEnabled(true);
+
         series_Q.clear();
         //series2.clear();
 
@@ -286,6 +299,8 @@ public class Statistic extends ActionBarActivity {
         indx_graph = indx_graph - sizeY - sizeY_prev;
         //int i2 = indx_graph;
 
+        if (indx_graph == 0) btnRew.setEnabled(false);
+
         while (h < sizeY) {
             j = MainActivity.vecQualifikation.get(indx_graph).toString();
             y_Qrew[h] = Integer.parseInt(j);
@@ -294,6 +309,10 @@ public class Statistic extends ActionBarActivity {
             indx_graph++;
             h++;
         } // while
+
+        if (MainActivity.vecQualifikation.size() > indx_graph) {
+            btnFwd.setEnabled(true);
+        }
 
         /*while (h2 < sizeY) {
             j = vecFeeling.get(i2).toString();
