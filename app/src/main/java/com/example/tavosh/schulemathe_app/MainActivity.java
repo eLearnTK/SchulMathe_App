@@ -67,13 +67,13 @@ public class MainActivity extends ActionBarActivity {
     static final String TIME = "time";
 
     private static final int OFF_TOPIC = 0;
-    //static final int xml01 = R.xml.test01;
-    //static final int xml02 = R.xml.test02;
-    //static final int xml03 = R.xml.test03;
+    static final int xml01 = R.xml.test01;
+    static final int xml02 = R.xml.test02;
+    static final int xml03 = R.xml.test03;
 
-    static final int xml01 = R.xml.test01short; // Short version of test 1 (just for tests)
-    static final int xml02 = R.xml.test02short; // Short version of test 2 (just for tests)
-    static final int xml03 = R.xml.test03short; // Short version of test 3 (just for tests)
+    //static final int xml01 = R.xml.test01short; // Short version of test 1 (just for tests)
+    //static final int xml02 = R.xml.test02short; // Short version of test 2 (just for tests)
+    //static final int xml03 = R.xml.test03short; // Short version of test 3 (just for tests)
 
     static final int xmlIntro = R.xml.intro;
     static final int xmlPool01 = R.xml.pool01;

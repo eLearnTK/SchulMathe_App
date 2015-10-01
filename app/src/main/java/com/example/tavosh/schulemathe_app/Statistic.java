@@ -70,8 +70,8 @@ public class Statistic extends ActionBarActivity {
     public GraphicalView getViewFwd(Context context) {
         /* evaluates how many task has the TEST*/
         sizeY = evalQtest(nextAufgabe);
-        sTests[indx_sTests] = nextAufgabe + "," + sizeY;
-        indx_sTests++;
+        //sTests[indx_sTests] = nextAufgabe + "," + sizeY;
+        sTests[indx_sTests] = nextAufgabe;
 
         y_Q = new int[sizeY];
         x_Q = new int[sizeY];
@@ -210,8 +210,8 @@ public class Statistic extends ActionBarActivity {
         nextAufgabe = MainActivity.vecTest.get(indx_graph).toString();
         sizeY = evalQtest(nextAufgabe);
         /* array to control which test is beeing displayed */
-        sTests[indx_sTests] = nextAufgabe + "," + sizeY;
         indx_sTests++;
+        sTests[indx_sTests] = nextAufgabe;
 
         int[] x_Qfwd = new int[sizeY];
         int[] y_Qfwd = new int[sizeY];
@@ -268,14 +268,13 @@ public class Statistic extends ActionBarActivity {
     }
 
     public void lastGraph(View view){
+        int sizeY_prev = evalQtest(nextAufgabe);
         indx_sTests--;
-        sTests[indx_sTests] = nextAufgabe + "," + sizeY;
-
         nextAufgabe = sTests[indx_sTests];
         sizeY = evalQtest(nextAufgabe);
 
-        int[] x_Qfwd = new int[sizeY];
-        int[] y_Qfwd = new int[sizeY];
+        int[] x_Qrew = new int[sizeY];
+        int[] y_Qrew = new int[sizeY];
         int h = 0;
         int[] xw2;
         int[] yz2;
@@ -284,12 +283,13 @@ public class Statistic extends ActionBarActivity {
         yz2 = new int[sizeY];
         xw2 = new int[sizeY];
 
+        indx_graph = indx_graph - sizeY - sizeY_prev;
         //int i2 = indx_graph;
 
         while (h < sizeY) {
             j = MainActivity.vecQualifikation.get(indx_graph).toString();
-            y_Qfwd[h] = Integer.parseInt(j);
-            x_Qfwd[h] = h+1;
+            y_Qrew[h] = Integer.parseInt(j);
+            x_Qrew[h] = h+1;
 
             indx_graph++;
             h++;
@@ -309,9 +309,9 @@ public class Statistic extends ActionBarActivity {
 
         //_/_/TimeSeries series = new TimeSeries("Line1");
         //series = new CategorySeries("Tests");
-        for (int w = 0; w < x_Qfwd.length; w++) {
-            x_temp_Q = (double) x_Qfwd[w];
-            y_temp_Q = (double) y_Qfwd[w];
+        for (int w = 0; w < x_Qrew.length; w++) {
+            x_temp_Q = (double) x_Qrew[w];
+            y_temp_Q = (double) y_Qrew[w];
             series_Q.add("bar" + x_temp_Q, y_temp_Q);
         }
 
