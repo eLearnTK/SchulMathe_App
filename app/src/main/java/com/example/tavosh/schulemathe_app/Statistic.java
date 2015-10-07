@@ -35,11 +35,16 @@ public class Statistic extends ActionBarActivity {
     public String nextAufgabe;
     int indx_graph = 0;
     int sizeY;
-    /* This variables stores the Qualification data to create the chart */
+    /* These variables stores the Qualification data to create the chart */
     int[] x_Q;
     int[] y_Q;
     double x_temp_Q;
     double y_temp_Q;
+    // These variables stores the Empfindung data to create the chart
+    int[] x_E;
+    int[] y_E;
+    double x_temp_E;
+    double y_temp_E;
 
     String[] sTests = new String[10];
     int indx_sTests = 0;
@@ -48,9 +53,10 @@ public class Statistic extends ActionBarActivity {
     GraphicalView gView;
     String j;
     XYSeriesRenderer renderer_Q = new XYSeriesRenderer();
-    //XYSeriesRenderer renderer2 = new XYSeriesRenderer();
+    XYSeriesRenderer renderer_E = new XYSeriesRenderer();
     //XYSeriesRenderer renderer3 = new XYSeriesRenderer();
     CategorySeries series_Q = new CategorySeries("Tests");
+    CategorySeries series_E = new CategorySeries("Empf");
     XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
     XYMultipleSeriesRenderer mRenderer = new XYMultipleSeriesRenderer();
 
@@ -83,11 +89,11 @@ public class Statistic extends ActionBarActivity {
 
         y_Q = new int[sizeY];
         x_Q = new int[sizeY];
-        //y2 = new int[sizeY];
-        //x2 = new int[sizeY];
+        y_E = new int[sizeY];
+        x_E = new int[sizeY];
         //y3 = new int[sizeY];
         //x3 = new int[sizeY];
-        //int i2 = indx_graph;
+        int i2 = indx_graph;
         //int i3 = indx_graph;
 
         while (indx_graph < sizeY) {
@@ -98,13 +104,13 @@ public class Statistic extends ActionBarActivity {
             indx_graph++;
         } // while
 
-        /*while (i2 < sizeY) {
-            j = vecFeeling.get(i2).toString();
-            y2[i2] = Integer.parseInt(j);
-            x2[i2] = i2+1;
+        while (i2 < sizeY) {
+            j = MainActivity.vecEmpfindung.get(i2).toString();
+            y_E[i2] = Integer.parseInt(j);
+            x_E[i2] = i2+1;
 
             i2++;
-        }*/
+        }
 
         /*while (i3 < sizeY) {
             j = vecFeeling2.get(i3).toString();
@@ -120,11 +126,11 @@ public class Statistic extends ActionBarActivity {
             series_Q.add("bar" + x_temp_Q, y_temp_Q);
         }
 
-        /*for (int w = 0; w < x2.length; w++) {
-            x2_temp = (double) x2[w];
-            y2_temp = (double) y2[w];
-            series2.add("bar" + x2_temp, y2_temp);
-        }*/
+        for (int w = 0; w < x_E.length; w++) {
+            x_temp_E = (double) x_E[w];
+            y_temp_E = (double) y_E[w];
+            series_E.add("line" + x_temp_E, y_temp_E);
+        }
 
         /*for (int w = 0; w < x3.length; w++) {
             x3_temp = (double) x3[w];
@@ -133,17 +139,17 @@ public class Statistic extends ActionBarActivity {
         }*/
 
         dataset.addSeries(series_Q.toXYSeries());
-        //dataset.addSeries(series2.toXYSeries());
+        dataset.addSeries(series_E.toXYSeries());
         //dataset.addSeries(series3.toXYSeries());
 
         renderer_Q.setColor(Color.GREEN);
         renderer_Q.setPointStyle(PointStyle.SQUARE);
         renderer_Q.setFillPoints(true);
 
-        //renderer2.setColor(Color.RED);
-        //renderer2.setPointStyle(PointStyle.SQUARE);
-        //renderer2.setFillPoints(true);
-        //renderer2.setLineWidth(7);
+        renderer_E.setColor(Color.YELLOW);
+        renderer_E.setPointStyle(PointStyle.SQUARE);
+        renderer_E.setFillPoints(true);
+        renderer_E.setLineWidth(7);
 
         //renderer3.setColor(Color.RED);
         //renderer3.setPointStyle(PointStyle.SQUARE);
@@ -151,7 +157,7 @@ public class Statistic extends ActionBarActivity {
         //renderer3.setLineWidth(7);
 
         mRenderer.addSeriesRenderer(renderer_Q);
-        //mRenderer.addSeriesRenderer(renderer2);
+        mRenderer.addSeriesRenderer(renderer_E);
         //mRenderer.addSeriesRenderer(renderer3);
 
         mRenderer.setChartTitle("Aufgabenergebnisse");
@@ -189,11 +195,11 @@ public class Statistic extends ActionBarActivity {
         }
 
         /* For single series */
-        return ChartFactory.getBarChartView(context, dataset, mRenderer, BarChart.Type.DEFAULT);
+        //return ChartFactory.getBarChartView(context, dataset, mRenderer, BarChart.Type.DEFAULT);
 
         /* For multiple series */
-        //String[] types = new String[]{BarChart.TYPE, LineChart.TYPE,LineChart.TYPE};
-        //return ChartFactory.getCombinedXYChartView(context, dataset, mRenderer, types);
+        String[] types = new String[]{BarChart.TYPE, LineChart.TYPE};
+        return ChartFactory.getCombinedXYChartView(context, dataset, mRenderer, types);
     }
 
     public static int evalQtest(String h) {
@@ -224,14 +230,11 @@ public class Statistic extends ActionBarActivity {
         int[] x_Qfwd = new int[sizeY];
         int[] y_Qfwd = new int[sizeY];
         int h = 0;
-        int[] xw2;
-        int[] yz2;
+        int[] x_Efwd = new int[sizeY];
+        int[] y_Efwd = new int[sizeY];
         int h2 = 0;
 
-        yz2 = new int[sizeY];
-        xw2 = new int[sizeY];
-
-        //int i2 = indx_graph;
+        int i2 = indx_graph;
 
         while (h < sizeY) {
             j = MainActivity.vecQualifikation.get(indx_graph).toString();
@@ -242,14 +245,14 @@ public class Statistic extends ActionBarActivity {
             h++;
         } // while
 
-        /*while (h2 < sizeY) {
-            j = vecFeeling.get(i2).toString();
-            yz2[h2] = Integer.parseInt(j);
-            xw2[h2] = i2+1;
+        while (h2 < sizeY) {
+            j = MainActivity.vecEmpfindung.get(i2).toString();
+            y_Efwd[h2] = Integer.parseInt(j);
+            x_Efwd[h2] = i2+1;
 
             i2++;
             h2++;
-        } // while*/
+        } // while
 
         if (MainActivity.vecQualifikation.size() == indx_graph) {
             btnFwd.setEnabled(false);
@@ -257,7 +260,7 @@ public class Statistic extends ActionBarActivity {
         if (indx_graph > 0) btnRew.setEnabled(true);
 
         series_Q.clear();
-        //series2.clear();
+        series_E.clear();
 
         //_/_/TimeSeries series = new TimeSeries("Line1");
         //series = new CategorySeries("Tests");
@@ -267,19 +270,20 @@ public class Statistic extends ActionBarActivity {
             series_Q.add("bar" + x_temp_Q, y_temp_Q);
         }
 
-        /*for (int w = 0; w < xw2.length; w++) {
-            x_temp = (double) xw2[w];
-            y_temp = (double) yz2[w];
-            series2.add("bar" + x_temp, y_temp);
-        }*/
+        for (int w = 0; w < x_Efwd.length; w++) {
+            x_temp_E = (double) x_Efwd[w];
+            y_temp_E = (double) y_Efwd[w];
+            series_E.add("line" + x_temp_E, y_temp_E);
+        }
 
         dataset.clear();
         dataset.addSeries(series_Q.toXYSeries());
-        //dataset.addSeries(series2.toXYSeries());
+        dataset.addSeries(series_E.toXYSeries());
         mRenderer.setXTitle(nextAufgabe);
         gView.repaint();
     }
 
+    /* This function generates the graph of the previous Test */
     public void lastGraph(View view){
         int sizeY_prev = evalQtest(nextAufgabe);
         indx_sTests--;
@@ -289,15 +293,12 @@ public class Statistic extends ActionBarActivity {
         int[] x_Qrew = new int[sizeY];
         int[] y_Qrew = new int[sizeY];
         int h = 0;
-        int[] xw2;
-        int[] yz2;
+        int[] x_Erew = new int[sizeY];
+        int[] y_Erew = new int[sizeY];
         int h2 = 0;
 
-        yz2 = new int[sizeY];
-        xw2 = new int[sizeY];
-
         indx_graph = indx_graph - sizeY - sizeY_prev;
-        //int i2 = indx_graph;
+        int i2 = indx_graph;
 
         if (indx_graph == 0) btnRew.setEnabled(false);
 
@@ -314,17 +315,17 @@ public class Statistic extends ActionBarActivity {
             btnFwd.setEnabled(true);
         }
 
-        /*while (h2 < sizeY) {
-            j = vecFeeling.get(i2).toString();
-            yz2[h2] = Integer.parseInt(j);
-            xw2[h2] = i2+1;
+        while (h2 < sizeY) {
+            j = MainActivity.vecEmpfindung.get(i2).toString();
+            y_Erew[h2] = Integer.parseInt(j);
+            x_Erew[h2] = i2+1;
 
             i2++;
             h2++;
-        } // while*/
+        } // while
 
         series_Q.clear();
-        //series2.clear();
+        series_E.clear();
 
         //_/_/TimeSeries series = new TimeSeries("Line1");
         //series = new CategorySeries("Tests");
@@ -334,15 +335,15 @@ public class Statistic extends ActionBarActivity {
             series_Q.add("bar" + x_temp_Q, y_temp_Q);
         }
 
-        /*for (int w = 0; w < xw2.length; w++) {
-            x_temp = (double) xw2[w];
-            y_temp = (double) yz2[w];
-            series2.add("bar" + x_temp, y_temp);
-        }*/
+        for (int w = 0; w < x_Erew.length; w++) {
+            x_temp_E = (double) x_Erew[w];
+            y_temp_E = (double) y_Erew[w];
+            series_E.add("line" + x_temp_E, y_temp_E);
+        }
 
         dataset.clear();
         dataset.addSeries(series_Q.toXYSeries());
-        //dataset.addSeries(series2.toXYSeries());
+        dataset.addSeries(series_E.toXYSeries());
         mRenderer.setXTitle(nextAufgabe);
         gView.repaint();
     }

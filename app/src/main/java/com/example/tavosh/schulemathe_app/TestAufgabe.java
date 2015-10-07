@@ -73,6 +73,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
     int count;
     private RadioGroup rGroup;
     public static int intZahl1;
+    public static int intEmpf;
     private String str1 = "20";
     private String str2 = "40";
     private String str3 = "60";
@@ -578,12 +579,10 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                             rGroup = (RadioGroup) findViewById(R.id.radioGrup1);
                             RadioButton checkedRadioButton1 = (RadioButton) rGroup.findViewById(rGroup.getCheckedRadioButtonId());
                             rGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                                public void onCheckedChanged(RadioGroup rGroup,
-                                                             int checkedId) {
+                                public void onCheckedChanged(RadioGroup rGroup, int checkedId) {
                                     // This will get the radiobutton that has changed in its
                                     // check state
-                                    RadioButton checkedRadioButton1 = (RadioButton) rGroup
-                                            .findViewById(checkedId);
+                                    RadioButton checkedRadioButton1 = (RadioButton) rGroup.findViewById(checkedId);
                                     // This puts the value (true/false) into the variable
                                     boolean isChecked = checkedRadioButton1.isChecked();
                                     // If the radiobutton that has changed in check state is
@@ -621,6 +620,25 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                                             }
                                         });
                                     } // if
+
+                                    switch (checkedId) { //set the Model to hold the answer the user picked
+                                        case R.id.radio_2:
+                                            intEmpf = Integer.parseInt(str1);
+                                            break;
+                                        case R.id.radio_1:
+                                            intEmpf = Integer.parseInt(str2);
+                                            break;
+                                        case R.id.radio0:
+                                            intEmpf = Integer.parseInt(str3);
+                                            break;
+                                        case R.id.radio1:
+                                            intEmpf = Integer.parseInt(str4);
+                                            break;
+                                        case R.id.radio2:
+                                            intEmpf = Integer.parseInt(str5);
+                                            break;
+                                        default:
+                                    }
                                 } // onCheckedChanged
                             }); // rGroup.setOnCheckedChangeListener
                             break;
@@ -632,10 +650,13 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                                 //mloesung.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
                                 // Get the image from the current Test / Pool
+                                // And sets the empindung of the current task/Pool
                                 if (MainActivity.poolActivated) {
                                     imageAufgabe = MainActivity.aufPoolLoad.getImageLoesung();
+                                    MainActivity.aufPoolLoad.setEmpfindung(intEmpf);
                                 } else {
                                     imageAufgabe = MainActivity.aufLoad.getImageLoesung();
+                                    MainActivity.aufLoad.setEmpfindung(intEmpf);
                                 }
 
                                 image.setScaleType(ImageView.ScaleType.FIT_CENTER);
@@ -745,8 +766,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                             RadioButton list = (RadioButton) rGroup.findViewById(rGroup.getCheckedRadioButtonId());
 
                             rGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                                public void onCheckedChanged(RadioGroup group,
-                                                             int checkedId) {
+                                public void onCheckedChanged(RadioGroup group, int checkedId) {
                                     Integer pos = (Integer) group.getTag();
 
                                     // Model element = list.get(pos);
@@ -799,6 +819,8 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
 
                             // Stores the qualification of each task is stored (To use it in the Chart)
                             MainActivity.vecQualifikation.add(intZahl1);
+                            // Stores the self Empfindung of each task (to be used in the chart)
+                            MainActivity.vecEmpfindung.add(intEmpf);
 
                             if (MainActivity.poolActivated) {
                                 MainActivity.n_poolAufgb++; //the next Pool-Aufgabe is going to be evaluated
@@ -1123,13 +1145,14 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                     String timeRequired = aufTemp.getTimeRequired();
                     int zustand = aufTemp.getZustand();
                     int qualifikation = aufTemp.getQualifikation();
+                    int empfindung = aufTemp.getEmpfindung();
 
                     myOutWriter.append("\t<test id=\"" + test + "\">\n");
                     myOutWriter.append("\t\t<aufgabe>" + aufgabe + "</aufgabe>\n");
                     myOutWriter.append("\t\t<timeRequired>" + timeRequired + "</timeRequired>\n");
                     myOutWriter.append("\t\t<Zustang>" + zustand + "</Zustang>\n");
                     myOutWriter.append("\t\t<qualifikation>" + qualifikation + "</qualifikation>\n");
-                    myOutWriter.append("\t\t<empfindung>" + null + "</empfindung>\n");
+                    myOutWriter.append("\t\t<empfindung>" + empfindung + "</empfindung>\n");
                     myOutWriter.append("\t</test>\n");
 
 
@@ -1138,7 +1161,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                     OSW.append("\t\t<timeRequired>" + timeRequired + "</timeRequired>\n");
                     OSW.append("\t\t<Zustang>" + zustand + "</Zustang>\n");
                     OSW.append("\t\t<qualifikation>" + qualifikation + "</qualifikation>\n");
-                    OSW.append("\t\t<empfindung>" + null + "</empfindung>\n");
+                    OSW.append("\t\t<empfindung>" + empfindung + "</empfindung>\n");
                     OSW.append("\t</test>\n");
                 }
             } // for

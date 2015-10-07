@@ -13,12 +13,13 @@ public class Aufgabe {
     private String timeRequired = new String();
 	private int zustand = 0;
 	private int qualifikation;
+	private int empfindung;
 
 	public Aufgabe() {
 	// Constructor without parameters	
 	}
 
-	public Aufgabe(int test, int aufgabe, String imageAufgabe, String hilfe, String iconLoesung, String Text, String time, String timeRequired, int zustand, int qlfktn) {
+	public Aufgabe(int test, int aufgabe, String imageAufgabe, String hilfe, String iconLoesung, String Text, String time, String timeRequired, int zustand, int qlfktn, int empfng) {
 		// Constructor with parameters
 		
 		super();
@@ -32,6 +33,7 @@ public class Aufgabe {
 		this.zustand = zustand;
 		this.qualifikation = qlfktn;
 		this.test = test;
+		this.empfindung = empfng;
 	}
 	
 	//Getters
@@ -69,6 +71,10 @@ public class Aufgabe {
 	
 	public int getQualifikation(){
 		return qualifikation;
+	}
+
+	public int getEmpfindung(){
+		return empfindung;
 	}
 	
 	public int getTest(){
@@ -113,6 +119,10 @@ public class Aufgabe {
 	
 	public void setQualifikation(int qlfktn){
 		this.qualifikation = qlfktn;
+	}
+
+	public void setEmpfindung(int empfndng){
+		this.qualifikation = empfndng;
 	}
 	
 	public void setTest(int tst) {

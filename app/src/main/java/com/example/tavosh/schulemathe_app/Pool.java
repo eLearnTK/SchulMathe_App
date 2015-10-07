@@ -13,12 +13,13 @@ public class Pool {
     private String timeRequired = new String();
 	private int zustand = 0;
 	private int qualifikation;
+	private int empfindung;
 
 	public Pool() {
 	// Constructor without parameters	
 	}
 
-	public Pool(int poolTest, int poolAufgb, String imagePool, String hilfe, String iconPoolLsng, String Text, String time, String timeRequired, int zustand, int qlfktn) {
+	public Pool(int poolTest, int poolAufgb, String imagePool, String hilfe, String iconPoolLsng, String Text, String time, String timeRequired, int zustand, int qlfktn, int empfng) {
 		// Constructor with parameters
 		
 		super();
@@ -32,6 +33,7 @@ public class Pool {
 		this.zustand = zustand;
 		this.qualifikation = qlfktn;
 		this.poolTest = poolTest;
+		this.empfindung = empfng;
 	}
 	
 	//Getters
@@ -68,7 +70,11 @@ public class Pool {
 	public int getQualifikation(){
 		return qualifikation;
 	}
-	
+
+	public int getEmpfindung(){
+		return empfindung;
+	}
+
 	public int getPoolTest(){
 		return poolTest;
 	}
@@ -107,6 +113,10 @@ public class Pool {
 	
 	public void setQualifikation(int qlfktn){
 		this.qualifikation = qlfktn;
+	}
+
+	public void setEmpfindung(int empfdng){
+		this.qualifikation = empfdng;
 	}
 	
 	public void setPoolTest(int poolTst) {
