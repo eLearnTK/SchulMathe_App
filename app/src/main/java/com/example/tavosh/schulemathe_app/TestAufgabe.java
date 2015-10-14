@@ -55,9 +55,6 @@ import java.util.concurrent.TimeUnit;
 import android.view.View;
 import android.view.View.OnTouchListener;
 
-
-
-
 public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
     public String message;
     public int cntntVw; // content View
@@ -532,10 +529,11 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
 
                             // Loads the time required for the task in the Countdown Chrono
                             time4task = Float.parseFloat(timeString);
+                            MainActivity.vecTime4task.add(timeString); // to generate the statistic time at the end.
                             pgsBarSum = 100/(time4task*60); // How much the ProgressBar should decrement
 
                             if (time4task < 1.6) {
-                                pgsBarSum = pgsBarSum / 2;
+                                pgsBarSum = pgsBarSum / 2; // How much the ProgressBar should decrement
                             }
 
                             prg = 99;
@@ -558,6 +556,8 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                             } else {
                                 MainActivity.aufLoad.setTimeRequired(chrono.getText().toString());
                             }
+                            // Saves the time of the Chrono to display it in the Time Statistic
+                            MainActivity.vecTime.add(chrono.getText());
 
                             System.out.println("1 task performed");
                             btnAkt2.setText("Zur Lösung");

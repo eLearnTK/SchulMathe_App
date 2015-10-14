@@ -45,6 +45,7 @@ public class Statistic extends ActionBarActivity {
     int[] y_E;
     double x_temp_E;
     double y_temp_E;
+    String[] time_temp = new String[10];
 
     String[] sTests = new String[10];
     int indx_sTests = 0;
@@ -98,6 +99,7 @@ public class Statistic extends ActionBarActivity {
 
         while (indx_graph < sizeY) {
             j = MainActivity.vecQualifikation.get(indx_graph).toString();
+            time_temp[indx_graph] = MainActivity.vecTime.get(indx_graph).toString();
             y_Q[indx_graph] = Integer.parseInt(j);
             x_Q[indx_graph] = indx_graph+1;
 
@@ -200,8 +202,9 @@ public class Statistic extends ActionBarActivity {
         /* For multiple series */
         String[] types = new String[]{BarChart.TYPE, LineChart.TYPE};
         return ChartFactory.getCombinedXYChartView(context, dataset, mRenderer, types);
-    }
+    } //getViewFwd
 
+    /* Returns the quantity of task that a Test has */
     public static int evalQtest(String h) {
         Enumeration vEnumTest = MainActivity.vecTest.elements();
         String j = "";
@@ -235,9 +238,11 @@ public class Statistic extends ActionBarActivity {
         int h2 = 0;
 
         int i2 = indx_graph;
+        time_temp = new String[10];
 
         while (h < sizeY) {
             j = MainActivity.vecQualifikation.get(indx_graph).toString();
+            time_temp[h] = MainActivity.vecTime.get(indx_graph).toString();
             y_Qfwd[h] = Integer.parseInt(j);
             x_Qfwd[h] = h+1;
 
@@ -281,7 +286,7 @@ public class Statistic extends ActionBarActivity {
         dataset.addSeries(series_E.toXYSeries());
         mRenderer.setXTitle(nextAufgabe);
         gView.repaint();
-    }
+    } //nextGraph
 
     /* This function generates the graph of the previous Test */
     public void lastGraph(View view){
@@ -299,11 +304,13 @@ public class Statistic extends ActionBarActivity {
 
         indx_graph = indx_graph - sizeY - sizeY_prev;
         int i2 = indx_graph;
+        time_temp = new String[10];
 
         if (indx_graph == 0) btnRew.setEnabled(false);
 
         while (h < sizeY) {
             j = MainActivity.vecQualifikation.get(indx_graph).toString();
+            time_temp[h] = MainActivity.vecTime.get(indx_graph).toString();
             y_Qrew[h] = Integer.parseInt(j);
             x_Qrew[h] = h+1;
 
@@ -346,7 +353,81 @@ public class Statistic extends ActionBarActivity {
         dataset.addSeries(series_E.toXYSeries());
         mRenderer.setXTitle(nextAufgabe);
         gView.repaint();
-    }
+    } //lastGraph
+
+    public void timeGraph(View view) {
+        try {
+            int sizeY_temp = evalQtest(nextAufgabe);
+            //int indx_sTest_temp = indx_sTests -1;
+            //nextAufgabe = sTests[indx_sTest_temp];
+            //int sizeY_temp = evalQtest(nextAufgabe);
+
+            float[] x_Time = new float[sizeY_temp];
+            float[] y_Time = new float[sizeY_temp];
+            int h = 0;
+            float[] x_Lim = new float[sizeY_temp];
+            float[] y_Lim = new float[sizeY_temp];
+            int h2 = 0;
+            int minutes;
+            int seconds;
+            String sSeconds;
+            String sMinutes;
+            int posMin;
+
+            int indx_temp = indx_graph - sizeY_temp;
+            int i2 = indx_temp;
+
+            while (h < sizeY_temp) {
+                j = MainActivity.vecTime.get(indx_temp).toString();
+                posMin = j.lastIndexOf(":");
+                sMinutes = j.substring(0,posMin);
+                //minutes = Integer.parseInt(j.substring(0,posMin));
+                sSeconds = j.substring(j.lastIndexOf(":") + 1);
+                seconds = ((Integer.parseInt(sSeconds))*100)/60;
+                y_Time[h] = Float.parseFloat(sMinutes + "." + seconds);
+                x_Time[h] = h + 1;
+
+                indx_temp++;
+                h++;
+            } // while
+
+            while (h2 < sizeY) {
+                j = MainActivity.vecTime4task.get(i2).toString();
+                //posMin = j.lastIndexOf(":");
+                //minutes = Integer.parseInt(j.substring(0,posMin));
+                //sSeconds = j.substring(j.lastIndexOf(":") + 1);
+                //seconds = ((Integer.parseInt(sSeconds))*100)/60;
+                y_Lim[h2] = Float.parseFloat(j);
+                x_Lim[h2] = h2 + 1;
+
+                i2++;
+                h2++;
+            } // while
+
+            series_Q.clear();
+            series_E.clear();
+
+            for (int w = 0; w < x_Time.length; w++) {
+                x_temp_Q = (double) x_Time[w];
+                y_temp_Q = (double) y_Time[w];
+                series_Q.add("bar" + x_temp_Q, y_temp_Q);
+            }
+
+            for (int w = 0; w < x_Lim.length; w++) {
+                x_temp_E = (double) x_Lim[w];
+                y_temp_E = (double) y_Lim[w];
+                series_E.add("line" + x_temp_E, y_temp_E);
+            }
+
+            dataset.clear();
+            dataset.addSeries(series_Q.toXYSeries());
+            dataset.addSeries(series_E.toXYSeries());
+            mRenderer.setXTitle("Time " + nextAufgabe);
+            gView.repaint();
+        } catch (Exception e) {
+            System.out.println("Error Statistic.java.timeGraph " + e);
+        }
+    } // timeGraph
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

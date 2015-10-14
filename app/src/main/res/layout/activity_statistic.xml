@@ -37,15 +37,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text=" - Avg. O "
-            android:textColor="@android:color/holo_red_light"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text=" - Avg. U "
-            android:textColor="@android:color/holo_red_light"/>
+            android:text=" - Empfindung "
+            android:textColor="@android:color/holo_orange_light"/>
     </LinearLayout>
 
     <LinearLayout
@@ -76,6 +69,7 @@
             android:textColor="@color/white"
             android:layout_weight="1"
             android:layout_gravity="center_vertical|center_horizontal"
+            android:onClick="timeGraph"
             android:text="@string/zuruck" />
 
         <Button

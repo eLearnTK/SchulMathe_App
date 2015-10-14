@@ -32,6 +32,8 @@ public class MainActivity extends ActionBarActivity {
     public static Vector vecQualifikation = new Vector<String>();// records each score of each task in order to create the statistic at the end
     public static Vector vecTest = new Vector<String>(); // records teh number of each task, works together with VecQualification to create the statistics.
     public static Vector vecEmpfindung = new Vector<String>(); // records each empfindung of each task in order to create the statistic at the end
+    public static Vector vecTime = new Vector<String>(); // records each time of each task in order to create the time statistic at the end (time of the user)
+    public static Vector vecTime4task = new Vector<String>(); // records each time of each task in order to create the time statistic at the end (time of the xml)
     public static boolean poolActivated = false; // When the score is too low, the next test will be from the Pool
 
     public static int sumQualfktion = 0; // Sums the qualification for each Test or pool.
@@ -68,13 +70,13 @@ public class MainActivity extends ActionBarActivity {
     static final String TIME = "time";
 
     private static final int OFF_TOPIC = 0;
-    //static final int xml01 = R.xml.test01;
-    //static final int xml02 = R.xml.test02;
-    //static final int xml03 = R.xml.test03;
+    static final int xml01 = R.xml.test01;
+    static final int xml02 = R.xml.test02;
+    static final int xml03 = R.xml.test03;
 
-    static final int xml01 = R.xml.test01short; // Short version of test 1 (just for tests)
-    static final int xml02 = R.xml.test02short; // Short version of test 2 (just for tests)
-    static final int xml03 = R.xml.test03short; // Short version of test 3 (just for tests)
+    //static final int xml01 = R.xml.test01short; // Short version of test 1 (just for tests)
+    //static final int xml02 = R.xml.test02short; // Short version of test 2 (just for tests)
+    //static final int xml03 = R.xml.test03short; // Short version of test 3 (just for tests)
 
     static final int xmlIntro = R.xml.intro;
     static final int xmlPool01 = R.xml.pool01;
