@@ -11,7 +11,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:text="Meine persönliche Einschätzung: Während der Lösung dieser Aufgabe habe ich mich:"
+            android:text="@string/Einschätzung"
             android:textAppearance="?android:attr/textAppearanceMedium"
             />
          <!--TextView
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:button="@drawable/radio_button"
-                android:text="voll unsicher" />
+                android:text="@string/Einschätzung1" />
 
             <RadioButton
                 android:id="@+id/radio_1"
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:button="@drawable/radio_button"
-                android:text="unsicher" />
+                android:text="@string/Einschätzung2" />
 
             <RadioButton
                 android:id="@+id/radio0"
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:button="@drawable/radio_button"
-                android:text="neutral" />
+                android:text="@string/Einschätzung3" />
 
             <RadioButton
                 android:id="@+id/radio1"
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:button="@drawable/radio_button"
-                android:text="sicher" />
+                android:text="@string/Einschätzung4" />
 
             <RadioButton
                 android:id="@+id/radio2"
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:button="@drawable/radio_button"
-                android:text="sehr sicher" />
+                android:text="@string/Einschätzung5" />
         </RadioGroup>
 
         <View
@@ -87,6 +87,6 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textColor="@color/white"
-            android:text="gefühlt"
+            android:text="@string/Einschätzung6"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 </LinearLayout>

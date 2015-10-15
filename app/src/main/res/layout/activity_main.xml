@@ -84,63 +84,63 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:text="Ablauf des lernprogramms wird in folgenden Schritten detailliert"
+                    android:text="@string/Beschreibung"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
                     android:id="@+id/step1"
                     android:textColor="@color/white"
                     android:layout_width="wrap_content"
-                    android:text="Der Benutzer nimmt Zettel und Stift"
+                    android:text="@string/Anleitung1"
                     android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/step2"
                     android:textColor="@color/white"
                     android:layout_width="wrap_content"
-                    android:text="Programm starten"
+                    android:text="@string/Anleitung2"
                     android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/step3"
                     android:textColor="@color/white"
                     android:layout_width="wrap_content"
-                    android:text="Aufgabe aussuchen und ggf. Online-Hilfe für Aufgaben ansehen"
+                    android:text="@string/Anleitung3"
                     android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/step4"
                     android:textColor="@color/white"
                     android:layout_width="wrap_content"
-                    android:text="Der Benutzer beginnt die Aufgabe zu lösen. Gleichzeitig wird der Timer gestartet. Je größer der Schwierigkeitsgrad der Aufgabe ist, desto mehr Zeit hat man zur Verfügung."
+                    android:text="@string/Anleitung4"
                     android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/step5"
                     android:textColor="@color/white"
                     android:layout_width="wrap_content"
-                    android:text="Persöhnliche Einschätzung: Der Nutzer muss selbst auf einer ganzzahligen fünf-stufigen Skala beurteilen, ob er bei der Lösung der Aufgabe völlig unsicher (-2) bis völlig sicher (+2) gefühlt hat."
+                    android:text="@string/Anleitung5"
                     android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/step6"
                     android:textColor="@color/white"
                     android:layout_width="wrap_content"
-                    android:text="Abgleich mit der Muster Lösung"
+                    android:text="@string/Anleitung6"
                     android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/step7"
                     android:textColor="@color/white"
                     android:layout_width="wrap_content"
-                    android:text="Richtigkeit: Prozent der Übereinstimmung mit der Muster-Lösung"
+                    android:text="@string/Anleitung7"
                     android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/step8"
                     android:textColor="@color/white"
                     android:layout_width="wrap_content"
-                    android:text="Statistik: Erhaltene Ergebnisse werden in Form einer Tabelle (Zeit, Anzahl der Hilfenutzung, Note bei der Selbstbeurteilung) ausgegeben"
+                    android:text="@string/Anleitung8"
                     android:layout_height="wrap_content" />
             </LinearLayout>
         </ScrollView>
@@ -203,7 +203,7 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
-                android:text="Neu"
+                android:text="@string/Neu"
                 android:onClick="clearFiles"
                 android:id="@+id/button" />
 

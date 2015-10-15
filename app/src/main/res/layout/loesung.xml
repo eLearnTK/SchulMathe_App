@@ -24,7 +24,7 @@
             android:layout_width="216dp"
             android:layout_height="146dp"
             android:textColor="@color/white"
-            android:text="Ich habe meine Lösung mit der Muster-Lösung verglichen und zeilenweise richtig oder falsch in die eigene Lösung eingetragen."
+            android:text="@string/loesung"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <CheckBox

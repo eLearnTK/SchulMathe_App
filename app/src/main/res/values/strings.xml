@@ -7,15 +7,37 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
 
-    <string name="Beenden">Beenden</string>
-    <string name="Weiter">Weiter</string>
-    <string name="hello">Beschreibung des Programmes!</string>
-    <string name="title_activity_test_aufgabe">TestAufgabe</string>
+    <string name="Weiter">Next</string>
+    <string name="hello"> Description of the program</string>
+    <string name="title_activity_test_aufgabe">TestTask</string>
     <string name="chk_ios">OK</string>
-    <string name="title_activity_graph_view">GraphView</string>
+    <string name="title_activity_graph_view" translatable="false">GraphView</string>
     <string name="title_activity_statistic">Statistic</string>
-    <string name="button_next_task">Nexte</string>
+    <string name="button_next_task">Next</string>
     <string name="button_prev_task">Vor</string>
 
-    <string name="zuruck">Zum Start</string>
+    <string name="zuruck">to the begining</string>
+    <string name="Beenden">Finish</string>
+
+    <string name="Neu">New</string>
+    <string name="Beschreibung">Procedetred</string>
+    <string name="Anleitung1">The user takes a pen and a slice of paper </string>
+    <string name="Anleitung2">start the programm</string>
+    <string name="Anleitung3">Reading the task and if needed use the online help</string>
+    <string name="Anleitung4">The user beginns to solve the task. At the same time a countdown beginns.For a harder task there is more time</string>
+    <string name="Anleitung5">Personal opinion: The user have to rate his performence on a skale from 1 to 5</string>
+    <string name="Anleitung6">Compere withe the soulution given</string>
+    <string name="Anleitung7">Now the user has to select how many percent of the task where right</string>
+    <string name="Anleitung8">At the end you can see your statistik</string>
+    <string name="Anleitung">sd</string>
+
+    <string name="Einschätzung">My personal opinion: I felt:</string>
+    <string name="Einschätzung1">very insecure</string>
+    <string name="Einschätzung2">neutral</string>
+    <string name="Einschätzung3">sd</string>
+    <string name="Einschätzung4">secure</string>
+    <string name="Einschätzung5">very insecure</string>
+    <string name="Einschätzung6"> </string>
+    <string name="loesung">I have compared my solution withe the given one, an marked everything either right or wrong</string>
+    <string name="result">Controll of the accuracy of my  solution in percent</string>
 </resources>

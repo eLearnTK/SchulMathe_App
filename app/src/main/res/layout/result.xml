@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:text="Kontrolle der Richtigkeit der Lösung (Prozent der Übereinstimmung mit der Muster-Lösung d.h. Anyahl von richtig durch die komplette Anzahl von richtig und falsch dividieren, dann mal 100%"
+        android:text="@string/result"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
      <View

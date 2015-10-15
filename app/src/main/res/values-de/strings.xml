@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SchuleMathe_App</string>
+    <string name="Beenden">Beenden</string>
+    <string name="Weiter">Weiter</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="button_next_task">Nächste</string>
+    <string name="button_prev_task">Zurück</string>
+    <string name="chk_ios">OK</string>
+    <string name="hello">Beschreibung des Programmes</string>
+    <string name="hello_world">Hallo Welt</string>
+    <string name="zuruck">Zum Anfang</string>
+    <string name="title_activity_test_aufgabe">TestAufgabe</string>
+    <string name="title_activity_statistic">Statistik</string>
+    <string name="Neu">Neu</string>
+    <string name="Beschreibung">Ablauf des lernprogramms wird in folgenden Schritten detailliert erklärt</string>
+    <string name="Anleitung">Der Benutzer nimmt Zettel und Stift</string>
+    <string name="Anleitung1">Der Benutzer nimmt Zettel und Stift</string>
+    <string name="Anleitung2">Programm starten</string>
+    <string name="Anleitung3">Aufgabe aussuchen und ggf. Online-Hilfe für Aufgaben ansehen</string>
+    <string name="Anleitung4">Der Benutzer beginnt die Aufgabe zu lösen. Gleichzeitig wird der Timer gestartet. Je größer der Schwierigkeitsgrad der Aufgabe ist, desto mehr Zeit hat man zur Verfügung.</string>
+    <string name="Anleitung5">Persöhnliche Einschätzung: Der Nutzer muss selbst auf einer ganzzahligen fünf-stufigen Skala beurteilen, ob er bei der Lösung der Aufgabe völlig unsicher (-2) bis völlig sicher (+2) gefühlt hat.</string>
+    <string name="Anleitung6">Abgleich mit der Muster Lösung</string>
+    <string name="Anleitung7">Richtigkeit: Prozent der Übereinstimmung mit der Muster-Lösung</string>
+    <string name="Anleitung8">Statistik: Erhaltene Ergebnisse werden in Form einer Tabelle (Zeit, Anzahl der Hilfenutzung, Note bei der Selbstbeurteilung) ausgegeben</string>
+    <string name="Einschätzung">Meine persönliche Einschätzung: Während der Lösung dieser Aufgabe habe ich mich:</string>
+    <string name="Einschätzung1">voll unsicher</string>
+    <string name="Einschätzung2">unsicher</string>
+    <string name="Einschätzung3">neutral</string>
+    <string name="Einschätzung4">sicher</string>
+    <string name="Einschätzung5">sehr sicher</string>
+    <string name="Einschätzung6">gefühlt</string>
+    <string name="loesung">Ich habe meine Lösung mit der Muster-Lösung verglichen und zeilenweise richtig oder falsch in die eigene Lösung eingetragen.</string>
+    <string name="result">Kontrolle der Richtigkeit der Lösung (Prozent der Übereinstimmung mit der Muster-Lösung d.h. Anyahl von richtig durch die komplette Anzahl von richtig und falsch dividieren, dann mal 100%</string>
+</resources>
