@@ -69,7 +69,7 @@
             android:textColor="@color/white"
             android:layout_weight="1"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:onClick="timeGraph"
+            android:onClick="back2Start"
             android:text="@string/zuruck" />
 
         <Button

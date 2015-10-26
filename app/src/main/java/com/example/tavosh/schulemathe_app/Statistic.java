@@ -1,7 +1,9 @@
 package com.example.tavosh.schulemathe_app;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -63,6 +65,7 @@ public class Statistic extends ActionBarActivity {
 
     Button btnRew;
     Button btnFwd;
+    public final static String EXTRA_MESSAGE = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -428,6 +431,34 @@ public class Statistic extends ActionBarActivity {
             System.out.println("Error Statistic.java.timeGraph " + e);
         }
     } // timeGraph
+
+    /* Returns to the first screen */
+    public void back2Start(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+
+        //sends the name of which layout to use to the new intent
+        int xmlScreen = R.layout.activity_main;
+        intent.putExtra(EXTRA_MESSAGE, xmlScreen);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if ((keyCode == KeyEvent.KEYCODE_BACK))
+        {
+            //Goes back to the first screen when the android back button is pressed
+            Intent intent = new Intent(this, MainActivity.class);
+            int xmlScreen = R.layout.activity_main;
+            intent.putExtra(EXTRA_MESSAGE, xmlScreen);
+            startActivity(intent);
+            finish();
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

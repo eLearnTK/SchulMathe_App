@@ -490,7 +490,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
 
             switch (v.getId()) {
                 case R.id.btnAkt1:
-                    System.exit(0);
+                    finish();
                     break;
                 case R.id.btnAkt2:
                     switch (ActualZustand) {
