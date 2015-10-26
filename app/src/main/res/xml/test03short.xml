@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- <!DOCTYPE test SYSTEM "test.dtd"> -->
 <test id="1" lang="deutsch">
 	<aufgaben>
@@ -6,18 +6,21 @@
 			<text>Geben Sie die Lösung für diese Aufgabe:</text>
 			<bild>test03aufgabe001</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>https://www.mathsisfun.com/geometry/triangles-similar.html</value>
+				<value>https://www.mathsisfun.com/pythagoras.html</value>
+				<value>http://www.regentsprep.org/regents/math/algebra/at2/ltrig.htm</value>
+				<value>https://www.easycalculation.com/analytical/altitude-of-triangles.php</value>
+				<value>https://www.mathsisfun.com/square-root.html</value>
 			</hilfe>
 			<loesung>test03loesung001</loesung>
 			<time>6.0</time>
+
 		</aufgabe>
 		<aufgabe id="2">
 			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
 			<bild>test03aufgabe002</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://www.mathworksheetsgo.com/triangle-calculators/area-of-triangle-calculator-online.php</value>
 			</hilfe>
 			<loesung>test03loesung002</loesung>
 			<time>6.0</time>

@@ -1,56 +1,57 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- <!DOCTYPE test SYSTEM "test.dtd"> -->
 <test id="1" lang="deutsch">
 	<aufgaben>
-    <aufgabe id="1">
-      <text>Formen Sie die folgenden Terme in moeglichst einfache Ausdrücken:</text>
-      <bild>test02aufgabe001</bild>
-      <hilfe>
-        <value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-        <value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-      </hilfe>
-      <loesung>test02loesung001</loesung>
-      <time>6.0</time>
-    </aufgabe>
+    		<aufgabe id="1">
+      			<text>Transform the following terms in the simplest terms:</text>
+     	 		<bild>test02aufgabe001</bild>
+      			<hilfe>
+        			<value>https://www.mathsisfun.com/fractions_addition.html</value>
+      			</hilfe>
+      			<loesung>test02loesung001</loesung>
+      			<time>6.0</time>
+   	 	</aufgabe>
 		<aufgabe id="2">
-			<text>Bestimmen Sie die Gleichung der Tangente im Punkt P(0) und die Parabel:</text>
+			<text>Determine the equation of the tangent at the point P (0) and the parable:</text>
 			<bild>test02aufgabe002</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://www.wikihow.com/Find-the-Equation-of-a-Tangent-Line</value>
 			</hilfe>
 			<loesung>test02loesung002</loesung>
 			<time>6.0</time>
+
 		</aufgabe>
 		<aufgabe id="3">
-			<text>Bestimmen Sie den Schnittpunkt P(0) der Parabel Y(1) und der Geraden Y(2):</text>
+			<text>Determine the intersection P (0) of the parabola Y (1) and the straight line Y (2):</text>
 			<bild>test02aufgabe003</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://calculator.tutorvista.com/point-of-intersection-calculator.html</value>
+
 			</hilfe>
 			<loesung>test02loesung003</loesung>
 			<time>6.0</time>
+
 		</aufgabe>
 		<aufgabe id="4">
-			<text>Bestimmen Sie die Nullstellen der folgenden Funktion:</text>
+			<text>Determine the zeros of the following function:</text>
 			<bild>test02aufgabe004</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://www.analyzemath.com/function/zeros.html</value>
+				<value>http://www.wikihow.com/Find-the-Zeros-of-a-Function</value>
 			</hilfe>
 			<loesung>test02loesung004</loesung>
 			<time>6.0</time>
+
 		</aufgabe>
 		<aufgabe id="5">
-			<text>Bestimmen Sie die Extremstellen und die Wendepunkte der folgenden Funktion:</text>
+			<text>Determine the extreme points and the turning points of the following functions:</text>
 			<bild>test02aufgabe005</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://help.matheass.eu/en/CurveDiscussion.html</value>
 			</hilfe>
 			<loesung>test02loesung005</loesung>
 			<time>6.0</time>
+
 		</aufgabe>
 	</aufgaben>
 </test>

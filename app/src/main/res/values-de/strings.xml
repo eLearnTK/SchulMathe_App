@@ -32,4 +32,10 @@
     <string name="Einschätzung6">gefühlt</string>
     <string name="loesung">Ich habe meine Lösung mit der Muster-Lösung verglichen und zeilenweise richtig oder falsch in die eigene Lösung eingetragen.</string>
     <string name="result">Kontrolle der Richtigkeit der Lösung (Prozent der Übereinstimmung mit der Muster-Lösung d.h. Anyahl von richtig durch die komplette Anzahl von richtig und falsch dividieren, dann mal 100%</string>
+    <string name="richtigkeit">Kontrolle der Richtigkeit der Lösung (Prozent der Übereinstimmung mit der Muster-Lösung d.h. Anzahl von richtig durch die komplette Anzahl von richtig und falsch dividieren, dann mal 100%)</string>
+    <string name="zur_Lösung">zur Lösung</string>
+    <string name="Lösung_ist_fertig">Lösung ist fertig</string>
+    <string name="Lösung_beginnen">Lösung beginnen</string>
+    <string name="Aufgabe">Aufgabe</string>
+    <string name="Zurück_zum_Start">Zurück zum Start</string>
 </resources>

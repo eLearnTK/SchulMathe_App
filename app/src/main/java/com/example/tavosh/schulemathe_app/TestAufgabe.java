@@ -152,7 +152,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
         screenHeight = size.y;
 
         image.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        btnAkt1.setText("Zurück zum Start");
+        btnAkt1.setText(R.string.Zurück_zum_Start);
 
         // Creates the click listener
         View.OnClickListener oclBtnOk = new View.OnClickListener() {
@@ -314,9 +314,9 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                 txtAufgabe = MainActivity.aufLoad.getText();
                 txtAufComment.setText(txtAufgabe);
                 aufNumbr = MainActivity.n_Aufgbe + 1;
-                txtAufNum.setText(" TEST " + MainActivity.n_Test + " Aufgabe " + aufNumbr);
+                txtAufNum.setText(" TEST " + MainActivity.n_Test +  " Aufgabe "  + aufNumbr);
 
-                btnAkt2.setText("Lösung beginnen");
+                btnAkt2.setText(R.string.Lösung_beginnen);
 
             } // if
         } catch (Exception e) {
@@ -355,7 +355,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                 aufPoolNumbr = MainActivity.n_poolAufgb + 1;
                 txtAufNum.setText(" POOL " + MainActivity.n_poolTest + " Aufgabe " + aufPoolNumbr);
 
-                btnAkt2.setText("Lösung beginnen");
+                btnAkt2.setText(R.string.Lösung_beginnen);
             } // if
         } catch (Exception e) {
             System.out.println("ERROR ???: TestAufgabe.loadPoolScreen --> " + e);
@@ -498,7 +498,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                             System.out.println("0 task started");
                             MainActivity.startsFromSavedPoolInfo = false;
 
-                            btnAkt2.setText("Lösung ist fertig");
+                            btnAkt2.setText(R.string.Lösung_ist_fertig);
                             layout = (LinearLayout) findViewById(R.id.item);
                             layout.removeAllViewsInLayout();
 
@@ -560,7 +560,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                             MainActivity.vecTime.add(chrono.getText());
 
                             System.out.println("1 task performed");
-                            btnAkt2.setText("Zur Lösung");
+                            btnAkt2.setText(R.string.zur_Lösung);
                             layout = (LinearLayout) findViewById(R.id.item);
                             layout.removeAllViewsInLayout();
 
@@ -671,7 +671,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
 
                                 layout = (LinearLayout) findViewById(R.id.item);
                                 layout.removeAllViewsInLayout();
-                                btnAkt2.setText("Weiter");
+                                btnAkt2.setText(R.string.Weiter);
                                 //Toast.makeText(getApplicationContext(), "msg msg3",Toast.LENGTH_SHORT).show();
 
                                 ViewGroup vg = (ViewGroup) inflater.inflate(R.layout.loesung, null);
@@ -736,7 +736,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
 
                             System.out.println("3 answer compared");
                             // Toast.makeText(getApplicationContext(), "msg msg4", Toast.LENGTH_SHORT).show();
-                            btnAkt2.setText("Weiter");
+                            btnAkt2.setText(R.string.Weiter);
                             layout = (LinearLayout) findViewById(R.id.item);
                             layout.removeAllViewsInLayout();
                             ViewGroup vg1 = (ViewGroup) inflater.inflate(R.layout.richtigkeit, null);

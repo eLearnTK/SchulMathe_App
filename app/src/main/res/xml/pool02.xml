@@ -3,54 +3,57 @@
 <test id="1" lang="deutsch">
 	<aufgaben>
 		<aufgabe id="1">
-			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<text>Solve this task:</text>
 			<bild>pool02aufgabe001</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://mathcentral.uregina.ca/QQ/database/QQ.09.04/brett1.html</value>
+				<value>http://mathcountsnotes.blogspot.de/2010/09/face-diagonal-and-space-diagonal.html</value>
+				<value>http://www.ditutor.com/solid_gometry/diagonal_cuboid.html</value>
+				<value>http://math.tutorcircle.com/geometry/how-to-find-the-diagonal-of-a-cube.html</value>			
 			</hilfe>
 			<loesung>pool02loesung001</loesung>
-			<time>6.0</time>
+			<time>3.0</time>
 		</aufgabe>
 		<aufgabe id="2">
-			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<text>Solve this task:</text>
 			<bild>pool02aufgabe002</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>https://www.mathsisfun.com/triangle.html</value>
 			</hilfe>
 			<loesung>pool02loesung002</loesung>
-			<time>6.0</time>
+			<time>3.0</time>
 		</aufgabe>
 	    <aufgabe id="3">
-			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<text>Solve this task:</text>
 			<bild>pool02aufgabe003</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>https://www.mathsisfun.com/geometry/circle-area.html</value>
+				<value>http://www.ajdesigner.com/phpcircle/circle_normal_diameter_d.php</value>
 			</hilfe>
 			<loesung>pool02loesung003</loesung>
-			<time>6.0</time>
+			<time>3.0</time>
 		</aufgabe>
 		<aufgabe id="4">
-			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<text>Solve this task:</text>
 			<bild>pool02aufgabe004</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>https://www.mathsisfun.com/geometry/tetrahedron.html</value>
+				<value>http://www.mathematische-basteleien.de/tetrahedron.htm</value>
+				<value>http://math.stackexchange.com/questions/11085/height-of-a-tetrahedron</value>
+				<value>http://www.quimica3d.com/en/cell.php</value>
+				<value>http://mathworld.wolfram.com/RegularTetrahedron.html</value>
 			</hilfe>
 			<loesung>pool02loesung004</loesung>
-			<time>6.0</time>
+			<time>3.0</time>
 		</aufgabe>
 		<aufgabe id="5">
-			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<text>Solve this task:</text>
 			<bild>pool02aufgabe005</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>https://www.mathsisfun.com/square-root.html</value>
 			</hilfe>
 			<loesung>pool02loesung005</loesung>
-			<time>6.0</time>
+			<time>3.0</time>
 		</aufgabe>
 	</aufgaben>
 </test>

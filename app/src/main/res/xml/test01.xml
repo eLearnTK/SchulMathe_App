@@ -3,57 +3,57 @@
 <test id="1" lang="deutsch">
 	<aufgaben>
 		<aufgabe id="1">
-			<text>Loesen Sie die folgenden quadratischen Gleichungen:</text>
+			<text>Solve the following quadratic equations:</text>
 			<bild>test01aufgabe001</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://www.frustfrei-lernen.de/mathematik/pq-formel-quadratische-gleichungen-mathematik.html</value>
-        		<value>http://www.mathepower.com/qgleich.php</value>
+				<value>https://www.mathsisfun.com/algebra/quadratic-equation.html</value>
+				<value>http://www.purplemath.com/modules/quadform.htm</value>
+        			<value>http://www.sosmath.com/algebra/quadraticeq/quadraformula/quadraformula.html</value>
 			</hilfe>
 			<loesung>test01loesung001</loesung>
-			<time>2.0</time>
+			<time>1.0</time>
 		</aufgabe>
 		<aufgabe id="2">
-			<text>Bestimmen Sie die Lösungsmenge der folgenden Wurzelgleichung:</text>
+			<text>Determine the solution set of the following root equation:</text>
 			<bild>test01aufgabe002</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://www.arndt-bruenner.de/mathe/pdf/wurzelgleichungen1.pdf</value>
-        		<value>http://www.frustfrei-lernen.de/mathematik/wurzelgleichungen.html</value>
-        		<value>http://www.mathepower.com/wurzelgleichungen.php</value>
+				<value>http://www.rapidtables.com/math/algebra/Quadratic_equation.htm</value>
+				<value>http://www.sosmath.com/algebra/quadraticeq/root/root.html</value>
+        			<value>http://www.wikihow.com/Find-the-Roots-of-a-Quadratic-Equation</value>
 			</hilfe>
 			<loesung>test01loesung002</loesung>
-			<time>6.0</time>
+			<time>3.0</time>
 		</aufgabe>
 		<aufgabe id="3">
-			<text>Berechnen Sie:</text>
+			<text>Calculate:</text>
 			<bild>test01aufgabe003</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>https://www.mathsisfun.com/fractions_addition.html</value>
+
 			</hilfe>
 			<loesung>test01loesung003</loesung>
-			<time>6.0</time>
+			<time>3.0</time>
 		</aufgabe>
 		<aufgabe id="4">
-			<text>Formen Sie die folgenden Terme in möglichst einfache Ausdrücke um:</text>
+			<text>Transform the following terms in the simplest terms:</text>
 			<bild>test01aufgabe004</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://zonalandeducation.com/mmts/intersections/intersectionOfTwoLines1/intersectionOfTwoLines1.html</value>
+				<value>http://www.mathopenref.com/coordintersection.html</value>
+				<value>http://www.wikihow.com/Algebraically-Find-the-Intersection-of-Two-Lines</value>
 			</hilfe>
 			<loesung>test01loesung004</loesung>
-			<time>6.0</time>
+			<time>3.0</time>
 		</aufgabe>
 		<aufgabe id="5">
-			<text>Bestimmen Sie den Schnittpunkt der Geraden:</text>
+			<text>Determine the intersection of the lines:</text>
 			<bild>test01aufgabe005</bild>
 			<hilfe>
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>test01loesung005</loesung>
-			<time>6.0</time>
+			<time>3.0</time>
 		</aufgabe>
 	</aufgaben>
 </test>

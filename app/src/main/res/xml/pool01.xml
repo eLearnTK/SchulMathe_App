@@ -1,36 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- <!DOCTYPE test SYSTEM "test.dtd"> -->
 <test id="1" lang="deutsch">
 	<aufgaben>
 		<aufgabe id="1">
-			<text>Berechnen Sie:</text>
+			<text>Calculate:</text>
 			<bild>pool01aufgabe001</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://www.purplemath.com/modules/solvquad2.htm</value>
+				<value>http://www.sosmath.com/algebra/quadraticeq/root/root.html</value>
 			</hilfe>
 			<loesung>pool01loesung001</loesung>
-			<time>3</time>
+			<time>3.0</time>
+
 		</aufgabe>
 		<aufgabe id="2">
-			<text>Lösen Sie die folgenden quadratischen Gleichungen:</text>
+			<text>Solve the following quadratic equations:</text>
 			<bild>pool01aufgabe002</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://www.wikihow.com/Find-the-Zeros-of-a-Function</value>
+				<value>http://www.analyzemath.com/function/zeros.html</value>
 			</hilfe>
 			<loesung>pool01loesung002</loesung>
 			<time>3.2</time>
+
 		</aufgabe>
         <aufgabe id="3">
-            <text>Elementare Geometrie</text>
+            <text>Elementary Geometry</text>
             <bild>pool01aufgabe003</bild>
             <hilfe>
-                <value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-                <value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+                <value>https://www.mathsisfun.com/triangle.html</value>
             </hilfe>
             <loesung>pool01loesung003</loesung>
             <time>6.0</time>
+
         </aufgabe>
 	</aufgaben>
 </test>

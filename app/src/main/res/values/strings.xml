@@ -33,11 +33,18 @@
 
     <string name="Einschätzung">My personal opinion: I felt:</string>
     <string name="Einschätzung1">very insecure</string>
-    <string name="Einschätzung2">neutral</string>
-    <string name="Einschätzung3">sd</string>
+    <string name="Einschätzung2">insecure</string>
+    <string name="Einschätzung3">neutral</string>
     <string name="Einschätzung4">secure</string>
     <string name="Einschätzung5">very insecure</string>
     <string name="Einschätzung6"> </string>
     <string name="loesung">I have compared my solution withe the given one, an marked everything either right or wrong</string>
     <string name="result">Controll of the accuracy of my  solution in percent</string>
+    <string name="richtigkeit">Check the correctness of the solution in percent</string>
+
+    <string name="zur_Lösung">to the solution</string>
+    <string name="Lösung_ist_fertig">solution is completed</string>
+    <string name="Lösung_beginnen">start the task</string>
+    <string name="Aufgabe">Task</string>
+    <string name="Zurück_zum_Start">back to the start</string>
 </resources>
