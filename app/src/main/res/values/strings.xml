@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SchuleMathe_App</string>
+    <string name="app_name">SchoolMath App</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -9,18 +9,18 @@
 
     <string name="Weiter">Next</string>
     <string name="hello"> Description of the program</string>
-    <string name="title_activity_test_aufgabe">TestTask</string>
+    <string name="title_activity_test_aufgabe">SchoolMath App</string>
     <string name="chk_ios">OK</string>
     <string name="title_activity_graph_view" translatable="false">GraphView</string>
     <string name="title_activity_statistic">Statistic</string>
     <string name="button_next_task">Next</string>
-    <string name="button_prev_task">Vor</string>
+    <string name="button_prev_task">Back</string>
 
-    <string name="zuruck">to the begining</string>
+    <string name="zuruck">to the beginning</string>
     <string name="Beenden">Finish</string>
 
     <string name="Neu">New</string>
-    <string name="Beschreibung">Procedetred</string>
+    <string name="Beschreibung">Proceed</string>
     <string name="Anleitung1">The user takes a pen and a slice of paper </string>
     <string name="Anleitung2">start the programm</string>
     <string name="Anleitung3">Reading the task and if needed use the online help</string>
@@ -28,17 +28,17 @@
     <string name="Anleitung5">Personal opinion: The user have to rate his performence on a skale from 1 to 5</string>
     <string name="Anleitung6">Compere withe the soulution given</string>
     <string name="Anleitung7">Now the user has to select how many percent of the task where right</string>
-    <string name="Anleitung8">At the end you can see your statistik</string>
+    <string name="Anleitung8">At the end you can see your statistic</string>
     <string name="Anleitung">sd</string>
 
-    <string name="Einschätzung">My personal opinion: I felt:</string>
-    <string name="Einschätzung1">very insecure</string>
-    <string name="Einschätzung2">insecure</string>
+    <string name="Einschätzung">My personal opinion I felt:</string>
+    <string name="Einschätzung1">very unsure </string>
+    <string name="Einschätzung2">unsure</string>
     <string name="Einschätzung3">neutral</string>
-    <string name="Einschätzung4">secure</string>
-    <string name="Einschätzung5">very insecure</string>
+    <string name="Einschätzung4">sure</string>
+    <string name="Einschätzung5">very sure</string>
     <string name="Einschätzung6"> </string>
-    <string name="loesung">I have compared my solution withe the given one, an marked everything either right or wrong</string>
+    <string name="loesung">I have compared my solution with the given one, an marked everything either right or wrong</string>
     <string name="result">Controll of the accuracy of my  solution in percent</string>
     <string name="richtigkeit">Check the correctness of the solution in percent</string>
 

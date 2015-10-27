@@ -147,6 +147,17 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
+                android:text="@string/title_activity_statistic"
+                android:onClick="ShowStatistic"
+                android:enabled="false"
+                android:id="@+id/btnStatistic" />
+
+            <Button
+                android:background="@drawable/custom_button"
+                android:textColor="@color/white"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
                 android:text="@string/Neu"
                 android:onClick="clearFiles"
                 android:id="@+id/button" />
@@ -161,35 +172,7 @@
                 android:text="@string/Weiter"
                 android:onClick="CallFirstTask" />
         </LinearLayout>
-
-        <LinearLayout
-            style="@android:style/ButtonBar"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/black"
-            android:id="@+id/buttons2">
-
-            <Button
-                android:background="@drawable/custom_button"
-                android:textColor="@color/white"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_weight="1"
-                android:text="Statistik"
-                android:id="@+id/button4" />
-
-            <Button
-                android:id="@+id/btnAbbrechnen"
-                android:textColor="@color/white"
-                android:background="@drawable/custom_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/Beenden"
-                android:onClick="exitSystem"/>
-        </LinearLayout>
     </LinearLayout>
-
 </RelativeLayout>
+
 

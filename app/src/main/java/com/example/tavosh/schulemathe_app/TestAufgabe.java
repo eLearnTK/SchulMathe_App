@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.util.FloatMath;
 import android.util.Log;
 import android.view.Display;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -490,7 +491,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
 
             switch (v.getId()) {
                 case R.id.btnAkt1:
-                    finish();
+                    System.exit(0);
                     break;
                 case R.id.btnAkt2:
                     switch (ActualZustand) {
@@ -1410,5 +1411,18 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
         float x = event.getX(0) + event.getX(1);
         float y = event.getY(0) + event.getY(1);
         point.set(x / 2, y / 2);
+    }
+
+    /* Executes the instruction System.exit(0) when the android back button is pressed*/
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if ((keyCode == KeyEvent.KEYCODE_BACK))
+        {
+            System.exit(0);
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 } // TestAufgabe

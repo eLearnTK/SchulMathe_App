@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SchuleMathe_App</string>
+    <string name="app_name">SchulMathe App</string>
     <string name="Beenden">Beenden</string>
     <string name="Weiter">Weiter</string>
     <string name="action_settings">Einstellungen</string>
@@ -10,7 +10,7 @@
     <string name="hello">Beschreibung des Programmes</string>
     <string name="hello_world">Hallo Welt</string>
     <string name="zuruck">Zum Anfang</string>
-    <string name="title_activity_test_aufgabe">TestAufgabe</string>
+    <string name="title_activity_test_aufgabe">SchulMathe App</string>
     <string name="title_activity_statistic">Statistik</string>
     <string name="Neu">Neu</string>
     <string name="Beschreibung">Ablauf des lernprogramms wird in folgenden Schritten detailliert erklärt</string>

@@ -66,6 +66,7 @@ public class Statistic extends ActionBarActivity {
     Button btnRew;
     Button btnFwd;
     public final static String EXTRA_MESSAGE = "";
+    private Button btnStatistic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +82,9 @@ public class Statistic extends ActionBarActivity {
 
         btnRew = (Button) findViewById(R.id.btnAktBack);
         btnFwd = (Button) findViewById(R.id.btnAktFwd);
+        btnStatistic =  (Button) findViewById(R.id.btnStatistic);
         btnRew.setEnabled(false);
+        //btnStatistic.setEnabled(true);
     }
 
     /* This function generates all the values and format for the chart */
@@ -176,26 +179,42 @@ public class Statistic extends ActionBarActivity {
         mRenderer.setBarSpacing(0.5);
         mRenderer.setYAxisMin(0);
 
+        // Sets fonts size according to the definition of the device
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
-
         switch(metrics.densityDpi)
         {
-            case DisplayMetrics.DENSITY_HIGH: //HDPI
-                mRenderer.setChartTitleTextSize(40);
-                mRenderer.setAxisTitleTextSize(30);
-                mRenderer.setLabelsTextSize(40);
-                System.out.println("HDPI");
+            case 640:
+                mRenderer.setChartTitleTextSize(50);
+                mRenderer.setAxisTitleTextSize(50);
+                mRenderer.setLabelsTextSize(50);
                 break;
-            case DisplayMetrics.DENSITY_MEDIUM: //MDPI
+            case 480:
                 mRenderer.setChartTitleTextSize(40);
-                mRenderer.setAxisTitleTextSize(30);
+                mRenderer.setAxisTitleTextSize(40);
                 mRenderer.setLabelsTextSize(40);
-                System.out.println("MDPI");
                 break;
-
-            case DisplayMetrics.DENSITY_LOW:  //LDPI
-                System.out.println("LDPI");
+            case 320:
+                mRenderer.setChartTitleTextSize(30);
+                mRenderer.setAxisTitleTextSize(30);
+                mRenderer.setLabelsTextSize(30);
+                break;
+            case 240:
+                mRenderer.setChartTitleTextSize(20);
+                mRenderer.setAxisTitleTextSize(20);
+                mRenderer.setLabelsTextSize(20);
+                break;
+            case 213:
+                mRenderer.setChartTitleTextSize(10);
+                mRenderer.setAxisTitleTextSize(10);
+                mRenderer.setLabelsTextSize(10);
+                break;
+            case 160: //MDPI
+                mRenderer.setChartTitleTextSize(5);
+                mRenderer.setAxisTitleTextSize(5);
+                mRenderer.setLabelsTextSize(5);
+                break;
+            case 120:  //LDPI
                 break;
         }
 
