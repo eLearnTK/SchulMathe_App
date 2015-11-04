@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -58,6 +59,7 @@ public class MainActivity extends ActionBarActivity {
     public static boolean starts2ndPool = false; // when the first pool was not executed then the ArrayList Pool needs to be created
     public static boolean startsFromSavedInfo = false; // when the app is open with already saved data this variable turns to true
     public static boolean startsFromSavedPoolInfo = true; // when the app writes the first pool task in the scrren this variable turns to false
+    public static boolean statisticData = false; // If there is no data to show in the statistic --> false
 
     // names of the XML tags for test files
     static final String AUFGABEN = "aufgaben";
@@ -90,6 +92,12 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (statisticData) {
+            Button btnStatistic;
+            btnStatistic =  (Button) findViewById(R.id.btnStatistic);
+            btnStatistic.setEnabled(true);
+        }
 
         call2parseIntro();
     }
