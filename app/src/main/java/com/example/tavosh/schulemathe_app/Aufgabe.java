@@ -15,6 +15,7 @@ public class Aufgabe {
 	private int qualifikation;
 	private int empfindung;
 
+
 	public Aufgabe() {
 	// Constructor without parameters	
 	}

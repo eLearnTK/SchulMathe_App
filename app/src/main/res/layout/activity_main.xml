@@ -36,7 +36,7 @@
                 android:layout_weight="1"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:adjustViewBounds="true"
-                android:src="@drawable/all_logo" />
+                android:src="@drawable/logos" />
         </LinearLayout>
     </LinearLayout>
 

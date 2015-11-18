@@ -53,6 +53,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.zip.Inflater;
+
 import android.view.View;
 import android.view.View.OnTouchListener;
 
@@ -310,12 +312,12 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                 // displays the image in the XML file
                 image.setImageDrawable(shape);
 
-                image.setOnTouchListener(this);
+                // zoom comented for tests // image.setOnTouchListener(this);
 
                 txtAufgabe = MainActivity.aufLoad.getText();
                 txtAufComment.setText(txtAufgabe);
                 aufNumbr = MainActivity.n_Aufgbe + 1;
-                txtAufNum.setText(" TEST " + MainActivity.n_Test +  " Aufgabe "  + aufNumbr);
+                txtAufNum.setText(" TEST " + MainActivity.n_Test +  "  Aufgabe "  + aufNumbr);
 
                 btnAkt2.setText(R.string.Lösung_beginnen);
 
@@ -349,12 +351,12 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                 // displays the image in the XML file
                 image.setImageDrawable(shape);
 
-                image.setOnTouchListener(this);
+                // zoom comented for tests // image.setOnTouchListener(this);
 
                 txtAufgabe = MainActivity.aufPoolLoad.getText();
                 txtAufComment.setText(txtAufgabe);
                 aufPoolNumbr = MainActivity.n_poolAufgb + 1;
-                txtAufNum.setText(" POOL " + MainActivity.n_poolTest + " Aufgabe " + aufPoolNumbr);
+                txtAufNum.setText(" POOL " + MainActivity.n_poolTest + "  Aufgabe " + aufPoolNumbr);
 
                 btnAkt2.setText(R.string.Lösung_beginnen);
             } // if
@@ -500,9 +502,9 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                             MainActivity.startsFromSavedPoolInfo = false;
 
                             btnAkt2.setText(R.string.Lösung_ist_fertig);
-                            layout = (LinearLayout) findViewById(R.id.item);
-                            layout.removeAllViewsInLayout();
 
+                            // Add the timer in the Screen
+                            layout = (LinearLayout) findViewById(R.id.layTimer);
                             inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                             ViewGroup timer = (ViewGroup) inflater.inflate(R.layout.timer, null);
                             layout.addView(timer);
@@ -559,6 +561,13 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                             }
                             // Saves the time of the Chrono to display it in the Time Statistic
                             MainActivity.vecTime.add(chrono.getText());
+
+                            // Removes the timer View from the layout
+                            LinearLayout layoutT;
+                            layoutT = (LinearLayout) findViewById(R.id.layTimer);
+                            layoutT.removeAllViewsInLayout();
+                            layoutT.setVisibility(View.GONE);
+                            layoutT.invalidate();
 
                             System.out.println("1 task performed");
                             btnAkt2.setText(R.string.zur_Lösung);
@@ -668,7 +677,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                                 // displays the image in the XML file
                                 image.setImageDrawable(shape);
                                 // For zooming and draging
-                                image.setOnTouchListener(this);
+                                // zoom comented for tests // image.setOnTouchListener(this);
 
                                 layout = (LinearLayout) findViewById(R.id.item);
                                 layout.removeAllViewsInLayout();
@@ -733,7 +742,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                             // displays the image in the XML file
                             image.setImageDrawable(shape);
                             // For zooming and draging
-                            image.setOnTouchListener(this);
+                            // zoom comented for tests // image.setOnTouchListener(this);
 
                             System.out.println("3 answer compared");
                             // Toast.makeText(getApplicationContext(), "msg msg4", Toast.LENGTH_SHORT).show();
@@ -994,6 +1003,8 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                                 currentAufgabe.setText(parser.nextText());
                             } else if (currentTag.equalsIgnoreCase(MainActivity.TIME)) {
                                 currentAufgabe.setTime(parser.nextText());
+                            } else if (currentTag.equalsIgnoreCase(MainActivity.AVGO)) {
+                                MainActivity.vecAvgO.add(parser.nextText());
                             } // if
                         } // if
                         break;
@@ -1073,6 +1084,8 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                                 currentPoolAfgb.setText(parser.nextText());
                             } else if (currentTag.equalsIgnoreCase(MainActivity.TIME)) {
                                 currentPoolAfgb.setTime(parser.nextText());
+                            } else if (currentTag.equalsIgnoreCase(MainActivity.AVGO)) {
+                                MainActivity.vecAvgO.add(parser.nextText());
                             } // if
                         } // if
                         break;

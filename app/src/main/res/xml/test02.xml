@@ -10,6 +10,12 @@
       			</hilfe>
       			<loesung>test02loesung001</loesung>
       			<time>6.0</time>
+				<avgo>60</avgo>
+				<avgu></avgu>
+				<avgof></avgof>
+				<avguf></avguf>
+				<avgos></avgos>
+				<avgus></avgus>
    	 	</aufgabe>
 		<aufgabe id="2">
 			<text>Determine the equation of the tangent at the point P (0) and the parable:</text>
@@ -19,18 +25,27 @@
 			</hilfe>
 			<loesung>test02loesung002</loesung>
 			<time>6.0</time>
-
+			<avgo>60</avgo>
+			<avgu></avgu>
+			<avgof></avgof>
+			<avguf></avguf>
+			<avgos></avgos>
+			<avgus></avgus>
 		</aufgabe>
 		<aufgabe id="3">
 			<text>Determine the intersection P (0) of the parabola Y (1) and the straight line Y (2):</text>
 			<bild>test02aufgabe003</bild>
 			<hilfe>
 				<value>http://calculator.tutorvista.com/point-of-intersection-calculator.html</value>
-
 			</hilfe>
 			<loesung>test02loesung003</loesung>
 			<time>6.0</time>
-
+			<avgo>80</avgo>
+			<avgu></avgu>
+			<avgof></avgof>
+			<avguf></avguf>
+			<avgos></avgos>
+			<avgus></avgus>
 		</aufgabe>
 		<aufgabe id="4">
 			<text>Determine the zeros of the following function:</text>
@@ -41,7 +56,12 @@
 			</hilfe>
 			<loesung>test02loesung004</loesung>
 			<time>6.0</time>
-
+			<avgo>80</avgo>
+			<avgu></avgu>
+			<avgof></avgof>
+			<avguf></avguf>
+			<avgos></avgos>
+			<avgus></avgus>
 		</aufgabe>
 		<aufgabe id="5">
 			<text>Determine the extreme points and the turning points of the following functions:</text>
@@ -51,7 +71,12 @@
 			</hilfe>
 			<loesung>test02loesung005</loesung>
 			<time>6.0</time>
-
+			<avgo>100</avgo>
+			<avgu></avgu>
+			<avgof></avgof>
+			<avguf></avguf>
+			<avgos></avgos>
+			<avgus></avgus>
 		</aufgabe>
 	</aufgaben>
 </test>

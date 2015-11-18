@@ -8,10 +8,17 @@
 			<hilfe>
 				<value>http://www.purplemath.com/modules/solvquad2.htm</value>
 				<value>http://www.sosmath.com/algebra/quadraticeq/root/root.html</value>
+                <value>https://www.youtube.com/watch?v=C4sG7g5bQq0</value>
+                <value>https://www.khanacademy.org/math/pre-algebra/fractions-pre-alg/fractions-unlike-denom-pre-alg/v/adding-fractions-with-unlike-denominators</value>
 			</hilfe>
 			<loesung>pool01loesung001</loesung>
 			<time>3.0</time>
-
+			<avgo>40</avgo>
+			<avgu></avgu>
+			<avgof></avgof>
+			<avguf></avguf>
+			<avgos></avgos>
+			<avgus></avgus>
 		</aufgabe>
 		<aufgabe id="2">
 			<text>Solve the following quadratic equations:</text>
@@ -19,20 +26,36 @@
 			<hilfe>
 				<value>http://www.wikihow.com/Find-the-Zeros-of-a-Function</value>
 				<value>http://www.analyzemath.com/function/zeros.html</value>
+                <value>https://www.youtube.com/watch?v=6ONgEmXJxw4</value>
+                <value>https://www.youtube.com/watch?v=h9MoF-ZA6n0</value>
 			</hilfe>
 			<loesung>pool01loesung002</loesung>
 			<time>3.2</time>
-
+			<avgo>60</avgo>
+			<avgu></avgu>
+			<avgof></avgof>
+			<avguf></avguf>
+			<avgos></avgos>
+			<avgus></avgus>
 		</aufgabe>
         <aufgabe id="3">
             <text>Elementary Geometry</text>
             <bild>pool01aufgabe003</bild>
             <hilfe>
                 <value>https://www.mathsisfun.com/triangle.html</value>
+                <value>https://www.youtube.com/watch?v=fjUN809FPRs</value>
+                <value>https://www.youtube.com/watch?v=3ofFWpIOKZA</value>
+                <value>https://www.youtube.com/watch?v=X5uFqpypDy4</value>
+                <value>https://www.youtube.com/watch?v=nVTtSE5nv7c</value>
             </hilfe>
             <loesung>pool01loesung003</loesung>
             <time>6.0</time>
-
+			<avgo>80</avgo>
+			<avgu></avgu>
+			<avgof></avgof>
+			<avguf></avguf>
+			<avgos></avgos>
+			<avgus></avgus>
         </aufgabe>
 	</aufgaben>
 </test>

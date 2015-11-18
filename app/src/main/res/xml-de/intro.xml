@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instruction>
+  <head>Anleitung</head>
+	<intro>Detailierte Beschreibung zum Ablauf des Lernprogramms:</intro>
+	<step id="1">
+	 Lege dir Zettel und Stift bereit.
+	</step>
+	<step id="2">
+		Starte mit der ersten Aufgabenstellung.
+	</step>
+	<step id="3">
+		Lies dir die Aufgabenstellung aufmerksam durch und nutze ggf. die Online-Hilfe für die Aufgaben.
+	</step>
+	<step id="4">
+		Starte mit der Lösung der Aufgaben. Gleichzeitig wird der Timer gestartet. Je größer der Schwierigkeitsgrad der Aufgabe ist, desto mehr Zeit hast du zur Verfügung.
+	</step>
+	<step id="5">
+		Persöhnliche Einschätzung: Beurteile selbst auf einer ganzzahligen fünf-stufigen Skala, ob du dich bei der Lösung der Aufgabe völlig unsicher (-2) bis völlig sicher (+2) gefühlt hast.
+	</step>
+	<step id="6">
+		Vergleiche deine Lösung mit der Musterlösung.
+	</step>
+	<step id="7">
+		Richtigkeit: Wähle hier in Prozent die Übereinstimmung mit der Musterlösung aus.
+	</step>
+	<step id="8">
+		Statistik: Die Gesamtergebnisse werden für jede Aufgabe der Tests in Form eines Diagrammes ausgegeben. Die beiden Linien kennzeichnen den Bereich in dem die Ergebnisse liegen sollten. 
+		Unterhalb des Bereiches solltest du noch etwas tun, im- und oberhalb des Bereiches ist dein Ergebnis gut bzw. sehr gut. 
+	</step>
+  <step id="Impressum:">
+    An der App-Entwicklung beteiligte Personen: Tobias Kutzner, Christian Steinert, Abdellah Azendour, Carlos Trujillo, Lando Eisenmann, Prof. Dr.-Ing. Ingrid Bönninger, Prof. Dr. habil. Olga Wälder
+  </step>
+  <step id=" Kontakt:    ">
+    Tobias.Kutzner@b-tu.de
+  </step>
+</instruction>

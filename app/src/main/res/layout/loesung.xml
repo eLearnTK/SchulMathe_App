@@ -6,26 +6,26 @@
     android:orientation="vertical"
     android:background="#ff000000">
 
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:background="@drawable/gradient" >
-    </View>
-
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/l2loesung"
         android:layout_width="fill_parent"
         android:layout_height="151dp"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
 
         <TextView
             android:id="@+id/text01"
-            android:layout_width="216dp"
-            android:layout_height="146dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:text="@string/loesung"
             android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp"
+            android:background="@drawable/gradient2" >
+        </View>
 
         <CheckBox
             android:id="@+id/chkIos"

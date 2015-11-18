@@ -14,7 +14,12 @@
 			</hilfe>
 			<loesung>test03loesung001</loesung>
 			<time>6.0</time>
-
+			<avgo>60</avgo>
+			<avgu></avgu>
+			<avgof></avgof>
+			<avguf></avguf>
+			<avgos></avgos>
+			<avgus></avgus>
 		</aufgabe>
 		<aufgabe id="2">
 			<text>Solve this task:</text>
@@ -24,6 +29,12 @@
 			</hilfe>
 			<loesung>test03loesung002</loesung>
 			<time>6.0</time>
+			<avgo>60</avgo>
+			<avgu></avgu>
+			<avgof></avgof>
+			<avguf></avguf>
+			<avgos></avgos>
+			<avgus></avgus>
 		</aufgabe>
 		<aufgabe id="3">
 			<text>Solve this task:</text>
@@ -33,7 +44,12 @@
 			</hilfe>
 			<loesung>test03loesung003</loesung>
 			<time>6.0</time>
-
+			<avgo>80</avgo>
+			<avgu></avgu>
+			<avgof></avgof>
+			<avguf></avguf>
+			<avgos></avgos>
+			<avgus></avgus>
 		</aufgabe>
 		<aufgabe id="4">
 			<text>Determine the extreme points and the turning points of the following functions:</text>
@@ -43,7 +59,12 @@
 			</hilfe>
 			<loesung>test03loesung004</loesung>
 			<time>6.0</time>
-
+			<avgo>80</avgo>
+			<avgu></avgu>
+			<avgof></avgof>
+			<avguf></avguf>
+			<avgos></avgos>
+			<avgus></avgus>
 		</aufgabe>
 		<aufgabe id="5">
 			<text>Determine the zeros of the following function:</text>
@@ -54,7 +75,12 @@
 			</hilfe>
 			<loesung>test03loesung005</loesung>
 			<time>6.0</time>
-
+			<avgo>100</avgo>
+			<avgu></avgu>
+			<avgof></avgof>
+			<avguf></avguf>
+			<avgos></avgos>
+			<avgus></avgus>
 		</aufgabe>
 	</aufgaben>
 </test>

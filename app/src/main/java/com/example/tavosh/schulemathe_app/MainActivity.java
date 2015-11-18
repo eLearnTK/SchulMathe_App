@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,6 +35,8 @@ public class MainActivity extends ActionBarActivity {
     public static Vector vecEmpfindung = new Vector<String>(); // records each empfindung of each task in order to create the statistic at the end
     public static Vector vecTime = new Vector<String>(); // records each time of each task in order to create the time statistic at the end (time of the user)
     public static Vector vecTime4task = new Vector<String>(); // records each time of each task in order to create the time statistic at the end (time of the xml)
+    public static Vector vecAvgO = new Vector<String>(); //records each avgO of each task to compare this values with vecQualifikation in the statistic
+
     public static boolean poolActivated = false; // When the score is too low, the next test will be from the Pool
 
     public static int sumQualfktion = 0; // Sums the qualification for each Test or pool.
@@ -58,6 +61,9 @@ public class MainActivity extends ActionBarActivity {
     public static boolean starts2ndPool = false; // when the first pool was not executed then the ArrayList Pool needs to be created
     public static boolean startsFromSavedInfo = false; // when the app is open with already saved data this variable turns to true
     public static boolean startsFromSavedPoolInfo = true; // when the app writes the first pool task in the scrren this variable turns to false
+    public static boolean statisticData = false; // If there is no data to show in the statistic --> false
+    public static boolean xmlMemoryReadAuf = true; // Evita que el archivo que guarda los resultados en memoria sea leído dos veces
+    public static boolean xmlMemoryReadPool = true; // Evita que el archivo que guarda los resultados en memoria sea leído dos veces
 
     // names of the XML tags for test files
     static final String AUFGABEN = "aufgaben";
@@ -68,6 +74,7 @@ public class MainActivity extends ActionBarActivity {
     static final String LOESUNG = "loesung";
     static final String TEXT = "text";
     static final String TIME = "time";
+    static final String AVGO = "avgo";
 
     private static final int OFF_TOPIC = 0;
     static final int xml01 = R.xml.test01;
@@ -86,10 +93,21 @@ public class MainActivity extends ActionBarActivity {
     static final int score2pool = 80; // when the Test result > score2pool --> go to next Test if not --> go to the Pool
     static final int qntPoolAufgaben = 40; // When Test result < qntPoolAufgaben --> 3 Aufgaben from the Pool
     // When Test result > qntPoolAufgaben --> 2 Aufgaben from the Pool
+
+    Button btnStatistic, btnWeiter, btnNew;;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (statisticData) {
+            btnStatistic =  (Button) findViewById(R.id.btnStatistic);
+            btnStatistic.setEnabled(true);
+
+            btnWeiter = (Button) findViewById(R.id.btnWeiter);
+            btnWeiter.setEnabled(false);
+        }
 
         call2parseIntro();
     }
@@ -235,6 +253,8 @@ public class MainActivity extends ActionBarActivity {
                                 currentAufgabe.setText(parser.nextText());
                             } else if (currentTag.equalsIgnoreCase(TIME)) {
                                 currentAufgabe.setTime(parser.nextText());
+                            } else if (currentTag.equalsIgnoreCase(AVGO)) {
+                                vecAvgO.add(parser.nextText());
                             } // if
                         } // if
                         break;
@@ -293,6 +313,12 @@ public class MainActivity extends ActionBarActivity {
         Context context = MainActivity.this;
 
         try {
+            statisticData = false;
+            btnStatistic =  (Button) findViewById(R.id.btnStatistic);
+            btnStatistic.setEnabled(false);
+            btnWeiter = (Button) findViewById(R.id.btnWeiter);
+            btnWeiter.setEnabled(false);
+
             File myFile = new File("/sdcard/aufgabeValues.xml");
             myFile.createNewFile();
             FileOutputStream fOut = new FileOutputStream(myFile);
@@ -352,9 +378,8 @@ public class MainActivity extends ActionBarActivity {
 
             startActivity(intent);
         } catch (Exception e) {
-            System.out.println("ERROR 1: MainActivity.java CallFirstTask --> " + e);
+            System.out.println("ERROR 1: MainActivity.java ClearFiles --> " + e);
         }
-
     } // clearFiles
 
     /* Shows the current statistic */

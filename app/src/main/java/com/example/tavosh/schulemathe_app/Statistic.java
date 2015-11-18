@@ -27,9 +27,8 @@ import org.achartengine.model.XYMultipleSeriesDataset;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
-import java.util.Arrays;
 import java.util.Enumeration;
-import java.util.Vector;
+import java.util.Locale;
 
 /* Carlos Trujillo   29/09/2015                                           */
 /* This class is used to create the statistic shown at the end of the app */
@@ -48,6 +47,7 @@ public class Statistic extends ActionBarActivity {
     double x_temp_E;
     double y_temp_E;
     String[] time_temp = new String[10];
+    String language;
 
     String[] sTests = new String[10];
     int indx_sTests = 0;
@@ -66,7 +66,6 @@ public class Statistic extends ActionBarActivity {
     Button btnRew;
     Button btnFwd;
     public final static String EXTRA_MESSAGE = "";
-    private Button btnStatistic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +74,8 @@ public class Statistic extends ActionBarActivity {
 
         nextAufgabe = MainActivity.vecTest.get(indx_graph).toString();
 
+        MainActivity.statisticData = true;
+
         /* displays the first values of the chart on the screen */
         layout = (LinearLayout) findViewById(R.id.BarGraph);
         gView = getViewFwd(this);
@@ -82,9 +83,7 @@ public class Statistic extends ActionBarActivity {
 
         btnRew = (Button) findViewById(R.id.btnAktBack);
         btnFwd = (Button) findViewById(R.id.btnAktFwd);
-        btnStatistic =  (Button) findViewById(R.id.btnStatistic);
         btnRew.setEnabled(false);
-        //btnStatistic.setEnabled(true);
     }
 
     /* This function generates all the values and format for the chart */
@@ -113,7 +112,8 @@ public class Statistic extends ActionBarActivity {
         } // while
 
         while (i2 < sizeY) {
-            j = MainActivity.vecEmpfindung.get(i2).toString();
+            //j = MainActivity.vecEmpfindung.get(i2).toString();
+            j = MainActivity.vecAvgO.get(i2).toString();
             y_E[i2] = Integer.parseInt(j);
             x_E[i2] = i2+1;
 
@@ -157,7 +157,6 @@ public class Statistic extends ActionBarActivity {
         renderer_E.setColor(Color.YELLOW);
         renderer_E.setPointStyle(PointStyle.SQUARE);
         renderer_E.setFillPoints(true);
-        renderer_E.setLineWidth(7);
 
         //renderer3.setColor(Color.RED);
         //renderer3.setPointStyle(PointStyle.SQUARE);
@@ -167,10 +166,20 @@ public class Statistic extends ActionBarActivity {
         mRenderer.addSeriesRenderer(renderer_Q);
         mRenderer.addSeriesRenderer(renderer_E);
         //mRenderer.addSeriesRenderer(renderer3);
-
-        mRenderer.setChartTitle("Aufgabenergebnisse");
         mRenderer.setXTitle(nextAufgabe);
-        mRenderer.setYTitle("Ergebniss");
+
+        // Sets the tittle fo the chart deppending on the language
+        language = Locale.getDefault().getLanguage().toString();
+        switch (language) {
+            case "en":
+                mRenderer.setChartTitle("Results for " + nextAufgabe);
+                mRenderer.setYTitle("Result");
+                break;
+            case "de":
+                mRenderer.setChartTitle("Ergebniss für " + nextAufgabe);
+                mRenderer.setYTitle("Ergebniss");
+                break;
+        }
 
         mRenderer.setPanEnabled(false, false);
         mRenderer.setApplyBackgroundColor(true);
@@ -188,33 +197,47 @@ public class Statistic extends ActionBarActivity {
                 mRenderer.setChartTitleTextSize(50);
                 mRenderer.setAxisTitleTextSize(50);
                 mRenderer.setLabelsTextSize(50);
+                mRenderer.setMargins(new int[]{ 80, 80, 80, 80 });
+                renderer_E.setLineWidth(8);
                 break;
             case 480:
                 mRenderer.setChartTitleTextSize(40);
                 mRenderer.setAxisTitleTextSize(40);
                 mRenderer.setLabelsTextSize(40);
+                mRenderer.setMargins(new int[]{ 65, 60, 60, 60 });
+                renderer_E.setLineWidth(7);
                 break;
             case 320:
                 mRenderer.setChartTitleTextSize(30);
                 mRenderer.setAxisTitleTextSize(30);
                 mRenderer.setLabelsTextSize(30);
+                mRenderer.setMargins(new int[]{ 50, 50, 50, 50 });
+                renderer_E.setLineWidth(6);
                 break;
             case 240:
                 mRenderer.setChartTitleTextSize(20);
                 mRenderer.setAxisTitleTextSize(20);
                 mRenderer.setLabelsTextSize(20);
+                mRenderer.setMargins(new int[]{ 40, 40, 40, 40 });
+                renderer_E.setLineWidth(5);
                 break;
             case 213:
                 mRenderer.setChartTitleTextSize(10);
                 mRenderer.setAxisTitleTextSize(10);
                 mRenderer.setLabelsTextSize(10);
+                mRenderer.setMargins(new int[]{ 30, 30, 30, 30 });
+                renderer_E.setLineWidth(4);
                 break;
             case 160: //MDPI
-                mRenderer.setChartTitleTextSize(5);
-                mRenderer.setAxisTitleTextSize(5);
-                mRenderer.setLabelsTextSize(5);
+                mRenderer.setChartTitleTextSize(10);
+                mRenderer.setAxisTitleTextSize(10);
+                mRenderer.setLabelsTextSize(10);
+                mRenderer.setMargins(new int[]{ 20, 20, 20, 20 });
+                renderer_E.setLineWidth(3);
                 break;
             case 120:  //LDPI
+                mRenderer.setMargins(new int[]{ 20, 10, 20, 10 });
+                renderer_E.setLineWidth(2);
                 break;
         }
 
@@ -273,7 +296,8 @@ public class Statistic extends ActionBarActivity {
         } // while
 
         while (h2 < sizeY) {
-            j = MainActivity.vecEmpfindung.get(i2).toString();
+            //j = MainActivity.vecEmpfindung.get(i2).toString();
+            j = MainActivity.vecAvgO.get(i2).toString();
             y_Efwd[h2] = Integer.parseInt(j);
             x_Efwd[h2] = i2+1;
 
@@ -307,6 +331,17 @@ public class Statistic extends ActionBarActivity {
         dataset.addSeries(series_Q.toXYSeries());
         dataset.addSeries(series_E.toXYSeries());
         mRenderer.setXTitle(nextAufgabe);
+
+        // Set the name or the graph at the top of it
+        switch (language) {
+            case "en":
+                mRenderer.setChartTitle("Results for " + nextAufgabe);
+                break;
+            case "de":
+                mRenderer.setChartTitle("Ergebniss für " + nextAufgabe);
+                break;
+        }
+
         gView.repaint();
     } //nextGraph
 
@@ -345,7 +380,8 @@ public class Statistic extends ActionBarActivity {
         }
 
         while (h2 < sizeY) {
-            j = MainActivity.vecEmpfindung.get(i2).toString();
+            //j = MainActivity.vecEmpfindung.get(i2).toString();
+            j = MainActivity.vecAvgO.get(i2).toString();
             y_Erew[h2] = Integer.parseInt(j);
             x_Erew[h2] = i2+1;
 
@@ -374,6 +410,17 @@ public class Statistic extends ActionBarActivity {
         dataset.addSeries(series_Q.toXYSeries());
         dataset.addSeries(series_E.toXYSeries());
         mRenderer.setXTitle(nextAufgabe);
+
+        // Set the name or the graph at the top of it
+        switch (language) {
+            case "en":
+                mRenderer.setChartTitle("Results for " + nextAufgabe);
+                break;
+            case "de":
+                mRenderer.setChartTitle("Ergebniss für " + nextAufgabe);
+                break;
+        }
+
         gView.repaint();
     } //lastGraph
 
