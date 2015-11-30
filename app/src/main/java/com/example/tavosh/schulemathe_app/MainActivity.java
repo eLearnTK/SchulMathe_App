@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Xml;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -49,6 +50,8 @@ public class MainActivity extends ActionBarActivity {
     public static Aufgabe aufLoad = new Aufgabe();
     public static Pool aufPoolLoad = new Pool();
     public static long averageQualfktion = 0; //Sets the Average qualification for every test or pool
+    public static int countAuf = 0;  // Counts how many Aufgabe activities are stored in the XML in memory
+    public static int countPool = 0; // Counts how many pool activities are stored in the XML in memory
 
     private static boolean done = false;
     private static String currentTag = null;
@@ -75,6 +78,7 @@ public class MainActivity extends ActionBarActivity {
     static final String TEXT = "text";
     static final String TIME = "time";
     static final String AVGO = "avgo";
+    static final String TEST = "test";
 
     private static final int OFF_TOPIC = 0;
     static final int xml01 = R.xml.test01;
@@ -110,6 +114,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
         call2parseIntro();
+        activateBtnStatistic();
     }
 
 
@@ -183,7 +188,8 @@ public class MainActivity extends ActionBarActivity {
 
                 nextStep = getResources().getIdentifier(strStep , "id", getPackageName());
                 textStep = (TextView) findViewById(nextStep);
-                textStep.setText(cont + ". " + vEnum.nextElement().toString());
+                //textStep.setText(cont + ". " + vEnum.nextElement().toString());
+                textStep.setText(vEnum.nextElement().toString());
 
                 cont++;
             } // while
@@ -303,8 +309,13 @@ public class MainActivity extends ActionBarActivity {
             fin = openFileInput("poolValues.xml");
             XmlParser.parseXmlPoolQntTest(fin);
             fin.close();
+
+            if (countAuf > 0) {
+                btnStatistic =  (Button) findViewById(R.id.btnStatistic);
+                btnStatistic.setEnabled(true);
+            }
         } catch (Exception e) {
-            //Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+            System.out.println("MainActivity.readXML " + e);
         }
     } // readXML
 
@@ -384,14 +395,48 @@ public class MainActivity extends ActionBarActivity {
 
     /* Shows the current statistic */
     public void ShowStatistic(View view) {
-        Intent intent = new Intent(this, Statistic.class);
+        System.out.println("--> ShowStatistic");
 
-        //sends the name of which layout to use to the new intent
-        int xmlScreen = R.layout.activity_statistic;
-        intent.putExtra(EXTRA_MESSAGE, xmlScreen);
-        startActivity(intent);
-        finish();
-    }
+        n_Aufgbe = 0; //the first Aufgabe is going to be evaluated
+        n_Test = 1; // the first test is going to be evaluated
+
+        if (!statisticData) {
+            if (vecAvgO.size() == 0) {
+                //starts the XML parsing
+                Context contextParse = this;
+                parse(contextParse, xml01, n_Test);
+                readXMLQntTest();
+                parseNextMain(xml02, 2);
+                parseNextMain(xml03, 3);
+                poolParseMain(xmlPool01, 1);
+                poolParseMain(xmlPool02, 2);
+            } // if
+        } // if
+
+        try {
+            FileInputStream fin = null;
+
+            if ((vecTest.size() == 0)) {
+                fin = openFileInput("aufgabeValues.xml");
+                XmlParser.parseXmlAufStatistic(fin);
+                fin.close();
+
+
+                fin = openFileInput("poolValues.xml");
+                XmlParser.parseXmlPoolStatistic(fin);
+                fin.close();
+            }
+
+            Intent intent = new Intent(this, Statistic.class);
+            //sends the name of which layout to use to the new intent
+            int xmlScreen = R.layout.activity_statistic;
+            intent.putExtra(EXTRA_MESSAGE, xmlScreen);
+            startActivity(intent);
+            //finish();
+        } catch(Exception e) {
+            System.out.println("MainActivity.ShowStatistic " + e);
+        }
+    } // ShowStatistic
 
     public void call2read(View view) {
         System.out.println("--> call2read");
@@ -410,8 +455,152 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
+    public void activateBtnStatistic() {
+        // Verifies when the button Statistic in the main screen should be activated
+        System.out.println("--> activateBtnStatistic");
+
+        int testNum = 0;
+        int quantTest3 = 0;
+        FileInputStream fin = null;
+        try {
+            fin = openFileInput("aufgabeValues.xml");
+            XmlPullParser parser = Xml.newPullParser();
+            parser.setInput(fin, "UTF-8");
+            int eventType = parser.getEventType();
+
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                switch (eventType) {
+                    case XmlPullParser.START_DOCUMENT:
+                        break;
+                    case XmlPullParser.START_TAG:
+                        currentTag = parser.getName();
+                        if (currentTag.equalsIgnoreCase(TEST)){
+                            testNum = Integer.parseInt(parser.getAttributeValue(0));
+                        } else if (currentTag.equalsIgnoreCase(AUFGABE)) {
+                            MainActivity.countAuf++;
+                            if (testNum == 3){
+                                quantTest3 ++;
+                            }
+                        }
+                        break;
+                    case XmlPullParser.END_TAG:
+                        break;
+                } // switch
+                eventType = parser.next();
+            } // while
+            fin.close();
+
+            fin = openFileInput("poolValues.xml");
+            XmlPullParser parser2 = Xml.newPullParser();
+            parser2.setInput(fin, "UTF-8");
+            int eventType2 = parser2.getEventType();
+
+            while (eventType2 != XmlPullParser.END_DOCUMENT) {
+                switch (eventType2) {
+                    case XmlPullParser.START_DOCUMENT:
+                        break;
+                    case XmlPullParser.START_TAG:
+                        currentTag = parser.getName();
+                        if (currentTag.equalsIgnoreCase(AUFGABE)) {
+                            MainActivity.countPool++;
+                        }
+                        break;
+                    case XmlPullParser.END_TAG:
+                        break;
+                } // switch
+                eventType2 = parser2.next();
+            } // while
+            fin.close();
+
+            if (countAuf > 0) {
+                btnStatistic =  (Button) findViewById(R.id.btnStatistic);
+                btnStatistic.setEnabled(true);
+
+                if (quantTest3 < 5) {
+                    btnWeiter = (Button) findViewById(R.id.btnWeiter);
+                    btnWeiter.setEnabled(true);
+                } else {
+                    btnWeiter = (Button) findViewById(R.id.btnWeiter);
+                    btnWeiter.setEnabled(false);
+                }
+            } else {
+                btnStatistic =  (Button) findViewById(R.id.btnStatistic);
+                btnStatistic.setEnabled(false);
+
+                btnWeiter = (Button) findViewById(R.id.btnWeiter);
+                btnWeiter.setEnabled(false);
+            }
+        } catch (Exception e) {
+            System.out.println("MainActivity.activateBtnStatistic " + e);
+        }
+    } // activateBtnStatistic
+
     public static void call2WriteClasses(View view) {
         TestAufgabe.writeSystemOutAufgabeXML();
     }
+
+    public void parseNextMain(int xmlEval, int testNumbr) {
+        // Parse the information from the XML that contains the different Tasks (Aufgaben)
+        System.out.println("--> parseNextMain" + testNumbr + " xml " + xmlEval);
+
+        Context context = this;
+        XmlPullParser parser = context.getResources().getXml(xmlEval);
+
+        try{
+            int eventType = parser.getEventType();
+
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                switch (eventType) {
+                    case XmlPullParser.START_DOCUMENT:
+                        break;
+                    case XmlPullParser.START_TAG:
+                        currentTag = parser.getName();
+
+                       if (currentTag.equalsIgnoreCase(MainActivity.AVGO)) {
+                                MainActivity.vecAvgO.add(parser.nextText());
+                       } // if
+
+                        break;
+                    case XmlPullParser.END_TAG:
+                        break;
+                } // switch
+                eventType = parser.next();
+            } // while
+        } catch (Exception e) {
+            System.out.println("ERROR ???: TestAufgabe.parseNextMain --> " + e);
+        } // try
+    } // parseNextMain
+
+    public void poolParseMain(int xmlEval, int poolTestNumbr) {
+        // Parse the information from the XML that contains the different Tasks (Aufgaben)
+        System.out.println("--> poolParseMain" + poolTestNumbr + " xml " + xmlEval );
+
+        Context context = this;
+        XmlPullParser parser = context.getResources().getXml(xmlEval);
+
+        try{
+            int eventType = parser.getEventType();
+
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                switch (eventType) {
+                    case XmlPullParser.START_DOCUMENT:
+                        break;
+                    case XmlPullParser.START_TAG:
+                        currentTag = parser.getName();
+
+                        if (currentTag.equalsIgnoreCase(MainActivity.AVGO)) {
+                            MainActivity.vecAvgO.add(parser.nextText());
+                        } // if
+
+                        break;
+                    case XmlPullParser.END_TAG:
+                        break;
+                } // switch
+                eventType = parser.next();
+            } // while
+        } catch (Exception e) {
+            System.out.println("ERROR ???: TestAufgabe.poolParseMain --> " + e);
+        } // try
+    } // poolParseMain
 } // MainActivity
 

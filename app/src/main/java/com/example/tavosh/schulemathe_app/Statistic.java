@@ -71,25 +71,34 @@ public class Statistic extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistic);
+        try{
+            nextAufgabe = MainActivity.vecTest.get(indx_graph).toString();
 
-        nextAufgabe = MainActivity.vecTest.get(indx_graph).toString();
+            MainActivity.statisticData = true;
 
-        MainActivity.statisticData = true;
+            /* displays the first values of the chart on the screen */
+            layout = (LinearLayout) findViewById(R.id.BarGraph);
+            gView = getViewFwd(this);
+            layout.addView(gView);
 
-        /* displays the first values of the chart on the screen */
-        layout = (LinearLayout) findViewById(R.id.BarGraph);
-        gView = getViewFwd(this);
-        layout.addView(gView);
-
-        btnRew = (Button) findViewById(R.id.btnAktBack);
-        btnFwd = (Button) findViewById(R.id.btnAktFwd);
-        btnRew.setEnabled(false);
-    }
+            btnRew = (Button) findViewById(R.id.btnAktBack);
+            btnFwd = (Button) findViewById(R.id.btnAktFwd);
+            btnRew.setEnabled(false);
+        } catch (Exception e){
+            System.out.println("Statistic.onCreate " + e);
+        }
+    } //onCreate
 
     /* This function generates all the values and format for the chart */
     public GraphicalView getViewFwd(Context context) {
         /* evaluates how many task has the TEST*/
         sizeY = evalQtest(nextAufgabe);
+
+        if (MainActivity.vecTest.size() == sizeY) {
+            btnFwd = (Button) findViewById(R.id.btnAktFwd);
+            btnFwd.setEnabled(false);
+        }
+
         //sTests[indx_sTests] = nextAufgabe + "," + sizeY;
         sTests[indx_sTests] = nextAufgabe;
 

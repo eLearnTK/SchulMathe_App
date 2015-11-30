@@ -67,7 +67,8 @@ public class XmlParser {
                         if (currentTag.equalsIgnoreCase(INTRO)) {
                             vectorIntro.addElement(parser.nextText());
                         } else if (currentTag.equalsIgnoreCase(STEP)) {
-                            vectorIntro.addElement(parser.nextText());
+                            String AttVal = (parser.getAttributeValue(0));
+                            vectorIntro.addElement(AttVal + " " + parser.nextText());
                         } // end if
 
                         break;
@@ -173,7 +174,7 @@ public class XmlParser {
         // so the application can start from the last point
         System.out.println("--> parseXmlAufgabe");
 
-        if (MainActivity.xmlMemoryReadAuf) {  // To be sure that this process ir executed just once
+        //if (MainActivity.xmlMemoryReadAuf) {  // To be sure that this process ir executed just once
             try {
                 XmlPullParser parser = Xml.newPullParser(); //_/_/_/
                 parser.setInput(fis, "UTF-8"); //_/_/_/
@@ -229,6 +230,8 @@ public class XmlParser {
                                     int intQual = Integer.parseInt(parser.nextText());
                                     currentAufgabe.setQualifikation(intQual);
                                     MainActivity.sumQualfktion = MainActivity.sumQualfktion + intQual;
+                                    //Data for the Statistic
+                                    MainActivity.vecQualifikation.add(intQual);
                                 } else if (currentTag.equalsIgnoreCase(EMPFINDUNG)) {
                                     empAuf = Integer.parseInt(parser.nextText());
                                     currentAufgabe.setEmpfindung(empAuf);
@@ -257,8 +260,8 @@ public class XmlParser {
             } catch (Exception e) {
                 System.out.println("ERROR ???: XmlParser.java parseXmlAufgabe --> " + e);
             } // try
-            MainActivity.xmlMemoryReadAuf = false;
-        }
+            //MainActivity.xmlMemoryReadAuf = false;
+        //}
     } // parseXmlAufgabe
 
     public static void parseXmlPool(FileInputStream fis) {
@@ -266,7 +269,7 @@ public class XmlParser {
         // so the application can start from the last point
         System.out.println("--> parseXmlPool");
 
-        if (MainActivity.xmlMemoryReadPool) {  // To be sure that this process ir executed just once
+        //if (MainActivity.xmlMemoryReadPool) {  // To be sure that this process ir executed just once
             try {
                 XmlPullParser parser = Xml.newPullParser(); //_/_/_/
                 parser.setInput(fis, "UTF-8"); //_/_/_/
@@ -315,7 +318,10 @@ public class XmlParser {
                                 } else if (currentTag.equalsIgnoreCase(ZUSTANG)) {
                                     currentPool.setZustand(Integer.parseInt(parser.nextText()));
                                 } else if (currentTag.equalsIgnoreCase(QUALIFIKATION)) {
-                                    currentPool.setQualifikation(Integer.parseInt(parser.nextText()));
+                                    int intQual = Integer.parseInt(parser.nextText());
+                                    currentPool.setQualifikation(intQual);
+                                    //Data for the Statistic
+                                    MainActivity.vecQualifikation.add(intQual);
                                 } else if (currentTag.equalsIgnoreCase(EMPFINDUNG)) {
                                     empAuf = Integer.parseInt(parser.nextText());
                                     currentAufgabe.setEmpfindung(empAuf);
@@ -361,8 +367,8 @@ public class XmlParser {
             } catch (Exception e) {
                 System.out.println("ERROR ???: XmlParser.java parseXmlPool --> " + e);
             } // try
-            MainActivity.xmlMemoryReadPool = false;
-        }
+            //MainActivity.xmlMemoryReadPool = false;
+        //}
     } // parseXmlPool
 
     public static void parseXmlAufQntTest(FileInputStream fis) {
@@ -587,6 +593,115 @@ public class XmlParser {
         } // while
 
         return count;
-    }
+    } //evalQTest
 
+    public static void parseXmlAufStatistic(FileInputStream fis) {
+        // Parse the information from the XML that contains the different SAVED Tasks (Aufgaben) Just for the Statistic
+        System.out.println("--> parseXmlAufStatistic");
+
+        try {
+            XmlPullParser parser = Xml.newPullParser(); //_/_/_/
+            parser.setInput(fis, "UTF-8"); //_/_/_/
+
+            int eventType = parser.getEventType();
+            int testNum = 0;
+            int testNumTemp;
+            int aufNum = 0;
+            int empAuf = 0;
+            String timeAuf;
+
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                switch (eventType) {
+                    case XmlPullParser.START_DOCUMENT:
+                        break;
+                    case XmlPullParser.START_TAG:
+                        currentTag = parser.getName();
+
+                        if (currentTag.equalsIgnoreCase(TEST)) {
+                            testNum = Integer.parseInt(parser.getAttributeValue(0));
+                        } else if (currentTag != null) {
+                            if (currentTag.equalsIgnoreCase(AUFGABE)) {
+                                aufNum = Integer.parseInt(parser.nextText());
+                                // Data to create the statistic Graph
+                                MainActivity.vecTest.add("Test " + testNum);
+                            } else if (currentTag.equalsIgnoreCase(TIMEREQUIRED)) {
+                                timeAuf = parser.nextText();
+                                //Data for the Statistic
+                                MainActivity.vecTime.add(timeAuf);
+                            } else if (currentTag.equalsIgnoreCase(QUALIFIKATION)) {
+                                    int intQual = Integer.parseInt(parser.nextText());
+                                    //Data for the Statistic
+                                    MainActivity.vecQualifikation.add(intQual);
+                            } else if (currentTag.equalsIgnoreCase(EMPFINDUNG)) {
+                                empAuf = Integer.parseInt(parser.nextText());
+                                //Data for the Statistic
+                                MainActivity.vecEmpfindung.add(empAuf);
+                            } // if
+                        } // if
+                        break;
+
+                    case XmlPullParser.END_TAG:
+                        break;
+                } // switch
+                eventType = parser.next();
+            } // while
+        } catch (Exception e) {
+            System.out.println("ERROR ???: XmlParser.parseXmlAufStatistic --> " + e);
+        } // try
+    } // parseXmlAufStatistic
+
+    public static void parseXmlPoolStatistic(FileInputStream fis) {
+        // Parse the information from the XML that contains the different SAVED Tasks (Aufgaben)
+        // so the application can start from the last point
+        System.out.println("--> parseXmlPoolStatistic");
+
+        //if (MainActivity.xmlMemoryReadPool) {  // To be sure that this process ir executed just once
+        try {
+            XmlPullParser parser = Xml.newPullParser(); //_/_/_/
+            parser.setInput(fis, "UTF-8"); //_/_/_/
+
+            int eventType = parser.getEventType();
+            int testNum = 0;
+            int poolNum = 0;
+            int empAuf = 0;
+            String timeAuf;
+
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                switch (eventType) {
+                    case XmlPullParser.START_DOCUMENT:
+                        break;
+                    case XmlPullParser.START_TAG:
+                        currentTag = parser.getName();
+
+                        if (currentTag.equalsIgnoreCase(TEST)) {
+                            testNum = Integer.parseInt(parser.getAttributeValue(0));
+                        } else if (currentTag != null) {
+                            if (currentTag.equalsIgnoreCase(AUFGABE)) {
+                                poolNum = Integer.parseInt(parser.nextText());
+                                MainActivity.vecTest.add("Pool " + testNum);
+                            } else if (currentTag.equalsIgnoreCase(TIMEREQUIRED)) {
+                                timeAuf = parser.nextText();
+                                //Data for the Statistic
+                                MainActivity.vecTime.add(timeAuf);
+                            } else if (currentTag.equalsIgnoreCase(QUALIFIKATION)) {
+                                int intQual = Integer.parseInt(parser.nextText());
+                                //Data for the Statistic
+                                MainActivity.vecQualifikation.add(intQual);
+                            } else if (currentTag.equalsIgnoreCase(EMPFINDUNG)) {
+                                empAuf = Integer.parseInt(parser.nextText());
+                                //Data for the Statistic
+                                MainActivity.vecEmpfindung.add(empAuf);
+                            } // if
+                        } // if
+                        break;
+
+                    case XmlPullParser.END_TAG:
+                        break;
+                } // switch
+                eventType = parser.next();
+            } // while
+        } catch (Exception e) {
+            System.out.println("ERROR ???: XmlParser.parseXmlPoolStatistic --> " + e);
+        } // try
+    } // parseXmlPoolStatistic
 } // XmlParser

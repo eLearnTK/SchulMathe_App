@@ -80,6 +80,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
     private String str4 = "80";
     private String str5 = "100";
     public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+    boolean sumActive;
 
     // Variables for Zoom
     private float scale = 1f;
@@ -173,37 +174,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
 
         evaluateAufgabe();
         readXML();
-
-        //The next code is to evaluate if at the end of a Test it should go to the pool or not
-        if ((!MainActivity.poolActivated) && (MainActivity.aufgb2Eval.size() > MainActivity.n_QntityAufEval)) {
-            int x;
-            int sum = 0;
-            int qntAufgabe = 0;
-            boolean sumActive = false;
-
-            for(x=0; x < MainActivity.aufgb2Eval.size(); x++) {
-                Aufgabe aufTemp = MainActivity.aufgb2Eval.get(x);
-                if (aufTemp.getTest() > MainActivity.n_poolTest) { // if the last pool evaluated < the last test evaluated, it means that there is a probability to go to the pool.
-                    if (aufTemp.getTest() < MainActivity.n_Test) { // the average will be evaluated only in the last test completed
-                        if (aufTemp.getTest() == MainActivity.n_Test - 1) { // the average will be evaluated only in the last test completed
-                            sum = aufTemp.getQualifikation() + sum;
-                            qntAufgabe++;
-                            sumActive = true;
-                        }
-                    }
-                } // if
-            } // for
-
-            if (sumActive) {
-                //MainActivity.sumQualfktion = sum;
-                //MainActivity.averageQualfktion = sum / qntAufgabe;
-                int avrgQ = sum / qntAufgabe;
-
-                if (avrgQ < MainActivity.score2pool) {
-                    MainActivity.poolActivated = true;
-                }
-            }
-        } // if
+        poolVerification(); //Checks if the pool needs to be initialized
 
         //Call to methods
         if (MainActivity.poolActivated) {
@@ -213,6 +184,44 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
         }
         createHelpButtons();
     } // onCreate
+
+    public void poolVerification() {
+        int x;
+        int sum = 0;
+        int qntAufgabe = 0;
+        sumActive = false;
+
+        try {
+            //The next code is to evaluate, if at the end of a Test, it should go to the pool or not
+            if ((!MainActivity.poolActivated) && (MainActivity.aufgb2Eval.size() > MainActivity.n_QntityAufEval) && (MainActivity.poolAfgb2Eval.size() > 0)) {
+                for (x = 0; x < MainActivity.aufgb2Eval.size(); x++) {
+                    Aufgabe aufTemp = MainActivity.aufgb2Eval.get(x);
+                    if (aufTemp.getTest() > MainActivity.n_poolTest) { // if the last pool evaluated < the last test evaluated, it means that there is a probability to go to the pool.
+                        if (aufTemp.getTest() < MainActivity.n_Test) { // the average will be evaluated only in the last test completed
+                            if (aufTemp.getTest() == MainActivity.n_Test - 1) { // the average will be evaluated only in the last test completed
+                                sum = aufTemp.getQualifikation() + sum;
+                                qntAufgabe++;
+                                sumActive = true;
+                            }
+                        }
+                    } // if
+                } // for
+            } // if
+        } catch (NullPointerException e){
+            sumActive = false;
+        }
+
+        if (sumActive) {
+            //MainActivity.sumQualfktion = sum;
+            //MainActivity.averageQualfktion = sum / qntAufgabe;
+            int avrgQ = sum / qntAufgabe;
+
+            if (avrgQ < MainActivity.score2pool) {
+                MainActivity.poolActivated = true;
+            }
+        }
+    } // poolVerification
+
 
     public void evaluateAufgabe() {
         // When the score is < than the value of MainActivity.score2pool, goes to the respective pool exercises
