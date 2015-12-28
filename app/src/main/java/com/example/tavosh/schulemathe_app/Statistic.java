@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -30,9 +31,14 @@ import org.achartengine.renderer.XYSeriesRenderer;
 import java.util.Enumeration;
 import java.util.Locale;
 
+import android.view.View.OnTouchListener;
+import android.widget.Toast;
+
+import javax.xml.transform.Result;
+
 /* Carlos Trujillo   29/09/2015                                           */
 /* This class is used to create the statistic shown at the end of the app */
-public class Statistic extends ActionBarActivity {
+public class Statistic extends ActionBarActivity implements OnTouchListener {
     public String nextAufgabe;
     int indx_graph = 0;
     int sizeY;
@@ -67,6 +73,10 @@ public class Statistic extends ActionBarActivity {
     Button btnFwd;
     public final static String EXTRA_MESSAGE = "";
 
+    Boolean timeGraph_boolean = false;
+    Boolean ResultGraph_boolean = false;
+    Boolean feelingGraph_boolean = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,8 +94,22 @@ public class Statistic extends ActionBarActivity {
             btnRew = (Button) findViewById(R.id.btnAktBack);
             btnFwd = (Button) findViewById(R.id.btnAktFwd);
             btnRew.setEnabled(false);
+
+            LinearLayout lnrLayout = (LinearLayout) findViewById(R.id.BarGraph);
+
+            lnrLayout.setOnTouchListener(new View.OnTouchListener() {
+
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+
+                    //Toast.makeText(getApplicationContext(),"OnTouchListener", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+            });
+
+            gView.setOnTouchListener(this);
         } catch (Exception e){
-            System.out.println("Statistic.onCreate " + e);
+            System.out.println("Error: Statistic.onCreate " + e);
         }
     } //onCreate
 
@@ -113,7 +137,7 @@ public class Statistic extends ActionBarActivity {
 
         while (indx_graph < sizeY) {
             j = MainActivity.vecQualifikation.get(indx_graph).toString();
-            time_temp[indx_graph] = MainActivity.vecTime.get(indx_graph).toString();
+            //time_temp[indx_graph] = MainActivity.vecTime.get(indx_graph).toString();
             y_Q[indx_graph] = Integer.parseInt(j);
             x_Q[indx_graph] = indx_graph+1;
 
@@ -122,7 +146,7 @@ public class Statistic extends ActionBarActivity {
 
         while (i2 < sizeY) {
             //j = MainActivity.vecEmpfindung.get(i2).toString();
-            j = MainActivity.vecAvgO.get(i2).toString();
+            j = MainActivity.vecAvgUc.get(i2).toString();
             y_E[i2] = Integer.parseInt(j);
             x_E[i2] = i2+1;
 
@@ -177,18 +201,18 @@ public class Statistic extends ActionBarActivity {
         //mRenderer.addSeriesRenderer(renderer3);
         mRenderer.setXTitle(nextAufgabe);
 
-        // Sets the tittle fo the chart deppending on the language
-        language = Locale.getDefault().getLanguage().toString();
+        // Sets the tittle fo the chart depending on the language
+        /*language = Locale.getDefault().getLanguage().toString();
         switch (language) {
             case "en":
                 mRenderer.setChartTitle("Results for " + nextAufgabe);
                 mRenderer.setYTitle("Result");
                 break;
             case "de":
-                mRenderer.setChartTitle("Ergebniss für " + nextAufgabe);
-                mRenderer.setYTitle("Ergebniss");
                 break;
-        }
+        }*/
+        mRenderer.setChartTitle(getString(R.string.chartResultTitle) + " " + nextAufgabe);
+        mRenderer.setYTitle(getString(R.string.yResultTitle));
 
         mRenderer.setPanEnabled(false, false);
         mRenderer.setApplyBackgroundColor(true);
@@ -253,6 +277,10 @@ public class Statistic extends ActionBarActivity {
         /* For single series */
         //return ChartFactory.getBarChartView(context, dataset, mRenderer, BarChart.Type.DEFAULT);
 
+        timeGraph_boolean = true;
+        ResultGraph_boolean = false;
+        feelingGraph_boolean = false;
+
         /* For multiple series */
         String[] types = new String[]{BarChart.TYPE, LineChart.TYPE};
         return ChartFactory.getCombinedXYChartView(context, dataset, mRenderer, types);
@@ -277,6 +305,7 @@ public class Statistic extends ActionBarActivity {
 
     /* This function generates the graph of the next Test */
     public void nextGraph(View view){
+        System.out.println("--> nextGraph");
         /* Measures the quantitiy of tasks that the next Test has */
         nextAufgabe = MainActivity.vecTest.get(indx_graph).toString();
         sizeY = evalQtest(nextAufgabe);
@@ -296,7 +325,7 @@ public class Statistic extends ActionBarActivity {
 
         while (h < sizeY) {
             j = MainActivity.vecQualifikation.get(indx_graph).toString();
-            time_temp[h] = MainActivity.vecTime.get(indx_graph).toString();
+            //time_temp[h] = MainActivity.vecTime.get(indx_graph).toString();
             y_Qfwd[h] = Integer.parseInt(j);
             x_Qfwd[h] = h+1;
 
@@ -306,7 +335,7 @@ public class Statistic extends ActionBarActivity {
 
         while (h2 < sizeY) {
             //j = MainActivity.vecEmpfindung.get(i2).toString();
-            j = MainActivity.vecAvgO.get(i2).toString();
+            j = MainActivity.vecAvgUc.get(i2).toString();
             y_Efwd[h2] = Integer.parseInt(j);
             x_Efwd[h2] = i2+1;
 
@@ -342,98 +371,177 @@ public class Statistic extends ActionBarActivity {
         mRenderer.setXTitle(nextAufgabe);
 
         // Set the name or the graph at the top of it
-        switch (language) {
+       /* switch (language) {
             case "en":
                 mRenderer.setChartTitle("Results for " + nextAufgabe);
                 break;
             case "de":
                 mRenderer.setChartTitle("Ergebniss für " + nextAufgabe);
                 break;
-        }
+        }*/
+        mRenderer.setChartTitle(getString(R.string.chartTitle) + " " + nextAufgabe);
+
+        timeGraph_boolean = true;
+        ResultGraph_boolean = false;
+        feelingGraph_boolean = false;
 
         gView.repaint();
     } //nextGraph
 
     /* This function generates the graph of the previous Test */
     public void lastGraph(View view){
-        int sizeY_prev = evalQtest(nextAufgabe);
-        indx_sTests--;
-        nextAufgabe = sTests[indx_sTests];
-        sizeY = evalQtest(nextAufgabe);
+        System.out.println("-->lastGraph");
 
-        int[] x_Qrew = new int[sizeY];
-        int[] y_Qrew = new int[sizeY];
-        int h = 0;
-        int[] x_Erew = new int[sizeY];
-        int[] y_Erew = new int[sizeY];
-        int h2 = 0;
+        try {
+            int sizeY_prev = evalQtest(nextAufgabe);
+            indx_sTests--;
+            nextAufgabe = sTests[indx_sTests];
+            sizeY = evalQtest(nextAufgabe);
 
-        indx_graph = indx_graph - sizeY - sizeY_prev;
-        int i2 = indx_graph;
-        time_temp = new String[10];
+            int[] x_Qrew = new int[sizeY];
+            int[] y_Qrew = new int[sizeY];
+            int h = 0;
+            int[] x_Erew = new int[sizeY];
+            int[] y_Erew = new int[sizeY];
+            int h2 = 0;
 
-        if (indx_graph == 0) btnRew.setEnabled(false);
+            indx_graph = indx_graph - sizeY - sizeY_prev;
+            int i2 = indx_graph;
+            //time_temp = new String[10];
 
-        while (h < sizeY) {
-            j = MainActivity.vecQualifikation.get(indx_graph).toString();
-            time_temp[h] = MainActivity.vecTime.get(indx_graph).toString();
-            y_Qrew[h] = Integer.parseInt(j);
-            x_Qrew[h] = h+1;
+            if (indx_graph == 0) btnRew.setEnabled(false);
 
-            indx_graph++;
-            h++;
-        } // while
+            while (h < sizeY) {
+                j = MainActivity.vecQualifikation.get(indx_graph).toString();
+                //time_temp[h] = MainActivity.vecTime.get(indx_graph).toString();
+                y_Qrew[h] = Integer.parseInt(j);
+                x_Qrew[h] = h + 1;
 
-        if (MainActivity.vecQualifikation.size() > indx_graph) {
-            btnFwd.setEnabled(true);
+                indx_graph++;
+                h++;
+            } // while
+
+            if (MainActivity.vecQualifikation.size() > indx_graph) {
+                btnFwd.setEnabled(true);
+            }
+
+            while (h2 < sizeY) {
+                //j = MainActivity.vecEmpfindung.get(i2).toString();
+                j = MainActivity.vecAvgUc.get(i2).toString();
+                y_Erew[h2] = Integer.parseInt(j);
+                x_Erew[h2] = i2 + 1;
+
+                i2++;
+                h2++;
+            } // while
+
+            series_Q.clear();
+            series_E.clear();
+
+            //_/_/TimeSeries series = new TimeSeries("Line1");
+            //series = new CategorySeries("Tests");
+            for (int w = 0; w < x_Qrew.length; w++) {
+                x_temp_Q = (double) x_Qrew[w];
+                y_temp_Q = (double) y_Qrew[w];
+                series_Q.add("bar" + x_temp_Q, y_temp_Q);
+            }
+
+            for (int w = 0; w < x_Erew.length; w++) {
+                x_temp_E = (double) x_Erew[w];
+                y_temp_E = (double) y_Erew[w];
+                series_E.add("line" + x_temp_E, y_temp_E);
+            }
+
+            dataset.clear();
+            dataset.addSeries(series_Q.toXYSeries());
+            dataset.addSeries(series_E.toXYSeries());
+            mRenderer.setXTitle(nextAufgabe);
+
+            // Set the name or the graph at the top of it
+            mRenderer.setChartTitle(getString(R.string.chartTitle) + " " + nextAufgabe);
+
+            gView.repaint();
+        } catch (Exception e) {
+            System.out.println("Error: TestAufgabe.lastgraph " + e);
         }
 
-        while (h2 < sizeY) {
-            //j = MainActivity.vecEmpfindung.get(i2).toString();
-            j = MainActivity.vecAvgO.get(i2).toString();
-            y_Erew[h2] = Integer.parseInt(j);
-            x_Erew[h2] = i2+1;
-
-            i2++;
-            h2++;
-        } // while
-
-        series_Q.clear();
-        series_E.clear();
-
-        //_/_/TimeSeries series = new TimeSeries("Line1");
-        //series = new CategorySeries("Tests");
-        for (int w = 0; w < x_Qrew.length; w++) {
-            x_temp_Q = (double) x_Qrew[w];
-            y_temp_Q = (double) y_Qrew[w];
-            series_Q.add("bar" + x_temp_Q, y_temp_Q);
-        }
-
-        for (int w = 0; w < x_Erew.length; w++) {
-            x_temp_E = (double) x_Erew[w];
-            y_temp_E = (double) y_Erew[w];
-            series_E.add("line" + x_temp_E, y_temp_E);
-        }
-
-        dataset.clear();
-        dataset.addSeries(series_Q.toXYSeries());
-        dataset.addSeries(series_E.toXYSeries());
-        mRenderer.setXTitle(nextAufgabe);
-
-        // Set the name or the graph at the top of it
-        switch (language) {
-            case "en":
-                mRenderer.setChartTitle("Results for " + nextAufgabe);
-                break;
-            case "de":
-                mRenderer.setChartTitle("Ergebniss für " + nextAufgabe);
-                break;
-        }
-
-        gView.repaint();
+        timeGraph_boolean = true;
+        ResultGraph_boolean = false;
+        feelingGraph_boolean = false;
     } //lastGraph
 
-    public void timeGraph(View view) {
+    public void correctnessGraph() {
+        System.out.println("--> correctnessGraph");
+        try {
+            int sizeY_temp = evalQtest(nextAufgabe);
+
+            float[] x_Corr = new float[sizeY_temp];
+            float[] y_Corr = new float[sizeY_temp];
+            int h = 0;
+            float[] x_Lim  = new float[sizeY_temp];
+            float[] y_Lim = new float[sizeY_temp];
+            int h2 = 0;
+            int minutes;
+            int seconds;
+            String sSeconds;
+            String sMinutes;
+            int posMin;
+
+            int indx_temp = indx_graph - sizeY_temp;
+            int i2 = indx_temp;
+
+            while (h < sizeY_temp) {
+                j = MainActivity.vecQualifikation.get(indx_temp).toString();
+                y_Corr[h] = Integer.parseInt(j);
+                x_Corr[h] = h + 1;
+
+                indx_temp++;
+                h++;
+            } // while
+
+            while (h2 < sizeY) {
+                j = MainActivity.vecAvgUc.get(i2).toString();
+                y_Lim[h2] = Integer.parseInt(j);
+                x_Lim[h2] = h2 + 1;
+
+                i2++;
+                h2++;
+            } // while
+
+            series_Q.clear();
+            series_E.clear();
+
+            for (int w = 0; w < x_Corr.length; w++) {
+                x_temp_Q = (double) x_Corr[w];
+                y_temp_Q = (double) y_Corr[w];
+                series_Q.add("bar" + x_temp_Q, y_temp_Q);
+            }
+
+            for (int w = 0; w < x_Lim.length; w++) {
+                x_temp_E = (double) x_Lim[w];
+                y_temp_E = (double) y_Lim[w];
+                series_E.add("line" + x_temp_E, y_temp_E);
+            }
+
+            dataset.clear();
+            dataset.addSeries(series_Q.toXYSeries());
+            dataset.addSeries(series_E.toXYSeries());
+
+            mRenderer.setXTitle(nextAufgabe);
+            mRenderer.setChartTitle(getString(R.string.chartTitle) + " " + nextAufgabe);
+            mRenderer.setYTitle(getString(R.string.yResultTitle));
+
+            gView.repaint();
+        } catch (Exception e) {
+            System.out.println("Error: Statistic.timeGraph " + e);
+        }
+        timeGraph_boolean = true;
+        ResultGraph_boolean = false;
+        feelingGraph_boolean = false;
+    } // correctnessGraph
+
+    public void timeGraph() {
+        System.out.println("--> timeGraph");
         try {
             int sizeY_temp = evalQtest(nextAufgabe);
             //int indx_sTest_temp = indx_sTests -1;
@@ -470,11 +578,18 @@ public class Statistic extends ActionBarActivity {
             } // while
 
             while (h2 < sizeY) {
-                j = MainActivity.vecTime4task.get(i2).toString();
+                j = MainActivity.vecTime4taskUt.get(i2).toString();
+                //Aufgabe j_Auf = MainActivity.aufgb2Eval.get(0);
+
+                //j = j_Auf.getTime();
                 //posMin = j.lastIndexOf(":");
                 //minutes = Integer.parseInt(j.substring(0,posMin));
                 //sSeconds = j.substring(j.lastIndexOf(":") + 1);
                 //seconds = ((Integer.parseInt(sSeconds))*100)/60;
+
+                if (j.equals("")){
+                    j = "0.0";
+                }
                 y_Lim[h2] = Float.parseFloat(j);
                 x_Lim[h2] = h2 + 1;
 
@@ -500,12 +615,99 @@ public class Statistic extends ActionBarActivity {
             dataset.clear();
             dataset.addSeries(series_Q.toXYSeries());
             dataset.addSeries(series_E.toXYSeries());
-            mRenderer.setXTitle("Time " + nextAufgabe);
+
+            mRenderer.setXTitle(getString(R.string.xTimeTitle) + " " + nextAufgabe);
+            mRenderer.setChartTitle(getString(R.string.chartTimeTitle) + " " + nextAufgabe);
+            mRenderer.setYTitle(getString(R.string.yTimeTitle));
+
             gView.repaint();
         } catch (Exception e) {
-            System.out.println("Error Statistic.java.timeGraph " + e);
+            System.out.println("Error: Statistic.timeGraph " + e);
         }
+        timeGraph_boolean = false;
+        ResultGraph_boolean = false;
+        feelingGraph_boolean = true;
     } // timeGraph
+
+    public void fellingGraph() {
+        System.out.println("--> feelingGraph");
+        try {
+            int sizeY_temp = evalQtest(nextAufgabe);
+            //int indx_sTest_temp = indx_sTests -1;
+            //nextAufgabe = sTests[indx_sTest_temp];
+            //int sizeY_temp = evalQtest(nextAufgabe);
+
+            float[] x_Feel = new float[sizeY_temp];
+            float[] y_Feel = new float[sizeY_temp];
+            int h = 0;
+            float[] x_Lim = new float[sizeY_temp];
+            float[] y_Lim = new float[sizeY_temp];
+            int h2 = 0;
+            //int minutes;
+            //int seconds;
+            //String sSeconds;
+            //String sMinutes;
+            //int posMin;
+
+            int indx_temp = indx_graph - sizeY_temp;
+            int i2 = indx_temp;
+
+            while (h < sizeY_temp) {
+                j = MainActivity.vecEmpfindung.get(indx_temp).toString();
+                //posMin = j.lastIndexOf(":");
+                //sMinutes = j.substring(0,posMin);
+                //minutes = Integer.parseInt(j.substring(0,posMin));
+                //sSeconds = j.substring(j.lastIndexOf(":") + 1);
+                //seconds = ((Integer.parseInt(sSeconds))*100)/60;
+                y_Feel[h] = Integer.parseInt(j);
+                x_Feel[h] = h + 1;
+
+                indx_temp++;
+                h++;
+            } // while
+
+            while (h2 < sizeY) {
+                j = MainActivity.vecEmpUf.get(i2).toString();
+
+                y_Lim[h2] = Integer.parseInt(j);
+                x_Lim[h2] = h2 + 1;
+
+                i2++;
+                h2++;
+            } // while
+
+            series_Q.clear();
+            series_E.clear();
+
+            for (int w = 0; w < x_Feel.length; w++) {
+                x_temp_Q = (double) x_Feel[w];
+                y_temp_Q = (double) y_Feel[w];
+                series_Q.add("bar" + x_temp_Q, y_temp_Q);
+            }
+
+            for (int w = 0; w < x_Lim.length; w++) {
+                x_temp_E = (double) x_Lim[w];
+                y_temp_E = (double) y_Lim[w];
+                series_E.add("line" + x_temp_E, y_temp_E);
+            }
+
+            dataset.clear();
+            dataset.addSeries(series_Q.toXYSeries());
+            dataset.addSeries(series_E.toXYSeries());
+
+            mRenderer.setXTitle(getString(R.string.xFeelTitle) + " " + nextAufgabe);
+            mRenderer.setChartTitle(getString(R.string.chartFeelTitle) + " " + nextAufgabe);
+            mRenderer.setYTitle(getString(R.string.yFeelTitle));
+
+            gView.repaint();
+        } catch (Exception e) {
+            System.out.println("Error: Statistic.feelingGraph " + e);
+        }
+
+        timeGraph_boolean = false;
+        ResultGraph_boolean = true;
+        feelingGraph_boolean = false;
+    } // feelingGraph
 
     /* Returns to the first screen */
     public void back2Start(View view) {
@@ -555,5 +757,39 @@ public class Statistic extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public boolean onTouch(View v, MotionEvent event) {
+        // Shows the next graph (Time, feeling or back to ergebniss) when the graph is touched
+        // Carlos Trujillo 08.11.2015
+        System.out.println("--> OnTouch");
+
+        // Handle touch events here...
+        switch (event.getAction() & MotionEvent.ACTION_MASK) {
+            case MotionEvent.ACTION_DOWN:
+                if (timeGraph_boolean) {
+                    timeGraph();
+                } else if(ResultGraph_boolean) {
+                    correctnessGraph();
+                } else if (feelingGraph_boolean) {
+                    fellingGraph();
+                }
+                //Toast.makeText(this, "ACTION_DOWN", Toast.LENGTH_SHORT) .show();
+                break;
+            case MotionEvent.ACTION_POINTER_DOWN:
+                //Toast.makeText(this, "ACTION_POINTER_DOWN", Toast.LENGTH_SHORT) .show();
+                break;
+            case MotionEvent.ACTION_UP:
+                //Toast.makeText(this, "ACTION_UP", Toast.LENGTH_SHORT) .show();
+                break;
+            case MotionEvent.ACTION_POINTER_UP:
+                //Toast.makeText(this, "ACTION_POINTER_UP", Toast.LENGTH_SHORT) .show();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                //Toast.makeText(this, "ACTION_MOVE", Toast.LENGTH_SHORT) .show();
+                break;
+        }
+
+        return true; // indicate event was handled
     }
 }

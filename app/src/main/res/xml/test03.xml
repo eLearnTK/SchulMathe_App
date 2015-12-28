@@ -14,12 +14,12 @@
 			</hilfe>
 			<loesung>test03loesung001</loesung>
 			<time>6.0</time>
-			<avgo>60</avgo>
-			<avgu></avgu>
-			<avgof></avgof>
-			<avguf></avguf>
-			<avgos></avgos>
-			<avgus></avgus>
+            <avguc>60</avguc>
+            <avgdc></avgdc>
+            <avguf>20</avguf>
+            <avgdf></avgdf>
+            <avgut>1.0</avgut>
+            <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="2">
 			<text>Solve this task:</text>
@@ -29,12 +29,12 @@
 			</hilfe>
 			<loesung>test03loesung002</loesung>
 			<time>6.0</time>
-			<avgo>60</avgo>
-			<avgu></avgu>
-			<avgof></avgof>
-			<avguf></avguf>
-			<avgos></avgos>
-			<avgus></avgus>
+            <avguc>60</avguc>
+            <avgdc></avgdc>
+            <avguf>30</avguf>
+            <avgdf></avgdf>
+            <avgut>1.5</avgut>
+            <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="3">
 			<text>Solve this task:</text>
@@ -44,12 +44,12 @@
 			</hilfe>
 			<loesung>test03loesung003</loesung>
 			<time>6.0</time>
-			<avgo>80</avgo>
-			<avgu></avgu>
-			<avgof></avgof>
-			<avguf></avguf>
-			<avgos></avgos>
-			<avgus></avgus>
+            <avguc>80</avguc>
+            <avgdc></avgdc>
+            <avguf>35</avguf>
+            <avgdf></avgdf>
+            <avgut>2.0</avgut>
+            <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="4">
 			<text>Determine the extreme points and the turning points of the following functions:</text>
@@ -59,12 +59,12 @@
 			</hilfe>
 			<loesung>test03loesung004</loesung>
 			<time>6.0</time>
-			<avgo>80</avgo>
-			<avgu></avgu>
-			<avgof></avgof>
-			<avguf></avguf>
-			<avgos></avgos>
-			<avgus></avgus>
+            <avguc>60</avguc>
+            <avgdc></avgdc>
+            <avguf>75</avguf>
+            <avgdf></avgdf>
+            <avgut>3.0</avgut>
+            <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="5">
 			<text>Determine the zeros of the following function:</text>
@@ -75,12 +75,12 @@
 			</hilfe>
 			<loesung>test03loesung005</loesung>
 			<time>6.0</time>
-			<avgo>100</avgo>
-			<avgu></avgu>
-			<avgof></avgof>
-			<avguf></avguf>
-			<avgos></avgos>
-			<avgus></avgus>
+            <avguc>100</avguc>
+            <avgdc></avgdc>
+            <avguf>70</avguf>
+            <avgdf></avgdf>
+            <avgut>3.5</avgut>
+            <avgdt></avgdt>
 		</aufgabe>
 	</aufgaben>
 </test>

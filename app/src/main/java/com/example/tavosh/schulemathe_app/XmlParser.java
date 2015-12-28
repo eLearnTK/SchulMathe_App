@@ -68,7 +68,8 @@ public class XmlParser {
                             vectorIntro.addElement(parser.nextText());
                         } else if (currentTag.equalsIgnoreCase(STEP)) {
                             String AttVal = (parser.getAttributeValue(0));
-                            vectorIntro.addElement(AttVal + " " + parser.nextText());
+                            vectorIntro.addElement(parser.nextText());
+                            MainActivity.vectorIntroTitle.addElement(AttVal);
                         } // end if
 
                         break;

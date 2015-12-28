@@ -2,35 +2,15 @@
 <instruction>
   <head>Anleitung</head>
 	<intro>Detailed information on the conduct of the program:</intro>
-	<step id="1">	 
-		Take paper and a pencil.
-	</step>
-	<step id="2">
-		Start with the first task.
-	</step>
-	<step id="3">
-		Please read the task carefully and if necessary use the online help for the tasks.
-	</step>
-	<step id="4">		
-		Start with the solution of the tasks. At the same time the timer is started. The greater the difficulty of the task, the more time you have available.
-	</step>
-	<step id="5">
-		Personal assessment: Assess yourself on a five-point scale integer if you felt in solving the task completely insecure (-2) to fully secure (+2).
-	</step>
-	<step id="6">		
-		Compare your solution with the sample solution.
-	</step>
-	<step id="7">
-		Correctness: Choose here in percent compliance with the sample solution.
-	</step>
-	<step id="8">
-		Statistics: The overall results are output for each task of the tests in the form of a diagram. The two lines indicate the area in which the results should be.
-		Below the range means you should still do something in and above the range means your score is good or very good.
-	</step>
-  <step id="Impressum:">
-    People involved in the app development: Tobias Kutzner, Christian Steinert, Abdellah Azendour, Carlos Trujillo, Lando Eisenmann, Prof. Dr.-Ing. Ingrid Bönninger, Prof. Dr. habil. Olga Wälder
-  </step>
-  <step id=" Kontakt:    ">
-    Tobias.Kutzner@b-tu.de
-  </step>
+	<step id="1">Take paper and a pencil.</step>
+	<step id="2">Start with the first task.</step>
+	<step id="3">Please read the task carefully and if necessary use the online help for the tasks.</step>
+	<step id="4">Start with the solution of the tasks. At the same time the timer is started. The greater the difficulty of the task, the more time you have available.</step>
+	<step id="5">Personal assessment: Assess yourself on a five-point scale integer if you felt in solving the task completely insecure (-2) to fully secure (+2).</step>
+	<step id="6">Compare your solution with the sample solution.</step>
+	<step id="7">Correctness: Choose here in percent compliance with the sample solution.</step>
+	<step id="8">Statistics: The overall results are output for each task of the tests in the form of a diagram. The two lines indicate the area in which the results should be.
+Below the range means you should still do something in and above the range means your score is good or very good.</step>
+  <step id="Impressum:">People involved in the app development: Tobias Kutzner, Christian Steinert, Abdellah Azendour, Carlos Trujillo, Lando Eisenmann, Prof. Dr.-Ing. Ingrid Bönninger, Prof. Dr. habil. Olga Wälder</step>
+  <step id=" Kontakt:    "> Tobias.Kutzner@b-tu.de</step>
 </instruction>

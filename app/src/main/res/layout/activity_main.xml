@@ -72,75 +72,219 @@
                     android:background="@drawable/gradient2" >
                 </View>
 
-                <TextView
-                    android:id="@+id/step1"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:text="@string/Anleitung1"
-                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    style="@android:style/ButtonBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/black"
+                    android:orientation="horizontal" >
+                    <TextView
+                        android:id="@+id/step1Title"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:text=""
+                        android:layout_height="match_parent" />
 
-                <TextView
-                    android:id="@+id/step2"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:text="@string/Anleitung2"
-                    android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/step1"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:text="@string/Anleitung1"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/step3"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:text="@string/Anleitung3"
-                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    style="@android:style/ButtonBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/black"
+                    android:orientation="horizontal" >
+                    <TextView
+                        android:id="@+id/step2Title"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:text=""
+                        android:layout_height="wrap_content" />
 
-                <TextView
-                    android:id="@+id/step4"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:text="@string/Anleitung4"
-                    android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/step2"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:text="@string/Anleitung2"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/step5"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:text="@string/Anleitung5"
-                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    style="@android:style/ButtonBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/black"
+                    android:orientation="horizontal" >
 
-                <TextView
-                    android:id="@+id/step6"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:text="@string/Anleitung6"
-                    android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/step3Title"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:text=""
+                        android:layout_height="wrap_content" />
 
-                <TextView
-                    android:id="@+id/step7"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:text="@string/Anleitung7"
-                    android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/step3"
+                        android:textColor="@color/white"
+                        android:layout_width="match_parent"
+                        android:text="@string/Anleitung3"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/step8"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:text="@string/Anleitung8"
-                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    style="@android:style/ButtonBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/black"
+                    android:orientation="horizontal" >
+                    <TextView
+                        android:id="@+id/step4Title"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:text=""
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/step4"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:text="@string/Anleitung4"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/step9"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:text="@string/Anleitung8"
-                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    style="@android:style/ButtonBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/black"
+                    android:orientation="horizontal" >
+                    <TextView
+                        android:id="@+id/step5Title"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:text=""
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/step5"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:text="@string/Anleitung5"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/step10"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:text="@string/Anleitung8"
-                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    style="@android:style/ButtonBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/black"
+                    android:orientation="horizontal" >
+                    <TextView
+                        android:id="@+id/step6Title"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:text=""
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/step6"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:text="@string/Anleitung6"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@android:style/ButtonBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/black"
+                    android:orientation="horizontal" >
+                    <TextView
+                        android:id="@+id/step7Title"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:text=""
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/step7"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:text="@string/Anleitung7"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@android:style/ButtonBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/black"
+                    android:orientation="horizontal" >
+                    <TextView
+                        android:id="@+id/step8Title"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:text=""
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/step8"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:text="@string/Anleitung8"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@android:style/ButtonBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/black"
+                    android:orientation="horizontal" >
+                    <TextView
+                        android:id="@+id/step9Title"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:text=""
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:id="@+id/step9"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:text="@string/Anleitung8"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@android:style/ButtonBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/black"
+                    android:orientation="horizontal" >
+                    <TextView
+                        android:id="@+id/step10Title"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:text=""
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/step10"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:text="@string/Anleitung8"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
             </LinearLayout>
         </ScrollView>
     </FrameLayout>

@@ -13,12 +13,12 @@
 			</hilfe>
 			<loesung>pool01loesung001</loesung>
 			<time>3.0</time>
-			<avgo>40</avgo>
-			<avgu></avgu>
-			<avgof></avgof>
-			<avguf></avguf>
-			<avgos></avgos>
-			<avgus></avgus>
+            <avguc>40</avguc>
+            <avgdc></avgdc>
+            <avguf>60</avguf>
+            <avgdf></avgdf>
+            <avgut>3.0</avgut>
+            <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="2">
 			<text>Solve the following quadratic equations:</text>
@@ -31,12 +31,12 @@
 			</hilfe>
 			<loesung>pool01loesung002</loesung>
 			<time>3.2</time>
-			<avgo>60</avgo>
-			<avgu></avgu>
-			<avgof></avgof>
-			<avguf></avguf>
-			<avgos></avgos>
-			<avgus></avgus>
+            <avguc>60</avguc>
+            <avgdc></avgdc>
+            <avguf>40</avguf>
+            <avgdf></avgdf>
+            <avgut>3.5</avgut>
+            <avgdt></avgdt>
 		</aufgabe>
         <aufgabe id="3">
             <text>Elementary Geometry</text>
@@ -50,12 +50,12 @@
             </hilfe>
             <loesung>pool01loesung003</loesung>
             <time>6.0</time>
-			<avgo>80</avgo>
-			<avgu></avgu>
-			<avgof></avgof>
-			<avguf></avguf>
-			<avgos></avgos>
-			<avgus></avgus>
+            <avguc>80</avguc>
+            <avgdc></avgdc>
+            <avguf>60</avguf>
+            <avgdf></avgdf>
+            <avgut>1.0</avgut>
+            <avgdt></avgdt>
         </aufgabe>
 	</aufgaben>
 </test>

@@ -13,13 +13,13 @@
                 <value>https://www.youtube.com/watch?v=1Pva-Iv43Nc</value>
 			</hilfe>
 			<loesung>test01loesung001</loesung>
-			<time>1.0</time>
-			<avgo>60</avgo>
-			<avgu></avgu>
-			<avgof></avgof>
-			<avguf></avguf>
-			<avgos></avgos>
-			<avgus></avgus>
+			<time>2.0</time>
+			<avguc>60</avguc>
+			<avgdc></avgdc>
+            <avguf>20</avguf>
+            <avgdf></avgdf>
+            <avgut>1.0</avgut>
+            <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="2">
 			<text>Determine the solution set of the following root equation:</text>
@@ -32,13 +32,13 @@
                 <value>https://www.youtube.com/watch?v=C4sG7g5bQq0</value>
 			</hilfe>
 			<loesung>test01loesung002</loesung>
-			<time>3.0</time>
-			<avgo>60</avgo>
-			<avgu></avgu>
-			<avgof></avgof>
-			<avguf></avguf>
-			<avgos></avgos>
-			<avgus></avgus>
+			<time>6.0</time>
+			<avguc>60</avguc>
+            <avgdc></avgdc>
+            <avguf>40</avguf>
+            <avgdf></avgdf>
+            <avgut>1.0</avgut>
+            <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="3">
 			<text>Calculate:</text>
@@ -51,13 +51,13 @@
 
 			</hilfe>
 			<loesung>test01loesung003</loesung>
-			<time>3.0</time>
-			<avgo>80</avgo>
-			<avgu></avgu>
-			<avgof></avgof>
-			<avguf></avguf>
-			<avgos></avgos>
-			<avgus></avgus>
+			<time>6.0</time>
+			<avguc>80</avguc>
+            <avgdc></avgdc>
+            <avguf>60</avguf>
+            <avgdf></avgdf>
+            <avgut>2.0</avgut>
+            <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="4">
 			<text>Transform the following terms in the simplest terms:</text>
@@ -69,13 +69,13 @@
                 <value>https://www.youtube.com/watch?v=cFPBgP0PoQk</value>
 			</hilfe>
 			<loesung>test01loesung004</loesung>
-			<time>3.0</time>
-			<avgo>80</avgo>
-			<avgu></avgu>
-			<avgof></avgof>
-			<avguf></avguf>
-			<avgos></avgos>
-			<avgus></avgus>
+			<time>6.0</time>
+			<avguc>80</avguc>
+            <avgdc></avgdc>
+            <avguf>80</avguf>
+            <avgdf></avgdf>
+            <avgut>2.0</avgut>
+            <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="5">
 			<text>Determine the intersection of the lines:</text>
@@ -85,13 +85,13 @@
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
 			</hilfe>
 			<loesung>test01loesung005</loesung>
-			<time>3.0</time>
-			<avgo>100</avgo>
-			<avgu></avgu>
-			<avgof></avgof>
-			<avguf></avguf>
-			<avgos></avgos>
-			<avgus></avgus>
+			<time>6.0</time>
+			<avguc>100</avguc>
+            <avgdc></avgdc>
+            <avguf>100</avguf>
+            <avgdf></avgdf>
+            <avgut>5.0</avgut>
+            <avgdt></avgdt>
 		</aufgabe>
 	</aufgaben>
 </test>

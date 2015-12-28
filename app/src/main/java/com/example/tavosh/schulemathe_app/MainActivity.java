@@ -34,9 +34,11 @@ public class MainActivity extends ActionBarActivity {
     public static Vector vecQualifikation = new Vector<String>();// records each score of each task in order to create the statistic at the end
     public static Vector vecTest = new Vector<String>(); // records teh number of each task, works together with VecQualification to create the statistics.
     public static Vector vecEmpfindung = new Vector<String>(); // records each empfindung of each task in order to create the statistic at the end
+    public static Vector vecEmpUf = new Vector<String>(); // records each empfindung of each task in order to create the Empfindug statistic (Up average line)
     public static Vector vecTime = new Vector<String>(); // records each time of each task in order to create the time statistic at the end (time of the user)
-    public static Vector vecTime4task = new Vector<String>(); // records each time of each task in order to create the time statistic at the end (time of the xml)
-    public static Vector vecAvgO = new Vector<String>(); //records each avgO of each task to compare this values with vecQualifikation in the statistic
+    public static Vector vecTime4taskUt = new Vector<String>(); // records each time of each task in order to create the time statistic at the end (time of the xml)
+    public static Vector vecAvgUc = new Vector<String>(); //records each avgUc of each task to compare this values with vecQualifikation in the statistic
+    public static Vector vectorIntroTitle = new Vector<String>();
 
     public static boolean poolActivated = false; // When the score is too low, the next test will be from the Pool
 
@@ -77,7 +79,13 @@ public class MainActivity extends ActionBarActivity {
     static final String LOESUNG = "loesung";
     static final String TEXT = "text";
     static final String TIME = "time";
-    static final String AVGO = "avgo";
+    static final String AVGUC = "avguc";
+    static final String AVGDC = "avgdc";
+    static final String AVGUF = "avguf";
+    static final String AVGDF = "avgdf";
+    static final String AVGUT = "avgut";
+    static final String AVGDT = "avgdt";
+
     static final String TEST = "test";
 
     private static final int OFF_TOPIC = 0;
@@ -171,24 +179,34 @@ public class MainActivity extends ActionBarActivity {
 
         int cont = 1;
         int nextStep = 0;
+        int nextStepTitle = 0;
         TextView textStep;
         TextView textIntro;
-        String strStep;
+        TextView textTitle;
+        String strStep, strStepTitle;
 
         try{
             Context context = this;
             vecInstruction = XmlParser.parseIntro(context, xmlIntro);
 
             Enumeration vEnum = vecInstruction.elements();
+            Enumeration vEnumTitle = vectorIntroTitle.elements();
+
             textIntro = (TextView) findViewById(R.id.intro);
             textIntro.setText("" + vEnum.nextElement());
 
             while(vEnum.hasMoreElements()) {
                 strStep = "step" + cont;
+                strStepTitle = "step" + cont + "Title";
 
                 nextStep = getResources().getIdentifier(strStep , "id", getPackageName());
+                nextStepTitle = getResources().getIdentifier(strStepTitle , "id", getPackageName());
+
                 textStep = (TextView) findViewById(nextStep);
+                textTitle = (TextView) findViewById(nextStepTitle);
                 //textStep.setText(cont + ". " + vEnum.nextElement().toString());
+
+                textTitle.setText(vEnumTitle.nextElement().toString() + "  ");
                 textStep.setText(vEnum.nextElement().toString());
 
                 cont++;
@@ -206,6 +224,7 @@ public class MainActivity extends ActionBarActivity {
         XmlPullParser parser = context.getResources().getXml(xmlEval);
         //XmlPullParser parser = Xml.newPullParser(); //_/_/_/
         //FileInputStream fin = null; //_/_/_/
+        String valTime;
 
         try{
             //fin = openFileInput("test01"); //_/_/_/
@@ -259,8 +278,15 @@ public class MainActivity extends ActionBarActivity {
                                 currentAufgabe.setText(parser.nextText());
                             } else if (currentTag.equalsIgnoreCase(TIME)) {
                                 currentAufgabe.setTime(parser.nextText());
-                            } else if (currentTag.equalsIgnoreCase(AVGO)) {
-                                vecAvgO.add(parser.nextText());
+                            } else if (currentTag.equalsIgnoreCase(AVGUC)) {
+                                vecAvgUc.add(parser.nextText());
+                            } else if (currentTag.equalsIgnoreCase(AVGDC)) {
+                            } else if (currentTag.equalsIgnoreCase(AVGUF)) {
+                                vecEmpUf.add(parser.nextText());
+                            } else if (currentTag.equalsIgnoreCase(AVGDF)) {
+                            } else if (currentTag.equalsIgnoreCase(AVGUT)) {
+                                vecTime4taskUt.add(parser.nextText());
+                            } else if (currentTag.equalsIgnoreCase(AVGDT)) {
                             } // if
                         } // if
                         break;
@@ -401,7 +427,7 @@ public class MainActivity extends ActionBarActivity {
         n_Test = 1; // the first test is going to be evaluated
 
         if (!statisticData) {
-            if (vecAvgO.size() == 0) {
+            if (vecAvgUc.size() == 0) {
                 //starts the XML parsing
                 Context contextParse = this;
                 parse(contextParse, xml01, n_Test);
@@ -556,8 +582,15 @@ public class MainActivity extends ActionBarActivity {
                     case XmlPullParser.START_TAG:
                         currentTag = parser.getName();
 
-                       if (currentTag.equalsIgnoreCase(MainActivity.AVGO)) {
-                                MainActivity.vecAvgO.add(parser.nextText());
+                       if (currentTag.equalsIgnoreCase(MainActivity.AVGUC)) {
+                           vecAvgUc.add(parser.nextText());
+                       } else if (currentTag.equalsIgnoreCase(AVGDC)) {
+                       } else if (currentTag.equalsIgnoreCase(AVGUF)) {
+                           vecEmpUf.add(parser.nextText());
+                       } else if (currentTag.equalsIgnoreCase(AVGDF)) {
+                       } else if (currentTag.equalsIgnoreCase(AVGUT)) {
+                           vecTime4taskUt.add(parser.nextText());
+                       } else if (currentTag.equalsIgnoreCase(AVGDT)) {
                        } // if
 
                         break;
@@ -588,8 +621,15 @@ public class MainActivity extends ActionBarActivity {
                     case XmlPullParser.START_TAG:
                         currentTag = parser.getName();
 
-                        if (currentTag.equalsIgnoreCase(MainActivity.AVGO)) {
-                            MainActivity.vecAvgO.add(parser.nextText());
+                        if (currentTag.equalsIgnoreCase(MainActivity.AVGUC)) {
+                            vecAvgUc.add(parser.nextText());
+                        } else if (currentTag.equalsIgnoreCase(AVGDC)) {
+                        } else if (currentTag.equalsIgnoreCase(AVGUF)) {
+                            vecEmpUf.add(parser.nextText());
+                        } else if (currentTag.equalsIgnoreCase(AVGDF)) {
+                        } else if (currentTag.equalsIgnoreCase(AVGUT)) {
+                            vecTime4taskUt.add(parser.nextText());
+                        } else if (currentTag.equalsIgnoreCase(AVGDT)) {
                         } // if
 
                         break;

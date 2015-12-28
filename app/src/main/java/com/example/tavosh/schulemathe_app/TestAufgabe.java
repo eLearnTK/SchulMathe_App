@@ -52,6 +52,7 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 import java.util.zip.Inflater;
 
@@ -81,6 +82,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
     private String str5 = "100";
     public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     boolean sumActive;
+    String language, AufLanguage;
 
     // Variables for Zoom
     private float scale = 1f;
@@ -208,7 +210,20 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                 } // for
             } // if
         } catch (NullPointerException e){
-            sumActive = false;
+            if (MainActivity.startsFromSavedPoolInfo) {
+                for (x = 0; x < MainActivity.aufgb2Eval.size(); x++) {
+                    Aufgabe aufTemp = MainActivity.aufgb2Eval.get(x);
+                        if (aufTemp.getTest() < MainActivity.n_Test) { // the average will be evaluated only in the last test completed
+                            if (aufTemp.getTest() == MainActivity.n_Test - 1) { // the average will be evaluated only in the last test completed
+                                sum = aufTemp.getQualifikation() + sum;
+                                qntAufgabe++;
+                                sumActive = true;
+                            }
+                        }
+                } // for
+            } else {
+                sumActive = false;
+            }
         }
 
         if (sumActive) {
@@ -323,10 +338,21 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
 
                 // zoom comented for tests // image.setOnTouchListener(this);
 
+                // Sets the tittle of the Task(Aufgabe) depending on the language
+                /*language = Locale.getDefault().getLanguage().toString();
+                switch (language) {
+                    case "en":
+                        AufLanguage = "Task";
+                        break;
+                    case "de":
+                        AufLanguage = "Aufgabe";
+                        break;
+                }*/
+
                 txtAufgabe = MainActivity.aufLoad.getText();
                 txtAufComment.setText(txtAufgabe);
                 aufNumbr = MainActivity.n_Aufgbe + 1;
-                txtAufNum.setText(" TEST " + MainActivity.n_Test +  "  Aufgabe "  + aufNumbr);
+                txtAufNum.setText(" TEST " + MainActivity.n_Test +  "   " + getString(R.string.Aufgabe) + " "  + aufNumbr);
 
                 btnAkt2.setText(R.string.Lösung_beginnen);
 
@@ -370,8 +396,40 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                 btnAkt2.setText(R.string.Lösung_beginnen);
             } // if
         } catch (Exception e) {
-            System.out.println("ERROR ???: TestAufgabe.loadPoolScreen --> " + e);
-        } // try
+            FileInputStream fin = null;
+
+            try {
+                fin = openFileInput("poolValues.xml");
+                poolParse(MainActivity.xmlPool02, 1);
+                fin.close();
+
+                MainActivity.aufPoolLoad = MainActivity.poolAfgb2Eval.get(numPoolAufgabe);
+                imageAufgabe = MainActivity.aufPoolLoad.getImagePool();
+
+                image.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                // Turns the String imageAufgabe into an int with the value R.drawable.image.
+                image2Disp = getResources().getIdentifier(imageAufgabe, "drawable", getPackageName());
+                Resources res = getResources();
+                Drawable shape = res.getDrawable(image2Disp);
+
+                // displays the image in the XML file
+                image.setImageDrawable(shape);
+
+                // zoom comented for tests // image.setOnTouchListener(this);
+
+                txtAufgabe = MainActivity.aufPoolLoad.getText();
+                txtAufComment.setText(txtAufgabe);
+                aufPoolNumbr = MainActivity.n_poolAufgb + 1;
+                txtAufNum.setText(" POOL " + MainActivity.n_poolTest + "  Aufgabe " + aufPoolNumbr);
+
+                btnAkt2.setText(R.string.Lösung_beginnen);
+            } catch (FileNotFoundException e1) {
+                //e1.printStackTrace();
+                System.out.println("FileNotFoundException: TestAufgabe.loadPoolScreen --> " + e1);
+            } catch (Exception e2) {
+                System.out.println("Error: TestAufgabe.loadPoolScreen --> " + e2);
+            } // try 2
+        } // try 1
     } // loadPoolScreen
 
     @Override
@@ -541,7 +599,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
 
                             // Loads the time required for the task in the Countdown Chrono
                             time4task = Float.parseFloat(timeString);
-                            MainActivity.vecTime4task.add(timeString); // to generate the statistic time at the end.
+                            MainActivity.vecTime4taskUt.add(timeString); // to generate the statistic time at the end.
                             pgsBarSum = 100/(time4task*60); // How much the ProgressBar should decrement
 
                             if (time4task < 1.6) {
@@ -669,7 +727,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                                 //mloesung.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
                                 // Get the image from the current Test / Pool
-                                // And sets the empindung of the current task/Pool
+                                // And sets the empfindung of the current task/Pool
                                 if (MainActivity.poolActivated) {
                                     imageAufgabe = MainActivity.aufPoolLoad.getImageLoesung();
                                     MainActivity.aufPoolLoad.setEmpfindung(intEmpf);
@@ -967,6 +1025,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
 
         Context context = this;
         XmlPullParser parser = context.getResources().getXml(xmlEval);
+        String valTime;
 
         try{
             int eventType = parser.getEventType();
@@ -1012,8 +1071,15 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                                 currentAufgabe.setText(parser.nextText());
                             } else if (currentTag.equalsIgnoreCase(MainActivity.TIME)) {
                                 currentAufgabe.setTime(parser.nextText());
-                            } else if (currentTag.equalsIgnoreCase(MainActivity.AVGO)) {
-                                MainActivity.vecAvgO.add(parser.nextText());
+                            } else if (currentTag.equalsIgnoreCase(MainActivity.AVGUC)) {
+                                MainActivity.vecAvgUc.add(parser.nextText());
+                            } else if (currentTag.equalsIgnoreCase(MainActivity.AVGDC)) {
+                            } else if (currentTag.equalsIgnoreCase(MainActivity.AVGUF)) {
+                                MainActivity.vecEmpUf.add(parser.nextText());
+                            } else if (currentTag.equalsIgnoreCase(MainActivity.AVGDF)) {
+                            } else if (currentTag.equalsIgnoreCase(MainActivity.AVGUT)) {
+                                MainActivity.vecTime4taskUt.add(parser.nextText());
+                            } else if (currentTag.equalsIgnoreCase(MainActivity.AVGDT)) {
                             } // if
                         } // if
                         break;
@@ -1044,6 +1110,7 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
 
         Context context = this;
         XmlPullParser parser = context.getResources().getXml(xmlEval);
+        String valTime;
 
         try{
             int eventType = parser.getEventType();
@@ -1093,8 +1160,16 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                                 currentPoolAfgb.setText(parser.nextText());
                             } else if (currentTag.equalsIgnoreCase(MainActivity.TIME)) {
                                 currentPoolAfgb.setTime(parser.nextText());
-                            } else if (currentTag.equalsIgnoreCase(MainActivity.AVGO)) {
-                                MainActivity.vecAvgO.add(parser.nextText());
+                            } else if (currentTag.equalsIgnoreCase(MainActivity.AVGUC)) {
+                                MainActivity.vecAvgUc.add(parser.nextText());
+                            } else if (currentTag.equalsIgnoreCase(MainActivity.AVGDC)) {
+                            } else if (currentTag.equalsIgnoreCase(MainActivity.AVGUF)) {
+                                MainActivity.vecEmpUf.add(parser.nextText());
+                            } else if (currentTag.equalsIgnoreCase(MainActivity.AVGDF)) {
+                            } else if (currentTag.equalsIgnoreCase(MainActivity.AVGUT)) {
+                                MainActivity.vecTime4taskUt.add(parser.nextText());
+                            } else if (currentTag.equalsIgnoreCase(MainActivity.AVGDT)) {
+                                //MainActivity.         .add(parser.nextText());
                             } // if
                         } // if
                         break;

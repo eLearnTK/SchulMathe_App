@@ -24,9 +24,9 @@
     <string name="Anleitung1">The user takes a pen and a slice of paper </string>
     <string name="Anleitung2">start the programm</string>
     <string name="Anleitung3">Reading the task and if needed use the online help</string>
-    <string name="Anleitung4">The user beginns to solve the task. At the same time a countdown beginns.For a harder task there is more time</string>
-    <string name="Anleitung5">Personal opinion: The user have to rate his performence on a skale from 1 to 5</string>
-    <string name="Anleitung6">Compere withe the soulution given</string>
+    <string name="Anleitung4">The user begins to solve the task. At the same time a countdown begins.For a harder task there is more time</string>
+    <string name="Anleitung5">Personal opinion: The user have to rate his performance on a scale from 1 to 5</string>
+    <string name="Anleitung6">Compere withe the solution given</string>
     <string name="Anleitung7">Now the user has to select how many percent of the task where right</string>
     <string name="Anleitung8">At the end you can see your statistic</string>
     <string name="Anleitung">sd</string>
@@ -39,7 +39,7 @@
     <string name="Einschätzung5">very sure</string>
     <string name="Einschätzung6"> </string>
     <string name="loesung">I have compared my solution with the given one, an marked everything either right or wrong</string>
-    <string name="result">Controll of the accuracy of my  solution in percent</string>
+    <string name="result">Control of the accuracy of my  solution in percent</string>
     <string name="richtigkeit">Check the correctness of the solution in percent</string>
 
     <string name="zur_Lösung">to the solution</string>
@@ -47,4 +47,14 @@
     <string name="Lösung_beginnen">start the task</string>
     <string name="Aufgabe">Task</string>
     <string name="Zurück_zum_Start">back to the start</string>
+
+    <string name="chartResultTitle">Results for</string>
+    <string name="yResultTitle">Result</string>
+    <string name="chartTitle">Results for</string>
+    <string name="xTimeTitle">Time</string>
+    <string name="chartTimeTitle">Time for</string>
+    <string name="yTimeTitle">Minutes</string>
+    <string name="xFeelTitle">Feeling</string>
+    <string name="chartFeelTitle">Feeling for</string>
+    <string name="yFeelTitle">Feeling %</string>
 </resources>

@@ -38,4 +38,14 @@
     <string name="Lösung_beginnen">Lösung beginnen</string>
     <string name="Aufgabe">Aufgabe</string>
     <string name="Zurück_zum_Start">Zurück zum Start</string>
+
+    <string name="chartResultTitle">Ergebniss für</string>
+    <string name="yResultTitle">Ergebniss</string>
+    <string name="yTimeTitle">Minuten</string>
+    <string name="chartTimeTitle">Zeit für</string>
+    <string name="chartTitle">Ergebniss für</string>
+    <string name="xTimeTitle">Zeit</string>
+    <string name="xFeelTitle">Empfindung</string>
+    <string name="chartFeelTitle">Empfindung für</string>
+    <string name="yFeelTitle">Empfindung %</string>
 </resources>
