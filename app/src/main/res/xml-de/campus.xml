@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test id="1" lang="deutsch">
+	<aufgaben>
+		<aufgabe id="1">
+			<text>
+				Lösen Sie die folgenden quadratischen Gleichungen:
+			</text>
+			<bild>
+				/sdcard/SDKarte/aufgabe01bTest1.png
+			</bild>
+			<hilfe1>
+				http://de.wikipedia.org/wiki/Quadratische_Gleichung
+			</hilfe1>
+			<hilfe2> http://www.youtube.com/watch?v=4grbGixuSXM</hilfe2>
+			<loesung>
+					/sdcard/SDKarte/loesung1_test1.PNG
+			</loesung>
+		
+		</aufgabe>
+
+		<aufgabe id="2">
+			<text>
+				Bestimmen Sie die Lösungsmenge der folgenden Wurzelgleichung:
+			</text>
+			<bild>
+				/sdcard/SDKarte/aufgabe002.JPG
+			</bild>
+			<hilfe1>
+					 http://de.wikipedia.org/wiki/Quadratische_Gleichung
+			</hilfe1>
+			<hilfe2>	 http://www.youtube.com/watch?v=4grbGixuSXM</hilfe2>
+			<loesung>
+				/sdcard/SDKarte/loesung2atest1.png
+			</loesung>
+		</aufgabe>
+		
+			<aufgabe id="3">
+			<text>
+				Berechnen Sie:
+			</text>
+			<bild>
+				/sdcard/SDKarte/aufgabe03Test2.PNG
+			</bild>
+			<hilfe1>
+					http://de.wikipedia.org/wiki/Quadratische_Gleichung
+			</hilfe1>
+			<hilfe2>	http://www.youtube.com/watch?v=4grbGixuSXM</hilfe2>
+			<loesung>
+				/sdcard/SDKarte/loesung3test1.PNG
+			</loesung>
+		</aufgabe>
+		
+				<aufgabe id="4">
+			<text>
+				Formen Sie die folgenden Terme in möglichst einfache Ausdrücke um:
+			</text>
+			<bild>
+				/sdcard/SDKarte/aufgabe04Test2.PNG
+			</bild>
+			<hilfe1>
+				 http://de.wikipedia.org/wiki/Quadratische_Gleichung
+			</hilfe1>
+			<hilfe2>http://www.youtube.com/watch?v=4grbGixuSXM</hilfe2>
+			<loesung>
+				/sdcard/SDKarte/Lösung4test2.JPG
+			</loesung>
+		</aufgabe>
+		
+				<aufgabe id="5">
+			<text>
+				Bestimmen Sie den Schnittpunkt der Geraden:
+			</text>
+			<bild>
+			/sdcard/aufgabe01bTest1.png
+			</bild>
+			<hilfe1>
+				http://de.wikipedia.org/wiki/Quadratische_Gleichung
+			</hilfe1>
+			<hilfe2>http://www.youtube.com/watch?v=4grbGixuSXM</hilfe2>
+			<loesung>
+				/sdcard/bilder/loesung3test1.PNG
+			</loesung>
+		</aufgabe>
+
+	</aufgaben>
+
+
+
+</test>

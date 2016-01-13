@@ -19,6 +19,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.FloatMath;
 import android.util.Log;
+import android.util.Xml;
 import android.view.Display;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -50,9 +51,11 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.Vector;
 import java.util.concurrent.TimeUnit;
 import java.util.zip.Inflater;
 
@@ -122,6 +125,9 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
     String timeString;
     float pgsBarInc;
     float pgsBarSum;
+
+    public static Vector vecTestEval = new Vector<String>(); // To evaluate the different tasks in order to know which is the next task to display
+    public static Vector vecQualifikationEval = new Vector<String>(); // To evaluate the different tasks in order to know which is the next task to display
 
     //Variables for Statistic
     boolean bool_showsGraph = false;
@@ -209,41 +215,204 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                     } // if
                 } // for
             } // if
+
+            if (sumActive) {
+                //MainActivity.sumQualfktion = sum;
+                //MainActivity.averageQualfktion = sum / qntAufgabe;
+                int avrgQ = sum / qntAufgabe;
+
+                if (avrgQ < MainActivity.score2pool) {
+                    MainActivity.poolActivated = true;
+                }
+            }
         } catch (NullPointerException e){
-            if (MainActivity.startsFromSavedPoolInfo) {
-                for (x = 0; x < MainActivity.aufgb2Eval.size(); x++) {
-                    Aufgabe aufTemp = MainActivity.aufgb2Eval.get(x);
-                        if (aufTemp.getTest() < MainActivity.n_Test) { // the average will be evaluated only in the last test completed
-                            if (aufTemp.getTest() == MainActivity.n_Test - 1) { // the average will be evaluated only in the last test completed
-                                sum = aufTemp.getQualifikation() + sum;
-                                qntAufgabe++;
-                                sumActive = true;
-                            }
-                        }
-                } // for
-            } else {
-                sumActive = false;
-            }
-        }
-
-        if (sumActive) {
-            //MainActivity.sumQualfktion = sum;
-            //MainActivity.averageQualfktion = sum / qntAufgabe;
-            int avrgQ = sum / qntAufgabe;
-
-            if (avrgQ < MainActivity.score2pool) {
-                MainActivity.poolActivated = true;
-            }
+            // when the App is restarted and the pool is about to be displayed, it produces a NullPointerException,
+            // because MainActivity.poolAfgb2Eval has not been initialized.
+        } catch (Exception e1) {
+            System.out.println("Error: TestAufgabe.poolVerification --> " + e1);
         }
     } // poolVerification
-
 
     public void evaluateAufgabe() {
         // When the score is < than the value of MainActivity.score2pool, goes to the respective pool exercises
         // When is a new test to be evaluated, resets the variables and parse the respective xml.
         System.out.println("--> evaluateAufgabe");
 
+        int qntAuf = 0;
+        int qntPoolAuf = 0;
+        int avgTemp = 0;
+        int posAuf = 0;
+        String strQual;
+        int intQual;
+        int sumQual = 0;
+        FileInputStream fin = null;
+
+        vecTestEval = new Vector<String>(); // To evaluate the different tasks in order to know which is the next task to display
+        vecQualifikationEval = new Vector<String>(); // To evaluate the different tasks in order to know which is the next task to display
+
         try {
+            fin = openFileInput("aufgabeValues.xml");
+            parseXmlAufEvaluate(fin);
+            fin.close();
+
+            fin = openFileInput("poolValues.xml");
+            parseXmlPoolEvaluate(fin);
+            fin.close();
+
+            if ((MainActivity.startsFromSavedInfo) || (MainActivity.startsFromSavedPoolInfo)) {
+                switch (MainActivity.n_Test) {
+                    case 1:
+                        qntAuf = evalQtestAufPool("Test 1");
+                        if (qntAuf == MainActivity.qntAufgabenTest1) {
+                            MainActivity.boolTest1 = true; // Test1 is complete
+                        } else if (qntAuf < MainActivity.qntAufgabenTest1) {
+                            MainActivity.boolTest1 = false; // Test1 is not complete
+                        }
+
+                        qntAuf = evalQtestAufPool("Test 2");
+                        if (qntAuf == MainActivity.qntAufgabenTest2) {
+                            MainActivity.boolTest2 = true; // Test1 is complete
+                        } else if (qntAuf < MainActivity.qntAufgabenTest2) {
+                            MainActivity.boolTest2 = false; // Test1 is not complete
+                        }
+                        break;
+                    case 2:
+                        qntAuf = evalQtestAufPool("Test 2");
+                        if (qntAuf == MainActivity.qntAufgabenTest2) {
+                            MainActivity.boolTest2 = true; // Test2 is complete
+                        } else if (qntAuf < MainActivity.qntAufgabenTest2) {
+                            MainActivity.boolTest2 = false; // Test2 is not complete
+                        }
+                        break;
+                    case 3:
+                        qntAuf = evalQtestAufPool("Test 3");
+                        if (qntAuf == MainActivity.qntAufgabenTest3) {
+                            MainActivity.boolTest3 = true; // Test3 is complete
+                        } else if (qntAuf < MainActivity.qntAufgabenTest3) {
+                            MainActivity.boolTest3 = false; // Test3 is not complete
+                        }
+                        break;
+                } // switch
+
+                if (((MainActivity.boolTest1) || (MainActivity.boolTest2)) && (!MainActivity.boolTest3)) {
+                    switch (MainActivity.n_poolTest) {
+                        case 1:
+                            // Validate the average of Test1 to see the quantity of exercises that the pool1 most have.
+                            qntAuf = evalQtestAufPool("Test 1");
+                            posAuf = evalPostestVec("Test 1") - 1;
+                            qntPoolAuf = evalQtestAufPool("Pool 1");
+
+                            for (int h = posAuf; h < qntAuf; h++) {
+                                strQual = vecQualifikationEval.get(h).toString();
+                                intQual = Integer.parseInt(strQual);
+
+                                sumQual = sumQual + intQual;
+                            }
+
+                            avgTemp = sumQual / MainActivity.qntAufgabenTest1;
+
+                            if (avgTemp <= MainActivity.qntPoolAufgaben) {
+                                if (qntPoolAuf == 3) {
+                                    MainActivity.boolPool1 = true; // pool1 is complete
+                                    MainActivity.poolActivated = false;
+                                    //MainActivity.n_poolAufgb++;
+                                    //MainActivity.n_poolQntAufEvl++;
+                                } else if (qntPoolAuf < 3) {
+                                    MainActivity.boolPool1 = false; // pool 1 is not complete
+                                    MainActivity.poolActivated = true;
+                                }
+                            } else {
+                                if (qntPoolAuf == 2) {
+                                    MainActivity.boolPool1 = true; // pool1 is complete
+                                    MainActivity.poolActivated = false;
+                                } else if (qntPoolAuf < 2) {
+                                    MainActivity.boolPool1 = false; // pool 1 is not complete
+                                    MainActivity.poolActivated = true;
+                                }
+                            }
+                            break;
+                        case 2:
+                            // Validate the average of Test2 to see the quantity of exercises that the pool1 most have.
+                            qntAuf = evalQtestAufPool("Test 2");
+                            posAuf = evalPostestVec("Test 2") - 1;
+                            qntPoolAuf = evalQtestAufPool("Pool 2");
+
+                            for (int h = posAuf; h < qntAuf; h++) {
+                                strQual = MainActivity.vecQualifikation.get(h).toString();
+                                intQual = Integer.parseInt(strQual);
+
+                                sumQual = sumQual + intQual;
+                            }
+
+                            avgTemp = sumQual / MainActivity.qntAufgabenTest1;
+
+                            if (avgTemp < MainActivity.qntPoolAufgaben) {
+                                if (qntPoolAuf == 3) {
+                                    MainActivity.boolPool1 = true; // pool1 is complete
+                                    MainActivity.poolActivated = false;
+                                } else if (qntPoolAuf < 3) {
+                                    MainActivity.boolPool1 = false; // pool 1 is not complete
+                                    MainActivity.poolActivated = true;
+                                }
+                            } else {
+                                if (qntPoolAuf == 2) {
+                                    MainActivity.boolPool1 = true; // pool1 is complete
+                                    MainActivity.poolActivated = false;
+                                } else if (qntPoolAuf < 2) {
+                                    MainActivity.boolPool1 = false; // pool 1 is not complete
+                                    MainActivity.poolActivated = true;
+                                }
+                            }
+                            break;
+                        default:
+                            if ((MainActivity.boolTest1) && (!MainActivity.boolTest2)) {
+                                // Validate the average of Test1 to see the quantity of exercises that the pool1 most have.
+                                qntAuf = evalQtestAufPool("Test 1");
+                                posAuf = evalPostestVec("Test 1") - 1;
+
+                                for (int h = posAuf; h < qntAuf; h++) {
+                                    strQual = vecQualifikationEval.get(h).toString();
+                                    intQual = Integer.parseInt(strQual);
+
+                                    sumQual = sumQual + intQual;
+                                }
+
+                                avgTemp = sumQual / MainActivity.qntAufgabenTest1;
+
+                                if (avgTemp < MainActivity.score2pool) {
+                                    MainActivity.poolActivated = true;
+                                } else {
+                                    MainActivity.poolActivated = false;
+                                }
+                            } else if ((MainActivity.boolTest1) && (MainActivity.boolTest2)) {
+                                // Validate the average of Test1 to see the quantity of exercises that the pool1 most have.
+                                qntAuf = evalQtestAufPool("Test 2") + MainActivity.qntAufgabenTest1;
+                                posAuf = evalPostestVec("Test 2");
+
+                                for (int h = posAuf; h < qntAuf; h++) {
+                                    strQual = vecQualifikationEval.get(h).toString();
+                                    intQual = Integer.parseInt(strQual);
+
+                                    sumQual = sumQual + intQual;
+                                }
+
+                                avgTemp = sumQual / MainActivity.qntAufgabenTest1;
+
+                                if (avgTemp < MainActivity.score2pool) {
+                                    MainActivity.n_Test = 1;
+                                    MainActivity.readNextTest = true;
+
+                                    MainActivity.poolActivated = true;
+                                    MainActivity.n_poolTest = 1;
+                                } else {
+                                    MainActivity.poolActivated = false;
+                                }
+                            }
+                            break;
+                    } // switch
+                } // if
+            } // if
+
             if ((MainActivity.poolActivated) && (MainActivity.n_poolTest < 2)) {
                 System.out.println("Pool activated " + MainActivity.poolActivated);
 
@@ -264,28 +433,37 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                     }
                 }
 
-                if ((MainActivity.starts2ndPool) || (MainActivity.poolAfgb2Eval.size() == MainActivity.n_poolQntAufEvl)) {
-                    // Call to parser for the pool
-                    switch (MainActivity.n_poolTest) {
-                        case 1:
-                            poolParse(MainActivity.xmlPool02, 2);
-                            writeSystemOutAufgabeXML();
-                            break;
-                        case 2:
+                try {
+                    if ((MainActivity.starts2ndPool) || (MainActivity.poolAfgb2Eval.size() == MainActivity.n_poolQntAufEvl)) {
+                        // Call to parser for the pool
+                        switch (MainActivity.n_poolTest) {
+                            case 1:
+                                poolParse(MainActivity.xmlPool02, 2);
+                                writeSystemOutAufgabeXML();
+                                break;
+                            case 2:
 
-                            break;
-                    } // switch
+                                break;
+                        } // switch
 
-                    MainActivity.n_poolTest++; // next Test
-                    if (MainActivity.readNextPoolTest) {
-                        MainActivity.readNextPoolTest = false;
-                    } else {
-                        MainActivity.n_poolAufgb = 0; // Starts from the first Aufgabe
-                    }
+                        MainActivity.n_poolTest++; // next Test
+                        if (MainActivity.readNextPoolTest) {
+                            MainActivity.readNextPoolTest = false;
+                        } else {
+                            MainActivity.n_poolAufgb = 0; // Starts from the first Aufgabe
+                        }
 
-                    MainActivity.starts2ndPool = false;
-                } // if
-            } else if ((MainActivity.aufgb2Eval.size() == MainActivity.n_QntityAufEval) || (MainActivity.readNextTest)) {
+                        MainActivity.starts2ndPool = false;
+                    } // if
+                } catch (NullPointerException e) {
+                    // When the first pool is not executed and the application restarts from the begginning of the
+                    // 2nd pool, the MainActivity.poolAfgb2Eval has not been initialized and produces a NullPointerException
+                    poolParse(MainActivity.xmlPool02, 2);
+                    MainActivity.n_poolTest = 2;
+                    //writeSystemOutAufgabeXML();
+                }
+            } else if (((MainActivity.aufgb2Eval.size() == MainActivity.n_QntityAufEval) || (MainActivity.readNextTest) || ((MainActivity.n_Test == 2) && (MainActivity.n_poolTest == 2)))
+                    && (!MainActivity.poolActivated)) {
                 // Call to parser for the next Test
                 switch (MainActivity.n_Test) {
                     case 1:
@@ -293,6 +471,17 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                         MainActivity.sumQualfktion = 0;
                         break;
                     case 2:
+                        if ((MainActivity.n_Test == 2) && (MainActivity.n_poolTest == 2)) {
+                            parseNext(MainActivity.xml02, 2);
+                            MainActivity.sumQualfktion = 0;
+
+                            fin = openFileInput("aufgabeValues.xml");
+                            XmlParser.parseXmlAufgabe(fin);
+                            fin.close();
+
+                            MainActivity.n_QntityAufEval = 0;
+                        }
+
                         parseNext(MainActivity.xml03, MainActivity.n_Test + 1);
                         MainActivity.sumQualfktion = 0;
                         break;
@@ -310,8 +499,10 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                     MainActivity.n_Aufgbe = 0; // Starts from the first Aufgabe
                 }
             } // if
+        } catch (FileNotFoundException e1) {
+            System.out.println("FileNotFoundException: TestAufgabe.evaluateAufgabe -->" + e1);
         } catch (Exception e) {
-            System.out.println("ERROR ???: TestAufgabe.evaluateAufgabe -->" + e);
+            System.out.println("ERROR: TestAufgabe.evaluateAufgabe -->" + e);
         }
     } // evaluateAufgabe
 
@@ -396,12 +587,20 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                 btnAkt2.setText(R.string.Lösung_beginnen);
             } // if
         } catch (Exception e) {
-            FileInputStream fin = null;
+            //FileInputStream fin = null;
 
             try {
-                fin = openFileInput("poolValues.xml");
-                poolParse(MainActivity.xmlPool02, 1);
-                fin.close();
+                if (MainActivity.n_Test == 2) {
+                    //fin = openFileInput("poolValues.xml");
+                    poolParse(MainActivity.xmlPool01, 1);
+                    MainActivity.n_poolTest = 1;
+                    //fin.close();
+                } else if (MainActivity.n_Test > 2){
+                    //fin = openFileInput("poolValues.xml");
+                    poolParse(MainActivity.xmlPool02, 2);
+                    MainActivity.n_poolTest = 2;
+                    //fin.close();
+                }
 
                 MainActivity.aufPoolLoad = MainActivity.poolAfgb2Eval.get(numPoolAufgabe);
                 imageAufgabe = MainActivity.aufPoolLoad.getImagePool();
@@ -423,9 +622,9 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
                 txtAufNum.setText(" POOL " + MainActivity.n_poolTest + "  Aufgabe " + aufPoolNumbr);
 
                 btnAkt2.setText(R.string.Lösung_beginnen);
-            } catch (FileNotFoundException e1) {
+            //} catch (FileNotFoundException e1) {
                 //e1.printStackTrace();
-                System.out.println("FileNotFoundException: TestAufgabe.loadPoolScreen --> " + e1);
+                //System.out.println("FileNotFoundException: TestAufgabe.loadPoolScreen --> " + e1);
             } catch (Exception e2) {
                 System.out.println("Error: TestAufgabe.loadPoolScreen --> " + e2);
             } // try 2
@@ -1522,4 +1721,132 @@ public class TestAufgabe extends ActionBarActivity implements OnTouchListener {
         }
         return super.onKeyDown(keyCode, event);
     }
+
+    /* Returns the position of the Test in the vector */
+    public static int evalPostestVec(String h) {
+        Enumeration vEnumTest = vecTestEval.elements();
+        String j = "";
+        int count = 0;
+
+        while(vEnumTest.hasMoreElements()) {
+            j = vEnumTest.nextElement().toString();
+
+            if (j.equals(h)){
+                break;
+            }
+
+            count++;
+        } // while
+
+        return count;
+    }
+
+    public static int evalQtestAufPool(String h) {
+        Enumeration vEnumTest = vecTestEval.elements();
+        String j = "";
+        int count = 0;
+
+        while(vEnumTest.hasMoreElements()) {
+            j = vEnumTest.nextElement().toString();
+
+            if (j.equals(h)){
+                count++;
+            }
+        } // while
+
+        return count;
+    }
+
+    public static void parseXmlAufEvaluate(FileInputStream fis) {
+        // Parse the information from the XML that contains the different SAVED Tasks (Aufgaben)
+        // To evaluate if the test was completed or not
+        System.out.println("--> parseXmlAufEvaluate");
+
+        try {
+            XmlPullParser parser = Xml.newPullParser(); //_/_/_/
+            parser.setInput(fis, "UTF-8"); //_/_/_/
+
+            int eventType = parser.getEventType();
+            int testNum = 0;
+            int testNumTemp;
+            int aufNum = 0;
+            int empAuf = 0;
+            String timeAuf;
+
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                switch (eventType) {
+                    case XmlPullParser.START_DOCUMENT:
+
+                        break;
+                    case XmlPullParser.START_TAG:
+                        currentTag = parser.getName();
+                        if (currentTag.equalsIgnoreCase(MainActivity.TEST)) {
+                            testNum = Integer.parseInt(parser.getAttributeValue(0));
+                        } else if (currentTag != null) {
+                            if (currentTag.equalsIgnoreCase(MainActivity.AUFGABE)) {
+                                aufNum = Integer.parseInt(parser.nextText());
+                                // Data to create the statistic Graph
+                                vecTestEval.add("Test " + testNum);
+                            } else if (currentTag.equalsIgnoreCase(XmlParser.QUALIFIKATION)) {
+                                int intQual = Integer.parseInt(parser.nextText());
+                                //Data for the Statistic
+                                vecQualifikationEval.add(intQual);
+                            }  // if
+                        } // if
+                        break;
+                    case XmlPullParser.END_TAG:
+                        break;
+                } // switch
+                eventType = parser.next();
+            } // while
+        } catch (Exception e) {
+            System.out.println("ERROR ???: TestAufgabe.parseXmlAufEvaluate --> " + e);
+        } // try
+    } // parseXmlAufEvaluate
+
+    public static void parseXmlPoolEvaluate(FileInputStream fis) {
+        // Parse the information from the XML that contains the different SAVED Tasks (Aufgaben)
+        // so the application can start from the last point
+        System.out.println("--> parseXmlPoolEvaluate");
+
+        //if (MainActivity.xmlMemoryReadPool) {  // To be sure that this process ir executed just once
+        try {
+            XmlPullParser parser = Xml.newPullParser(); //_/_/_/
+            parser.setInput(fis, "UTF-8"); //_/_/_/
+
+            int eventType = parser.getEventType();
+            int testNum = 0;
+            int poolNum = 0;
+            int empAuf = 0;
+            String timeAuf;
+
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                switch (eventType) {
+                    case XmlPullParser.START_DOCUMENT:
+                        break;
+                    case XmlPullParser.START_TAG:
+                        currentTag = parser.getName();
+
+                        if (currentTag.equalsIgnoreCase(MainActivity.TEST)) {
+                            testNum = Integer.parseInt(parser.getAttributeValue(0));
+                        } else if (currentTag != null) {
+                            if (currentTag.equalsIgnoreCase(MainActivity.AUFGABE)) {
+                                poolNum = Integer.parseInt(parser.nextText());
+                                vecTestEval.add("Pool " + testNum);
+                            } else if (currentTag.equalsIgnoreCase(XmlParser.QUALIFIKATION)) {
+                                int intQual = Integer.parseInt(parser.nextText());
+                                //Data for the Statistic
+                                vecQualifikationEval.add(intQual);
+                            } // if
+                        } // if
+                        break;
+                    case XmlPullParser.END_TAG:
+                        break;
+                } // switch
+                eventType = parser.next();
+            } // while
+        } catch (Exception e) {
+            System.out.println("ERROR ???: TestAufgabe.parseXmlPoolEvaluate --> " + e);
+        } // try
+    } // parseXmlPoolEvaluate
 } // TestAufgabe

@@ -123,7 +123,7 @@ public class Aufgabe {
 	}
 
 	public void setEmpfindung(int empfndng){
-		this.qualifikation = empfndng;
+		this.empfindung = empfndng;
 	}
 	
 	public void setTest(int tst) {

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE test SYSTEM "test.dtd"> -->
+<test id="1" lang="deutsch">
+	<aufgaben>
+		<aufgabe id="1">
+			<text>Loesen Sie die folgenden quadratischen Gleichungen:</text>
+			<bild>test01aufgabe001</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://www.frustfrei-lernen.de/mathematik/pq-formel-quadratische-gleichungen-mathematik.html</value>
+        		<value>http://www.mathepower.com/qgleich.php</value>
+			</hilfe>
+			<loesung>test01loesung001</loesung>
+			<time>2.0</time>
+			<avgo>60</avgo>
+            <avgdc></avgdc>
+            <avguf>20</avguf>
+            <avgdf></avgdf>
+            <avgut>1.0</avgut>
+            <avgdt></avgdt>
+		</aufgabe>
+		<aufgabe id="2">
+			<text>Bestimmen Sie die Lösungsmenge der folgenden Wurzelgleichung:</text>
+			<bild>test01aufgabe002</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://www.arndt-bruenner.de/mathe/pdf/wurzelgleichungen1.pdf</value>
+        		<value>http://www.frustfrei-lernen.de/mathematik/wurzelgleichungen.html</value>
+        		<value>http://www.mathepower.com/wurzelgleichungen.php</value>
+			</hilfe>
+			<loesung>test01loesung002</loesung>
+			<time>6.0</time>
+			<avgo>60</avgo>
+            <avgdc></avgdc>
+            <avguf>40</avguf>
+            <avgdf></avgdf>
+            <avgut>1.0</avgut>
+            <avgdt></avgdt>
+		</aufgabe>
+		<aufgabe id="3">
+			<text>Berechnen Sie:</text>
+			<bild>test01aufgabe003</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test01loesung003</loesung>
+			<time>6.0</time>
+			<avgo>80</avgo>
+            <avgdc></avgdc>
+            <avguf>60</avguf>
+            <avgdf></avgdf>
+            <avgut>2.0</avgut>
+            <avgdt></avgdt>
+		</aufgabe>
+		<aufgabe id="4">
+			<text>Formen Sie die folgenden Terme in möglichst einfache Ausdrücke um:</text>
+			<bild>test01aufgabe004</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test01loesung004</loesung>
+			<time>6.0</time>
+			<avgo>80</avgo>
+            <avgdc></avgdc>
+            <avguf>80</avguf>
+            <avgdf></avgdf>
+            <avgut>2.0</avgut>
+            <avgdt></avgdt>
+		</aufgabe>
+		<aufgabe id="5">
+			<text>Bestimmen Sie den Schnittpunkt der Geraden:</text>
+			<bild>test01aufgabe005</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test01loesung005</loesung>
+			<time>6.0</time>
+			<avgo>100</avgo>
+            <avgdc></avgdc>
+            <avguf>100</avguf>
+            <avgdf></avgdf>
+            <avgut>5.0</avgut>
+            <avgdt></avgdt>
+		</aufgabe>
+	</aufgaben>
+</test>

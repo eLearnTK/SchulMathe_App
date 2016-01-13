@@ -116,7 +116,7 @@ public class Pool {
 	}
 
 	public void setEmpfindung(int empfdng){
-		this.qualifikation = empfdng;
+		this.empfindung = empfdng;
 	}
 	
 	public void setPoolTest(int poolTst) {

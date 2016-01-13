@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE test SYSTEM "test.dtd"> -->
+<test id="1" lang="deutsch">
+	<aufgaben>
+		<aufgabe id="1">
+			<text>Geben Sie die Lösung für diese Aufgabe:</text>
+			<bild>test03aufgabe001</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test03loesung001</loesung>
+			<time>6.0</time>
+			<avgo>60</avgo>
+            <avgdc></avgdc>
+            <avguf>20</avguf>
+            <avgdf></avgdf>
+            <avgut>1.0</avgut>
+            <avgdt></avgdt>
+		</aufgabe>
+		<aufgabe id="2">
+			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<bild>test03aufgabe002</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test03loesung002</loesung>
+			<time>6.0</time>
+			<avgo>60</avgo>
+            <avgdc></avgdc>
+            <avguf>30</avguf>
+            <avgdf></avgdf>
+            <avgut>1.5</avgut>
+            <avgdt></avgdt>
+		</aufgabe>
+		<aufgabe id="3">
+			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<bild>test03aufgabe003</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test03loesung003</loesung>
+			<time>6.0</time>
+			<avgo>80</avgo>
+            <avgdc></avgdc>
+            <avguf>35</avguf>
+            <avgdf></avgdf>
+            <avgut>2.0</avgut>
+            <avgdt></avgdt>
+		</aufgabe>
+		<aufgabe id="4">
+			<text>Bestimmen Sie die Extremstellen und die Wendepunkte der folgenden Funktion:</text>
+			<bild>test03aufgabe004</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test03loesung004</loesung>
+			<time>6.0</time>
+			<avgo>80</avgo>
+            <avgdc></avgdc>
+            <avguf>75</avguf>
+            <avgdf></avgdf>
+            <avgut>3.0</avgut>
+            <avgdt></avgdt>
+		</aufgabe>
+		<aufgabe id="5">
+			<text>Bestimmen Sie die Nullstellen der folgenden Funktion:</text>
+			<bild>test03aufgabe005</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>test03loesung005</loesung>
+			<time>6.0</time>
+			<avgo>100</avgo>
+            <avgdc></avgdc>
+            <avguf>70</avguf>
+            <avgdf></avgdf>
+            <avgut>3.5</avgut>
+            <avgdt></avgdt>
+		</aufgabe>
+	</aufgaben>
+</test>

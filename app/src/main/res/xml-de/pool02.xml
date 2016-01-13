@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE test SYSTEM "test.dtd"> -->
+<test id="1" lang="deutsch">
+	<aufgaben>
+		<aufgabe id="1">
+			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<bild>pool02aufgabe001</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>pool02loesung001</loesung>
+			<time>6.0</time>
+			<avgo>80</avgo>
+            <avgdc></avgdc>
+            <avguf>60</avguf>
+            <avgdf></avgdf>
+            <avgut>1.2</avgut>
+            <avgdt></avgdt>
+		</aufgabe>
+		<aufgabe id="2">
+			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<bild>pool02aufgabe002</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>pool02loesung002</loesung>
+			<time>6.0</time>
+			<avgo>60</avgo>
+            <avgdc></avgdc>
+            <avguf>65</avguf>
+            <avgdf></avgdf>
+            <avgut>1.5</avgut>
+            <avgdt></avgdt>
+		</aufgabe>
+	    <aufgabe id="3">
+			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<bild>pool02aufgabe003</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>pool02loesung003</loesung>
+			<time>6.0</time>
+			<avgo>60</avgo>
+            <avgdc></avgdc>
+            <avguf>75</avguf>
+            <avgdf></avgdf>
+            <avgut>2.0</avgut>
+            <avgdt></avgdt>
+		</aufgabe>
+		<aufgabe id="4">
+			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<bild>pool02aufgabe004</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>pool02loesung004</loesung>
+			<time>6.0</time>
+			<avgo>80</avgo>
+            <avgdc></avgdc>
+            <avguf>45</avguf>
+            <avgdf></avgdf>
+            <avgut>1.0</avgut>
+            <avgdt></avgdt>
+		</aufgabe>
+		<aufgabe id="5">
+			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<bild>pool02aufgabe005</bild>
+			<hilfe>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+			</hilfe>
+			<loesung>pool02loesung005</loesung>
+			<time>6.0</time>
+			<avgo>100</avgo>
+            <avgdc></avgdc>
+            <avguf>45</avguf>
+            <avgdf></avgdf>
+            <avgut>1.3</avgut>
+            <avgdt></avgdt>
+		</aufgabe>
+	</aufgaben>
+</test>
