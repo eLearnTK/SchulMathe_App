@@ -13,12 +13,12 @@
 				<value>https://www.mathsisfun.com/square-root.html</value>
 			</hilfe>
 			<loesung>test03loesung001</loesung>
-			<time>6.0</time>
-            <avguc>60</avguc>
+			<time>5.0</time>
+            <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>20</avguf>
+            <avguf>2</avguf>
             <avgdf></avgdf>
-            <avgut>1.0</avgut>
+            <avgut>2.36</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="2">
@@ -29,11 +29,11 @@
 			</hilfe>
 			<loesung>test03loesung002</loesung>
 			<time>6.0</time>
-            <avguc>60</avguc>
+            <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>30</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>1.5</avgut>
+            <avgut>3.16</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="3">
@@ -43,12 +43,12 @@
 				<value>http://www.mathworksheetsgo.com/triangle-calculators/area-of-triangle-calculator-online.php</value>
 			</hilfe>
 			<loesung>test03loesung003</loesung>
-			<time>6.0</time>
+			<time>7.0</time>
             <avguc>80</avguc>
             <avgdc></avgdc>
-            <avguf>35</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>2.0</avgut>
+            <avgut>3.11</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="4">
@@ -58,12 +58,12 @@
 				<value>http://www.math.uiuc.edu/~r-ash/CV/CV5.pdf</value>
 			</hilfe>
 			<loesung>test03loesung004</loesung>
-			<time>6.0</time>
-            <avguc>60</avguc>
+			<time>8.0</time>
+            <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>75</avguf>
+            <avguf>2</avguf>
             <avgdf></avgdf>
-            <avgut>3.0</avgut>
+            <avgut>4.22</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="5">
@@ -77,9 +77,9 @@
 			<time>6.0</time>
             <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>70</avguf>
+            <avguf>0</avguf>
             <avgdf></avgdf>
-            <avgut>3.5</avgut>
+            <avgut>3.09</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 	</aufgaben>

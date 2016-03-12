@@ -52,9 +52,10 @@
     <string name="yResultTitle">Result</string>
     <string name="chartTitle">Results for</string>
     <string name="xTimeTitle">Time</string>
-    <string name="chartTimeTitle">Time for</string>
-    <string name="yTimeTitle">Minutes</string>
+    <string name="chartTimeTitle">Time remaining for</string>
+    <string name="yTimeTitle">Minutes left</string>
     <string name="xFeelTitle">Feeling</string>
     <string name="chartFeelTitle">Feeling for</string>
-    <string name="yFeelTitle">Feeling %</string>
+    <string name="yFeelTitle">Feeling</string>
+    <string name="chartLineLegend">Recomendation</string>
 </resources>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- <!DOCTYPE test SYSTEM "test.dtd"> -->
 <test id="1" lang="deutsch">
 	<aufgaben>
@@ -6,48 +6,81 @@
 			<text>Berechnen Sie:</text>
 			<bild>pool01aufgabe001</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://www.lernstunde.de/thema/wurzel/grundwissen.htm</value>
+				<value>http://www.youtube.com/watch?v=sUVAixDL7uI</value>
 			</hilfe>
 			<loesung>pool01loesung001</loesung>
-			<time>3.0</time>
-           	<avgot>40</avgot>
+            <time>6.0</time>
+            <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>60</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>3.0</avgut>
+            <avgut>2.43</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="2">
 			<text>Lösen Sie die folgenden quadratischen Gleichungen:</text>
 			<bild>pool01aufgabe002</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://www.youtube.com/watch?v=C3c8X4HcTU8</value>
+				<value>http://www.arndt-bruenner.de/mathe/pdf/wurzelgleichungen1.pdf</value>
+				
 			</hilfe>
 			<loesung>pool01loesung002</loesung>
-			<time>3.2</time>
-            <avgo>60</avgo>
+            <time>6.0</time>
+            <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>40</avguf>
+            <avguf>2</avguf>
             <avgdf></avgdf>
-            <avgut>3.5</avgut>
+            <avgut>3.06</avgut>
             <avgdt></avgdt>
 		</aufgabe>
         <aufgabe id="3">
             <text>Elementare Geometrie</text>
             <bild>pool01aufgabe003</bild>
             <hilfe>
-                <value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-                <value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+                <value>http://de.wikipedia.org/wiki/Gleichschenkliges_Dreieck</value>
+		<value>http://www.youtube.com/watch?v=GGot2RkfMCw</value>
             </hilfe>
             <loesung>pool01loesung003</loesung>
-            <time>6.0</time>
-            <avgo>80</avgo>
+            <time>11.0</time>
+            <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>60</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>1.0</avgut>
+            <avgut>5.4</avgut>
+            <avgdt></avgdt>
+        </aufgabe>
+        <aufgabe id="4">
+            <text>Vereinfachen Sie die folgende Funktion</text>
+            <bild>pool01aufgabe004</bild>
+            <hilfe>
+                <value>http://www.brinkmann-du.de/mathe/aufgabenportal/p0_potenzen_10/p0_potenzen_10.htm</value>
+                <value>http://www.frustfrei-lernen.de/mathematik/potenzen-potenzieren-zahlen-mathematik.html</value>
+            </hilfe>
+            <loesung>pool01loesung004</loesung>
+            <time>11.0</time>
+            <avguc>100</avguc>
+            <avgdc></avgdc>
+            <avguf>1</avguf>
+            <avgdf></avgdf>
+            <avgut>5.4</avgut>
+            <avgdt></avgdt>
+        </aufgabe>
+        <aufgabe id="5">
+            <text>Lösen Sie die folgenden Gleichungen:</text>
+            <bild>pool01aufgabe005</bild>
+            <hilfe>
+                <value>http://www.mathe-trainer.de/Klasse9/Quadratische_Gleichungen/Block14/Aufgaben.htm</value>
+                <value>https://de.serlo.org/mathe/artikel-und-videos-aus-serlo-1-spaeter-loeschen/substitution</value>
+            </hilfe>
+            <loesung>pool01loesung005</loesung>
+            <time>11.0</time>
+            <avguc>100</avguc>
+            <avgdc></avgdc>
+            <avguf>1</avguf>
+            <avgdf></avgdf>
+            <avgut>5.4</avgut>
             <avgdt></avgdt>
         </aufgabe>
 	</aufgaben>

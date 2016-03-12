@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- <!DOCTYPE test SYSTEM "test.dtd"> -->
 <test id="1" lang="deutsch">
 	<aufgaben>
@@ -6,80 +6,80 @@
 			<text>Geben Sie die Lösung für diese Aufgabe:</text>
 			<bild>test03aufgabe001</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://schulnetz.nibis.de/db/mk-mail/n001/formelsammlung.pdf</value>
+				<value>http://www.youtube.com/watch?v=PwCfQIH0NkU</value>
 			</hilfe>
 			<loesung>test03loesung001</loesung>
-			<time>6.0</time>
-			<avgo>60</avgo>
+            <time>5.0</time>
+            <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>20</avguf>
+            <avguf>2</avguf>
             <avgdf></avgdf>
-            <avgut>1.0</avgut>
+            <avgut>2.36</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="2">
 			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
 			<bild>test03aufgabe002</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://www.frustfrei-lernen.de/mathematik/geometrie-flaeche-umfang-kreis-dreieck.html</value>
+				<value>http://www.youtube.com/watch?v=vTmRE80HNsM</value>
 			</hilfe>
 			<loesung>test03loesung002</loesung>
-			<time>6.0</time>
-			<avgo>60</avgo>
+            <time>6.0</time>
+            <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>30</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>1.5</avgut>
+            <avgut>3.16</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="3">
 			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
 			<bild>test03aufgabe003</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>https://de.answers.yahoo.com/question/index?qid=20071125045352AAsOy6D</value>
+				<value>http://www.youtube.com/watch?v=c6ImnO7pyYE</value>
 			</hilfe>
 			<loesung>test03loesung003</loesung>
-			<time>6.0</time>
-			<avgo>80</avgo>
+            <time>7.0</time>
+            <avguc>80</avguc>
             <avgdc></avgdc>
-            <avguf>35</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>2.0</avgut>
+            <avgut>3.11</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="4">
 			<text>Bestimmen Sie die Extremstellen und die Wendepunkte der folgenden Funktion:</text>
 			<bild>test03aufgabe004</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://www.brinkmann-du.de/mathe/gost/diff_01_10.htm</value>
+				<value>http://www.youtube.com/watch?v=JDsPSH80DVY</value>
 			</hilfe>
 			<loesung>test03loesung004</loesung>
-			<time>6.0</time>
-			<avgo>80</avgo>
+            <time>8.0</time>
+            <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>75</avguf>
+            <avguf>2</avguf>
             <avgdf></avgdf>
-            <avgut>3.0</avgut>
+            <avgut>4.22</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="5">
 			<text>Bestimmen Sie die Nullstellen der folgenden Funktion:</text>
 			<bild>test03aufgabe005</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://www.gutefrage.net/frage/nullstelle-und-scheitelpunkt-bestimmen-wichtig-</value>
+				<value>http://www.youtube.com/watch?v=ZtpmyNfCV3U</value>
 			</hilfe>
 			<loesung>test03loesung005</loesung>
-			<time>6.0</time>
-			<avgo>100</avgo>
+            <time>6.0</time>
+            <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>70</avguf>
+            <avguf>0</avguf>
             <avgdf></avgdf>
-            <avgut>3.5</avgut>
+            <avgut>3.09</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 	</aufgaben>

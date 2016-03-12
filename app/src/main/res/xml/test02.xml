@@ -10,11 +10,11 @@
       			</hilfe>
       			<loesung>test02loesung001</loesung>
       			<time>6.0</time>
-				<avguc>60</avguc>
+				<avguc>80</avguc>
                 <avgdc></avgdc>
-                <avguf>40</avguf>
+                <avguf>1</avguf>
                 <avgdf></avgdf>
-                <avgut>1.5</avgut>
+                <avgut>3.16</avgut>
                 <avgdt></avgdt>
    	 	</aufgabe>
 		<aufgabe id="2">
@@ -24,12 +24,12 @@
 				<value>http://www.wikihow.com/Find-the-Equation-of-a-Tangent-Line</value>
 			</hilfe>
 			<loesung>test02loesung002</loesung>
-			<time>6.0</time>
-            <avguc>60</avguc>
+			<time>8.0</time>
+            <avguc>80</avguc>
             <avgdc></avgdc>
-            <avguf>40</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>1.0</avgut>
+            <avgut>4.08</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="3">
@@ -39,12 +39,12 @@
 				<value>http://calculator.tutorvista.com/point-of-intersection-calculator.html</value>
 			</hilfe>
 			<loesung>test02loesung003</loesung>
-			<time>6.0</time>
+			<time>7.0</time>
             <avguc>80</avguc>
             <avgdc></avgdc>
-            <avguf>50</avguf>
+            <avguf>0</avguf>
             <avgdf></avgdf>
-            <avgut>1.5</avgut>
+            <avgut>3.5</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="4">
@@ -55,12 +55,12 @@
 				<value>http://www.wikihow.com/Find-the-Zeros-of-a-Function</value>
 			</hilfe>
 			<loesung>test02loesung004</loesung>
-			<time>6.0</time>
-            <avguc>80</avguc>
+			<time>7.0</time>
+            <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>55</avguf>
+            <avguf>0</avguf>
             <avgdf></avgdf>
-            <avgut>1.0</avgut>
+            <avgut>3.4</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="5">
@@ -70,12 +70,12 @@
 				<value>http://help.matheass.eu/en/CurveDiscussion.html</value>
 			</hilfe>
 			<loesung>test02loesung005</loesung>
-			<time>6.0</time>
-            <avguc>60</avguc>
+			<time>8.0</time>
+            <avguc>80</avguc>
             <avgdc></avgdc>
-            <avguf>50</avguf>
+            <avguf>0</avguf>
             <avgdf></avgdf>
-            <avgut>2.0</avgut>
+            <avgut>4.0</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 	</aufgaben>

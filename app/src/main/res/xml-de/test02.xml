@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- <!DOCTYPE test SYSTEM "test.dtd"> -->
 <test id="1" lang="deutsch">
 	<aufgaben>
@@ -6,80 +6,79 @@
 			<text>Formen Sie die folgenden Terme in moeglichst einfache Ausdrücken:</text>
 			<bild>test02aufgabe001</bild>
 		  	<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://www.mathe-online.at/mathint/var/i.html</value>
+        			<value>http://www.youtube.com/watch?v=OvhDWazw54g</value>
 		  	</hilfe>
 		  	<loesung>test02loesung001</loesung>
-		  	<time>6.0</time>
-			<avgo>60</avgo>
+            <time>6.0</time>
+            <avguc>80</avguc>
             <avgdc></avgdc>
-            <avguf>40</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>1.5</avgut>
+            <avgut>3.16</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="2">
 			<text>Bestimmen Sie die Gleichung der Tangente im Punkt P(0) und die Parabel:</text>
 			<bild>test02aufgabe002</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://peheko.netfast.org/m1102/tangpar/Tan1.htm</value>
+				<value>http://www.helpster.de/tangentengleichung-bestimmen-so-geht-s_42655</value>
 			</hilfe>
 			<loesung>test02loesung002</loesung>
-			<time>6.0</time>
-			<avgo>60</avgo>
+            <time>8.0</time>
+            <avguc>80</avguc>
             <avgdc></avgdc>
-            <avguf>40</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>1.0</avgut>
+            <avgut>4.08</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="3">
 			<text>Bestimmen Sie den Schnittpunkt P(0) der Parabel Y(1) und der Geraden Y(2):</text>
 			<bild>test02aufgabe003</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://de.answers.yahoo.com/question/index?qid=20091202074523AAIW7sJ</value>
+				<value>http://www.youtube.com/watch?v=lBlUc5EWsd8</value>
 			</hilfe>
 			<loesung>test02loesung003</loesung>
-			<time>6.0</time>
-			<avgo>80</avgo>
+            <time>7.0</time>
+            <avguc>80</avguc>
             <avgdc></avgdc>
-            <avguf>50</avguf>
+            <avguf>0</avguf>
             <avgdf></avgdf>
-            <avgut>1.5</avgut>
+            <avgut>3.5</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="4">
 			<text>Bestimmen Sie die Nullstellen der folgenden Funktion:</text>
 			<bild>test02aufgabe004</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-			</hilfe>
+				<value>http://www.frustfrei-lernen.de/mathematik/nullstellen-berechnen.html</value>
+				</hilfe>
 			<loesung>test02loesung004</loesung>
-			<time>6.0</time>
-			<avgo>80</avgo>
+            <time>7.0</time>
+            <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>55</avguf>
+            <avguf>0</avguf>
             <avgdf></avgdf>
-            <avgut>1.0</avgut>
+            <avgut>3.4</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="5">
 			<text>Bestimmen Sie die Extremstellen und die Wendepunkte der folgenden Funktion:</text>
 			<bild>test02aufgabe005</bild>
 			<hilfe>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
-				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
+				<value>http://www.mathematik-wissen.de/eine_komplette_kurvendiskussion.htm</value>
+				<value>http://www.youtube.com/watch?v=JDsPSH80DVY</value>
 			</hilfe>
 			<loesung>test02loesung005</loesung>
-			<time>6.0</time>
-			<avgo>100</avgo>
+            <time>8.0</time>
+            <avguc>80</avguc>
             <avgdc></avgdc>
-            <avguf>50</avguf>
+            <avguf>0</avguf>
             <avgdf></avgdf>
-            <avgut>2.0</avgut>
+            <avgut>4.0</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 	</aufgaben>

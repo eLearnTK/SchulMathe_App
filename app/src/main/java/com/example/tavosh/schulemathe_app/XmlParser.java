@@ -353,7 +353,7 @@ public class XmlParser {
                                         if (poolNum < 4) {
                                             MainActivity.poolAfgb2Eval.set(testNumTemp, currentPool);
                                         }
-                                    } else if (poolNum > 1) {
+                                    } else if (poolNum > 3) {
                                         MainActivity.poolAfgb2Eval.set(testNumTemp, currentPool);
                                     }
                                 }

@@ -13,12 +13,12 @@
                 <value>https://www.youtube.com/watch?v=1Pva-Iv43Nc</value>
 			</hilfe>
 			<loesung>test01loesung001</loesung>
-			<time>2.0</time>
-			<avguc>60</avguc>
+			<time>5.0</time>
+			<avguc>100</avguc>
 			<avgdc></avgdc>
-            <avguf>20</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>1.0</avgut>
+            <avgut>2.27</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="2">
@@ -33,11 +33,11 @@
 			</hilfe>
 			<loesung>test01loesung002</loesung>
 			<time>6.0</time>
-			<avguc>60</avguc>
+			<avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>40</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>1.0</avgut>
+            <avgut>2.42</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="3">
@@ -51,12 +51,12 @@
 
 			</hilfe>
 			<loesung>test01loesung003</loesung>
-			<time>6.0</time>
+			<time>7.0</time>
 			<avguc>80</avguc>
             <avgdc></avgdc>
-            <avguf>60</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>2.0</avgut>
+            <avgut>3.5</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="4">
@@ -69,12 +69,12 @@
                 <value>https://www.youtube.com/watch?v=cFPBgP0PoQk</value>
 			</hilfe>
 			<loesung>test01loesung004</loesung>
-			<time>6.0</time>
+			<time>7.0</time>
 			<avguc>80</avguc>
             <avgdc></avgdc>
-            <avguf>80</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>2.0</avgut>
+            <avgut>3.26</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="5">
@@ -88,9 +88,9 @@
 			<time>6.0</time>
 			<avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>100</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>5.0</avgut>
+            <avgut>3.04</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 	</aufgaben>

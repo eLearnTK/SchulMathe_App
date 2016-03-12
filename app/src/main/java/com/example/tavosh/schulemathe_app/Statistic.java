@@ -65,7 +65,7 @@ public class Statistic extends ActionBarActivity implements OnTouchListener {
     XYSeriesRenderer renderer_E = new XYSeriesRenderer();
     //XYSeriesRenderer renderer3 = new XYSeriesRenderer();
     CategorySeries series_Q = new CategorySeries("Tests");
-    CategorySeries series_E = new CategorySeries("Empf");
+    CategorySeries series_E; // Trujillo 07_03_2016
     XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
     XYMultipleSeriesRenderer mRenderer = new XYMultipleSeriesRenderer();
 
@@ -83,6 +83,7 @@ public class Statistic extends ActionBarActivity implements OnTouchListener {
         setContentView(R.layout.activity_statistic);
         try{
             nextAufgabe = MainActivity.vecTest.get(indx_graph).toString();
+            series_E = new CategorySeries(getString(R.string.chartLineLegend)); // Trujillo 07_03_2016
 
             MainActivity.statisticData = true;
 
@@ -230,46 +231,53 @@ public class Statistic extends ActionBarActivity implements OnTouchListener {
                 mRenderer.setChartTitleTextSize(50);
                 mRenderer.setAxisTitleTextSize(50);
                 mRenderer.setLabelsTextSize(50);
-                mRenderer.setMargins(new int[]{ 80, 80, 80, 80 });
+                mRenderer.setMargins(new int[]{80, 80, 80, 80});
+                mRenderer.setLegendTextSize(50); // Trujillo 07_03_2016
                 renderer_E.setLineWidth(8);
                 break;
             case 480:
                 mRenderer.setChartTitleTextSize(40);
                 mRenderer.setAxisTitleTextSize(40);
                 mRenderer.setLabelsTextSize(40);
-                mRenderer.setMargins(new int[]{ 65, 60, 60, 60 });
+                mRenderer.setMargins(new int[]{65, 60, 60, 60});
+                mRenderer.setLegendTextSize(40); // Trujillo 07_03_2016
                 renderer_E.setLineWidth(7);
                 break;
             case 320:
                 mRenderer.setChartTitleTextSize(30);
                 mRenderer.setAxisTitleTextSize(30);
                 mRenderer.setLabelsTextSize(30);
-                mRenderer.setMargins(new int[]{ 50, 50, 50, 50 });
+                mRenderer.setMargins(new int[]{50, 50, 50, 50});
+                mRenderer.setLegendTextSize(30); // Trujillo 07_03_2016
                 renderer_E.setLineWidth(6);
                 break;
             case 240:
                 mRenderer.setChartTitleTextSize(20);
                 mRenderer.setAxisTitleTextSize(20);
                 mRenderer.setLabelsTextSize(20);
-                mRenderer.setMargins(new int[]{ 40, 40, 40, 40 });
+                mRenderer.setMargins(new int[]{40, 40, 40, 40});
+                mRenderer.setLegendTextSize(20); // Trujillo 07_03_2016
                 renderer_E.setLineWidth(5);
                 break;
             case 213:
                 mRenderer.setChartTitleTextSize(10);
                 mRenderer.setAxisTitleTextSize(10);
                 mRenderer.setLabelsTextSize(10);
-                mRenderer.setMargins(new int[]{ 30, 30, 30, 30 });
+                mRenderer.setMargins(new int[]{30, 30, 30, 30});
+                mRenderer.setLegendTextSize(10); // Trujillo 07_03_2016
                 renderer_E.setLineWidth(4);
                 break;
             case 160: //MDPI
                 mRenderer.setChartTitleTextSize(10);
                 mRenderer.setAxisTitleTextSize(10);
                 mRenderer.setLabelsTextSize(10);
-                mRenderer.setMargins(new int[]{ 20, 20, 20, 20 });
+                mRenderer.setMargins(new int[]{20, 20, 20, 20});
+                mRenderer.setLegendTextSize(10); // Trujillo 07_03_2016
                 renderer_E.setLineWidth(3);
                 break;
             case 120:  //LDPI
                 mRenderer.setMargins(new int[]{ 20, 10, 20, 10 });
+                mRenderer.setLegendTextSize(10); // Trujillo 07_03_2016
                 renderer_E.setLineWidth(2);
                 break;
         }
@@ -559,18 +567,22 @@ public class Statistic extends ActionBarActivity implements OnTouchListener {
             String sSeconds;
             String sMinutes;
             int posMin;
+            float y_Time_Temp;
+            float j_temp;
 
             int indx_temp = indx_graph - sizeY_temp;
             int i2 = indx_temp;
 
             while (h < sizeY_temp) {
                 j = MainActivity.vecTime.get(indx_temp).toString();
+                j_temp = Float.parseFloat(MainActivity.vecTimeTask.get(indx_temp).toString()); // Trujillo 06_03_2016
                 posMin = j.lastIndexOf(":");
                 sMinutes = j.substring(0,posMin);
                 //minutes = Integer.parseInt(j.substring(0,posMin));
                 sSeconds = j.substring(j.lastIndexOf(":") + 1);
                 seconds = ((Integer.parseInt(sSeconds))*100)/60;
-                y_Time[h] = Float.parseFloat(sMinutes + "." + seconds);
+                y_Time_Temp = Float.parseFloat(sMinutes + "." + seconds); // Trujillo 06_03_2016
+                y_Time[h] = j_temp - y_Time_Temp; // Trujillo 06_03_2016
                 x_Time[h] = h + 1;
 
                 indx_temp++;
@@ -579,6 +591,9 @@ public class Statistic extends ActionBarActivity implements OnTouchListener {
 
             while (h2 < sizeY) {
                 j = MainActivity.vecTime4taskUt.get(i2).toString();
+                j_temp = Float.parseFloat(MainActivity.vecTimeTask.get(indx_temp).toString()); // Trujillo 06_03_2016
+
+
                 //Aufgabe j_Auf = MainActivity.aufgb2Eval.get(0);
 
                 //j = j_Auf.getTime();
@@ -590,7 +605,7 @@ public class Statistic extends ActionBarActivity implements OnTouchListener {
                 if (j.equals("")){
                     j = "0.0";
                 }
-                y_Lim[h2] = Float.parseFloat(j);
+                y_Lim[h2] = j_temp - Float.parseFloat(j);
                 x_Lim[h2] = h2 + 1;
 
                 i2++;
@@ -651,6 +666,7 @@ public class Statistic extends ActionBarActivity implements OnTouchListener {
 
             int indx_temp = indx_graph - sizeY_temp;
             int i2 = indx_temp;
+            int y_Feel_temp;
 
             while (h < sizeY_temp) {
                 j = MainActivity.vecEmpfindung.get(indx_temp).toString();
@@ -659,8 +675,17 @@ public class Statistic extends ActionBarActivity implements OnTouchListener {
                 //minutes = Integer.parseInt(j.substring(0,posMin));
                 //sSeconds = j.substring(j.lastIndexOf(":") + 1);
                 //seconds = ((Integer.parseInt(sSeconds))*100)/60;
-                y_Feel[h] = Integer.parseInt(j);
+                y_Feel_temp = Integer.parseInt(j);
+                y_Feel[h] = y_Feel_temp;
                 x_Feel[h] = h + 1;
+
+                if (y_Feel_temp < 0) {
+                    if ((y_Feel_temp == -1) && (mRenderer.getYAxisMin() == 0)) {
+                        mRenderer.setYAxisMin(-1);
+                    } else if (y_Feel_temp == -2) {
+                        mRenderer.setYAxisMin(-2);
+                    }
+                }
 
                 indx_temp++;
                 h++;
@@ -768,10 +793,13 @@ public class Statistic extends ActionBarActivity implements OnTouchListener {
         switch (event.getAction() & MotionEvent.ACTION_MASK) {
             case MotionEvent.ACTION_DOWN:
                 if (timeGraph_boolean) {
+                    mRenderer.setYAxisMin(0);
                     timeGraph();
                 } else if(ResultGraph_boolean) {
+                    mRenderer.setYAxisMin(0);
                     correctnessGraph();
                 } else if (feelingGraph_boolean) {
+                    mRenderer.setYAxisMin(0);
                     fellingGraph();
                 }
                 //Toast.makeText(this, "ACTION_DOWN", Toast.LENGTH_SHORT) .show();

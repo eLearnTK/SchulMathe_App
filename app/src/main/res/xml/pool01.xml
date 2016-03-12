@@ -12,12 +12,12 @@
                 <value>https://www.khanacademy.org/math/pre-algebra/fractions-pre-alg/fractions-unlike-denom-pre-alg/v/adding-fractions-with-unlike-denominators</value>
 			</hilfe>
 			<loesung>pool01loesung001</loesung>
-			<time>3.0</time>
-            <avguc>40</avguc>
+			<time>6.0</time>
+            <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>60</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>3.0</avgut>
+            <avgut>2.43</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="2">
@@ -30,31 +30,63 @@
                 <value>https://www.youtube.com/watch?v=h9MoF-ZA6n0</value>
 			</hilfe>
 			<loesung>pool01loesung002</loesung>
-			<time>3.2</time>
-            <avguc>60</avguc>
+			<time>6.0</time>
+            <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>40</avguf>
+            <avguf>2</avguf>
             <avgdf></avgdf>
-            <avgut>3.5</avgut>
+            <avgut>3.06</avgut>
             <avgdt></avgdt>
 		</aufgabe>
         <aufgabe id="3">
-            <text>Elementary Geometry</text>
-            <bild>pool01aufgabe003</bild>
+        <text>Elementary Geometry</text>
+        <bild>pool01aufgabe003</bild>
+        <hilfe>
+            <value>https://www.mathsisfun.com/triangle.html</value>
+            <value>https://www.youtube.com/watch?v=fjUN809FPRs</value>
+            <value>https://www.youtube.com/watch?v=3ofFWpIOKZA</value>
+            <value>https://www.youtube.com/watch?v=X5uFqpypDy4</value>
+            <value>https://www.youtube.com/watch?v=nVTtSE5nv7c</value>
+        </hilfe>
+        <loesung>pool01loesung003</loesung>
+        <time>11.0</time>
+        <avguc>100</avguc>
+        <avgdc></avgdc>
+        <avguf>1</avguf>
+        <avgdf></avgdf>
+        <avgut>5.4</avgut>
+        <avgdt></avgdt>
+    </aufgabe>
+        <aufgabe id="4">
+            <text>Transform the following term in the simplest term:</text>
+            <bild>pool01aufgabe004</bild>
             <hilfe>
-                <value>https://www.mathsisfun.com/triangle.html</value>
-                <value>https://www.youtube.com/watch?v=fjUN809FPRs</value>
-                <value>https://www.youtube.com/watch?v=3ofFWpIOKZA</value>
-                <value>https://www.youtube.com/watch?v=X5uFqpypDy4</value>
-                <value>https://www.youtube.com/watch?v=nVTtSE5nv7c</value>
+                <value>http://www.brinkmann-du.de/mathe/aufgabenportal/p0_potenzen_10/p0_potenzen_10.htm</value>
+                <value>http://www.frustfrei-lernen.de/mathematik/potenzen-potenzieren-zahlen-mathematik.html</value>
             </hilfe>
-            <loesung>pool01loesung003</loesung>
-            <time>6.0</time>
-            <avguc>80</avguc>
+            <loesung>pool01loesung004</loesung>
+            <time>11.0</time>
+            <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>60</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>1.0</avgut>
+            <avgut>5.4</avgut>
+            <avgdt></avgdt>
+        </aufgabe>
+        <aufgabe id="5">
+            <text>Solve the following quadratic equations:</text>
+            <bild>pool01aufgabe005</bild>
+            <hilfe>
+                <value>http://www.mathe-trainer.de/Klasse9/Quadratische_Gleichungen/Block14/Aufgaben.htm</value>
+                <value>https://de.serlo.org/mathe/artikel-und-videos-aus-serlo-1-spaeter-loeschen/substitution</value>
+            </hilfe>
+            <loesung>pool01loesung005</loesung>
+            <time>11.0</time>
+            <avguc>100</avguc>
+            <avgdc></avgdc>
+            <avguf>1</avguf>
+            <avgdf></avgdf>
+            <avgut>5.4</avgut>
             <avgdt></avgdt>
         </aufgabe>
 	</aufgaben>

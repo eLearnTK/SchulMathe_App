@@ -36,13 +36,10 @@ public class MainActivity extends ActionBarActivity {
     public static Vector vecEmpfindung = new Vector<String>(); // records each empfindung of each task in order to create the statistic at the end
     public static Vector vecEmpUf = new Vector<String>(); // records each empfindung of each task in order to create the Empfindug statistic (Up average line)
     public static Vector vecTime = new Vector<String>(); // records each time of each task in order to create the time statistic at the end (time of the user)
+    public static Vector vecTimeTask = new Vector<String>(); // records the assignied time for each time, so it can be substract from the time made by the student
     public static Vector vecTime4taskUt = new Vector<String>(); // records each time of each task in order to create the time statistic at the end (time of the xml)
     public static Vector vecAvgUc = new Vector<String>(); //records each avgUc of each task to compare this values with vecQualifikation in the statistic
     public static Vector vectorIntroTitle = new Vector<String>();
-    public static Vector vecTestEvalBtnStatistic = new Vector<String>(); // to evaluate if the button statistic should be enabled
-
-    public static Vector vecQualifikation_temp = new Vector<String>();// equals to vecQualification, but the value is used just in the beginning
-    public static Vector vecTest_temp = new Vector<String>(); // equals to vecTest, but the value is used just in the beginning
 
     public static boolean poolActivated = false; // When the score is too low, the next test will be from the Pool
 
@@ -73,14 +70,7 @@ public class MainActivity extends ActionBarActivity {
     public static boolean statisticData = false; // If there is no data to show in the statistic --> false
     public static boolean xmlMemoryReadAuf = true; // Evita que el archivo que guarda los resultados en memoria sea leído dos veces
     public static boolean xmlMemoryReadPool = true; // Evita que el archivo que guarda los resultados en memoria sea leído dos veces
-    public static String nextAufgabe2display; // Saves the info of which
-    public static String nextTest2display;
-    public static boolean boolTest1 = false;
-    public static boolean boolTest2 = false;
-    public static boolean boolTest3 = false;
-    public static boolean boolPool1 = false;
-    public static boolean boolPool2 = false;
-
+    private String timeTemp; // Trujillo 06/03/2016
 
     // names of the XML tags for test files
     static final String AUFGABEN = "aufgaben";
@@ -91,14 +81,15 @@ public class MainActivity extends ActionBarActivity {
     static final String LOESUNG = "loesung";
     static final String TEXT = "text";
     static final String TIME = "time";
-    static final String EMPFINDUNG = "empfindung";
-    static final String QUALIFIKATION = "qualifikation";
-    static final String AVGUC = "avguc";
-    static final String AVGDC = "avgdc";
-    static final String AVGUF = "avguf";
+
+    //for the statistik Lando Eisenmann!!!
+    static final String AVGUC = "avguc";//avarage upper correctness
+    static final String AVGDC = "avgdc";//avarage downer correctness
+    static final String AVGUF = "avguf";//
     static final String AVGDF = "avgdf";
     static final String AVGUT = "avgut";
     static final String AVGDT = "avgdt";
+
     static final String TEST = "test";
 
     private static final int OFF_TOPIC = 0;
@@ -106,23 +97,18 @@ public class MainActivity extends ActionBarActivity {
     static final int xml02 = R.xml.test02;
     static final int xml03 = R.xml.test03;
 
+    //static final int xml01 = R.xml.test01short; // Short version of test 1 (just for tests)
+    //static final int xml02 = R.xml.test02short; // Short version of test 2 (just for tests)
+    //static final int xml03 = R.xml.test03short; // Short version of test 3 (just for tests)
+
     static final int xmlIntro = R.xml.intro;
     static final int xmlPool01 = R.xml.pool01;
     static final int xmlPool02 = R.xml.pool02;
-
-    public static int qntTaskAuf_1 = 5; // quantity of exercises that the XML contains
-    public static int qntTaskAuf_2 = 5; // quantity of exercises that the XML contains
-    public static int qntTaskAuf_3 = 5; // quantity of exercises that the XML contains
-
-    public static int averageTest_1 = 0; // to save the average obtained in test 1
 
     int valuesXML;
     static final int score2pool = 80; // when the Test result > score2pool --> go to next Test if not --> go to the Pool
     static final int qntPoolAufgaben = 40; // When Test result < qntPoolAufgaben --> 3 Aufgaben from the Pool
     // When Test result > qntPoolAufgaben --> 2 Aufgaben from the Pool
-    static final int qntAufgabenTest1 = 5;
-    static final int qntAufgabenTest2 = 5;
-    static final int qntAufgabenTest3 = 5;
 
     Button btnStatistic, btnWeiter, btnNew;;
 
@@ -131,20 +117,18 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        activateBtnStatistic();
-
         if (statisticData) {
             btnStatistic =  (Button) findViewById(R.id.btnStatistic);
             btnStatistic.setEnabled(true);
 
-            if ((n_Test == 3) && (n_Aufgbe == qntTaskAuf_1)) {
-                btnWeiter = (Button) findViewById(R.id.btnWeiter);
-                btnWeiter.setEnabled(false);
-            }
+            btnWeiter = (Button) findViewById(R.id.btnWeiter);
+            btnWeiter.setEnabled(false);
         }
 
         call2parseIntro();
+        activateBtnStatistic();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -178,7 +162,7 @@ public class MainActivity extends ActionBarActivity {
         //starts the XML parsing
         Context contextParse = this;
         parse(contextParse, xml01, n_Test);
-        //readXMLQntTest();
+        readXMLQntTest();
 
         try{
             Intent intent = new Intent(this, TestAufgabe.class);
@@ -297,7 +281,9 @@ public class MainActivity extends ActionBarActivity {
                             } else if (currentTag.equalsIgnoreCase(TEXT)) {
                                 currentAufgabe.setText(parser.nextText());
                             } else if (currentTag.equalsIgnoreCase(TIME)) {
-                                currentAufgabe.setTime(parser.nextText());
+                                timeTemp = parser.nextText(); //Trujillo 06_03_2016
+                                currentAufgabe.setTime(timeTemp); //Trujillo 06_03_2016
+                                vecTimeTask.add(timeTemp); //Trujillo 06_03_2016
                             } else if (currentTag.equalsIgnoreCase(AVGUC)) {
                                 vecAvgUc.add(parser.nextText());
                             } else if (currentTag.equalsIgnoreCase(AVGDC)) {
@@ -370,15 +356,11 @@ public class MainActivity extends ActionBarActivity {
         Context context = MainActivity.this;
 
         try {
-            n_Test = 0;
-            n_poolTest = 0;
             statisticData = false;
             btnStatistic =  (Button) findViewById(R.id.btnStatistic);
             btnStatistic.setEnabled(false);
             btnWeiter = (Button) findViewById(R.id.btnWeiter);
             btnWeiter.setEnabled(false);
-            startsFromSavedInfo = false;
-            startsFromSavedPoolInfo = false;
 
             File myFile = new File("/sdcard/aufgabeValues.xml");
             myFile.createNewFile();
@@ -512,8 +494,6 @@ public class MainActivity extends ActionBarActivity {
         int testNum = 0;
         int quantTest3 = 0;
         FileInputStream fin = null;
-        vecTest_temp  = new Vector<String>();
-        vecQualifikation_temp  = new Vector<String>();
         try {
             fin = openFileInput("aufgabeValues.xml");
             XmlPullParser parser = Xml.newPullParser();
@@ -528,20 +508,11 @@ public class MainActivity extends ActionBarActivity {
                         currentTag = parser.getName();
                         if (currentTag.equalsIgnoreCase(TEST)){
                             testNum = Integer.parseInt(parser.getAttributeValue(0));
-                            statisticData = true;
-                            n_Test = testNum;
                         } else if (currentTag.equalsIgnoreCase(AUFGABE)) {
                             MainActivity.countAuf++;
                             if (testNum == 3){
                                 quantTest3 ++;
                             }
-                            //n_QntityAufEval ++;
-                            vecTest_temp.add("Test " + testNum);
-                            startsFromSavedInfo = true;
-                        //} else if (currentTag.equalsIgnoreCase(EMPFINDUNG)) {
-                        //    vecEmpfindung_temp.add(parser.nextText().toString());
-                        } else if (currentTag.equalsIgnoreCase(QUALIFIKATION)) {
-                            vecQualifikation_temp.add(parser.nextText().toString());
                         }
                         break;
                     case XmlPullParser.END_TAG:
@@ -562,13 +533,8 @@ public class MainActivity extends ActionBarActivity {
                         break;
                     case XmlPullParser.START_TAG:
                         currentTag = parser.getName();
-                        if (currentTag.equalsIgnoreCase(TEST)) {
-                            testNum = Integer.parseInt(parser.getAttributeValue(0));
-                            n_poolTest = testNum;
-                            poolActivated = true;
-                        } else if (currentTag.equalsIgnoreCase(AUFGABE)) {
-                            n_poolQntAufEvl ++;
-                            vecTest_temp.add("Pool " + testNum);
+                        if (currentTag.equalsIgnoreCase(AUFGABE)) {
+                            MainActivity.countPool++;
                         }
                         break;
                     case XmlPullParser.END_TAG:
@@ -631,6 +597,9 @@ public class MainActivity extends ActionBarActivity {
                        } else if (currentTag.equalsIgnoreCase(AVGUT)) {
                            vecTime4taskUt.add(parser.nextText());
                        } else if (currentTag.equalsIgnoreCase(AVGDT)) {
+                       } else if (currentTag.equalsIgnoreCase(TIME)) { //Trujillo 06_03_2016
+                        timeTemp = parser.nextText(); //Trujillo 06_03_2016
+                        vecTimeTask.add(timeTemp); //Trujillo 06_03_2016
                        } // if
 
                         break;
@@ -670,6 +639,9 @@ public class MainActivity extends ActionBarActivity {
                         } else if (currentTag.equalsIgnoreCase(AVGUT)) {
                             vecTime4taskUt.add(parser.nextText());
                         } else if (currentTag.equalsIgnoreCase(AVGDT)) {
+                        } else if (currentTag.equalsIgnoreCase(TIME)) { //Trujillo 06_03_2016
+                            timeTemp = parser.nextText(); //Trujillo 06_03_2016
+                            vecTimeTask.add(timeTemp); //Trujillo 06_03_2016
                         } // if
 
                         break;
@@ -682,65 +654,5 @@ public class MainActivity extends ActionBarActivity {
             System.out.println("ERROR ???: TestAufgabe.poolParseMain --> " + e);
         } // try
     } // poolParseMain
-
-    public static void parseXmlAufEvaluateBtnStatistic(FileInputStream fis) {
-        // Parse the information from the XML that contains the different SAVED Tasks (Aufgaben)
-        // Analize if there is data, in order to activate the button statistic
-        System.out.println("--> parseXmlAufEvaluate");
-
-        try {
-            XmlPullParser parser = Xml.newPullParser(); //_/_/_/
-            parser.setInput(fis, "UTF-8"); //_/_/_/
-
-            int eventType = parser.getEventType();
-            int testNum = 0;
-            int testNumTemp;
-            int aufNum = 0;
-            int empAuf = 0;
-            String timeAuf;
-
-            while (eventType != XmlPullParser.END_DOCUMENT) {
-                switch (eventType) {
-                    case XmlPullParser.START_DOCUMENT:
-
-                        break;
-                    case XmlPullParser.START_TAG:
-                        currentTag = parser.getName();
-                        if (currentTag.equalsIgnoreCase(MainActivity.TEST)) {
-                            testNum = Integer.parseInt(parser.getAttributeValue(0));
-                        } else if (currentTag != null) {
-                            if (currentTag.equalsIgnoreCase(MainActivity.AUFGABE)) {
-                                aufNum = Integer.parseInt(parser.nextText());
-                                // Data to create the statistic Graph
-                                vecTestEvalBtnStatistic.add("Test " + testNum);
-                            }
-                        } // if
-                        break;
-                    case XmlPullParser.END_TAG:
-                        break;
-                } // switch
-                eventType = parser.next();
-            } // while
-        } catch (Exception e) {
-            System.out.println("ERROR ???: TestAufgabe.parseXmlAufEvaluate --> " + e);
-        } // try
-    } // parseXmlAufEvaluate
-
-    public static int evalQtestAufPoolBtnStatistic(String h) {
-        // Analize if there is data, in order to activate the button statistic
-        Enumeration vEnumTest = vecTestEvalBtnStatistic.elements();
-        String j = "";
-        int count = 0;
-
-        while(vEnumTest.hasMoreElements()) {
-            j = vEnumTest.nextElement().toString();
-
-            if (j.equals(h)){
-                count++;
-            }
-        } // while
-
-        return count;
-    }
 } // MainActivity
 

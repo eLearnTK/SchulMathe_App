@@ -13,12 +13,12 @@
                 <value>https://www.youtube.com/watch?v=dWXIx5Th86s</value>
 			</hilfe>
 			<loesung>pool02loesung001</loesung>
-			<time>3.0</time>
-            <avguc>60</avguc>
+			<time>9.0</time>
+            <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>60</avguf>
+            <avguf>1</avguf>
             <avgdf></avgdf>
-            <avgut>1.2</avgut>
+            <avgut>4.2</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="2">
@@ -32,12 +32,12 @@
                 <value>https://www.youtube.com/watch?v=fjUN809FPRs</value>
 			</hilfe>
 			<loesung>pool02loesung002</loesung>
-			<time>3.0</time>
+			<time>7.0</time>
             <avguc>80</avguc>
             <avgdc></avgdc>
-            <avguf>65</avguf>
+            <avguf>0</avguf>
             <avgdf></avgdf>
-            <avgut>1.5</avgut>
+            <avgut>3.4</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 	    <aufgabe id="3">
@@ -51,12 +51,12 @@
                 <value>https://www.youtube.com/watch?v=ahOJtHBdBgE</value>
 			</hilfe>
 			<loesung>pool02loesung003</loesung>
-			<time>3.0</time>
-            <avguc>60</avguc>
+			<time>8.0</time>
+            <avguc>80</avguc>
             <avgdc></avgdc>
-            <avguf>75</avguf>
+            <avguf>0</avguf>
             <avgdf></avgdf>
-            <avgut>2.0</avgut>
+            <avgut>4.0</avgut>
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="4">
@@ -73,7 +73,7 @@
 			<time>3.0</time>
             <avguc>80</avguc>
             <avgdc></avgdc>
-            <avguf>45</avguf>
+            <avguf>0</avguf>
             <avgdf></avgdf>
             <avgut>1.0</avgut>
             <avgdt></avgdt>
@@ -90,7 +90,7 @@
 			<time>3.0</time>
             <avguc>100</avguc>
             <avgdc></avgdc>
-            <avguf>45</avguf>
+            <avguf>0</avguf>
             <avgdf></avgdf>
             <avgut>1.3</avgut>
             <avgdt></avgdt>
