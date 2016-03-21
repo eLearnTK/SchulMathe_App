@@ -7,7 +7,7 @@
 			<bild>test02aufgabe001</bild>
 		  	<hilfe>
 				<value>http://www.mathe-online.at/mathint/var/i.html</value>
-        			<value>http://www.youtube.com/watch?v=OvhDWazw54g</value>
+        		<value>http://www.youtube.com/watch?v=OvhDWazw54g</value>
 		  	</hilfe>
 		  	<loesung>test02loesung001</loesung>
             <time>6.0</time>
@@ -55,7 +55,7 @@
 			<bild>test02aufgabe004</bild>
 			<hilfe>
 				<value>http://www.frustfrei-lernen.de/mathematik/nullstellen-berechnen.html</value>
-				</hilfe>
+			</hilfe>
 			<loesung>test02loesung004</loesung>
             <time>7.0</time>
             <avguc>100</avguc>

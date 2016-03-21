@@ -61,8 +61,8 @@
             <text>Transform the following term in the simplest term:</text>
             <bild>pool01aufgabe004</bild>
             <hilfe>
-                <value>http://www.brinkmann-du.de/mathe/aufgabenportal/p0_potenzen_10/p0_potenzen_10.htm</value>
-                <value>http://www.frustfrei-lernen.de/mathematik/potenzen-potenzieren-zahlen-mathematik.html</value>
+                <value>http://mathworld.wolfram.com/ExponentLaws.html</value>
+                <value>https://www.mathsisfun.com/algebra/exponent-laws.html</value>
             </hilfe>
             <loesung>pool01loesung004</loesung>
             <time>11.0</time>
@@ -77,8 +77,8 @@
             <text>Solve the following quadratic equations:</text>
             <bild>pool01aufgabe005</bild>
             <hilfe>
-                <value>http://www.mathe-trainer.de/Klasse9/Quadratische_Gleichungen/Block14/Aufgaben.htm</value>
-                <value>https://de.serlo.org/mathe/artikel-und-videos-aus-serlo-1-spaeter-loeschen/substitution</value>
+                <value>http://www.purplemath.com/modules/quadform.htm</value>
+                <value>http://mathworld.wolfram.com/QuadraticEquation.html</value>
             </hilfe>
             <loesung>pool01loesung005</loesung>
             <time>11.0</time>

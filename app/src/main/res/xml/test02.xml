@@ -6,7 +6,10 @@
       			<text>Transform the following terms in the simplest terms:</text>
      	 		<bild>test02aufgabe001</bild>
       			<hilfe>
-        			<value>https://www.mathsisfun.com/fractions_addition.html</value>
+                    <value>https://www.mathsisfun.com/fractions_addition.html</value>
+                    <value>https://www.khanacademy.org/math/pre-algebra/fractions-pre-alg/fractions-unlike-denom-pre-alg/v/adding-fractions-with-unlike-denominators</value>
+                    <value>https://www.khanacademy.org/math/pre-algebra/fractions-pre-alg/fractions-unlike-denom-pre-alg/v/adding-fractions-ex-1</value>
+                    <value>https://www.youtube.com/watch?v=5juto2ze8Lg</value>
       			</hilfe>
       			<loesung>test02loesung001</loesung>
       			<time>6.0</time>
@@ -22,7 +25,10 @@
 			<bild>test02aufgabe002</bild>
 			<hilfe>
 				<value>http://www.wikihow.com/Find-the-Equation-of-a-Tangent-Line</value>
-			</hilfe>
+                <value>https://www.youtube.com/watch?v=b6I6RlyL_jA</value>
+                <value>https://www.khanacademy.org/math/differential-calculus/taking-derivatives/product_rule/v/equation-of-a-tangent-line</value>
+
+            </hilfe>
 			<loesung>test02loesung002</loesung>
 			<time>8.0</time>
             <avguc>80</avguc>
@@ -68,6 +74,10 @@
 			<bild>test02aufgabe005</bild>
 			<hilfe>
 				<value>http://help.matheass.eu/en/CurveDiscussion.html</value>
+                <value>https://www.youtube.com/watch?v=vOTTuZflAIM</value>
+                <value>https://www.youtube.com/watch?v=0Fx6jec8SwY</value>
+                <value>https://www.youtube.com/watch?v=o2I3lajJklE</value>
+                <value>https://www.khanacademy.org/math/differential-calculus/derivative_applications/concavity-inflection-points/v/calculus-graphing-using-derivatives</value>
 			</hilfe>
 			<loesung>test02loesung005</loesung>
 			<time>8.0</time>
