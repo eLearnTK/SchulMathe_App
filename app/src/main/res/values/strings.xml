@@ -51,11 +51,16 @@
     <string name="chartResultTitle">Results for</string>
     <string name="yResultTitle">Result</string>
     <string name="chartTitle">Results for</string>
-    <string name="xTimeTitle">Time</string>
-    <string name="chartTimeTitle">Time remaining for</string>
-    <string name="yTimeTitle">Minutes left</string>
-    <string name="xFeelTitle">Feeling</string>
+    <string name="chartTimeTitle">Time for</string>
+    <string name="yTimeTitle_1">Time Used (min)</string>
+    <string name="yTimeTitle_2">Time for Task</string>
     <string name="chartFeelTitle">Feeling for</string>
     <string name="yFeelTitle">Feeling</string>
     <string name="chartLineLegend">Recomendation</string>
+    <string name="chartBarLegend">Result</string>
+
+
+    <string name="xTimeTitle">Time Left</string>
+    <string name="xFeelTitle">Feeling</string>
+    <string name="xResultTitle">Results</string>
 </resources>

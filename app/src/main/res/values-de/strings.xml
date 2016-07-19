@@ -41,12 +41,16 @@
 
     <string name="chartResultTitle">Ergebniss für</string>
     <string name="yResultTitle">Ergebniss</string>
-    <string name="yTimeTitle">Minutenrest</string>
-    <string name="chartTimeTitle">Zeitrest für</string>
+    <string name="yTimeTitle_1">Zeit für Ausgabe (min)</string>
+    <string name="yTimeTitle_2">Verfügbare Zeit</string>
+    <string name="chartTimeTitle">Restzeit für</string>
     <string name="chartTitle">Ergebniss für</string>
-    <string name="xTimeTitle">Zeit</string>
-    <string name="xFeelTitle">Empfindung</string>
     <string name="chartFeelTitle">Empfindung für</string>
     <string name="yFeelTitle">Empfindung</string>
-    <string name="chartLineLegend">Empfehlen</string>
+    <string name="chartLineLegend">Empfehlung</string>
+    <string name="chartBarLegend">Ergebniss</string>
+
+    <string name="xTimeTitle">Zeit Übrig</string>
+    <string name="xFeelTitle">Empfindung</string>
+    <string name="xResultTitle">Ergebniss</string>
 </resources>

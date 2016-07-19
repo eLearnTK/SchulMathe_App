@@ -9,8 +9,11 @@
 	<step id="5">Personal assessment: Assess yourself on a five-point scale integer if you felt in solving the task completely insecure (-2) to fully secure (+2).</step>
 	<step id="6">Compare your solution with the sample solution.</step>
 	<step id="7">Correctness: Choose here in percent compliance with the sample solution.</step>
-	<step id="8">Statistics: The overall results are output for each task of the tests in the form of a diagram. The two lines indicate the area in which the results should be.
-Below the range means you should still do something in and above the range means your score is good or very good.</step>
-  <step id="Impressum:">People involved in the app development: Tobias Kutzner, Christian Steinert, Abdellah Azendour, Carlos Trujillo, Lando Eisenmann, Prof. Dr.-Ing. Ingrid Bönninger, Prof. Dr. habil. Olga Wälder</step>
+	<step id="8">Statistics: The overall results are output for each task of the tests in the form of a diagram. The yellow line indicates where the results should be.  Bellow the line, it means you should still do something and above the range means your score is good or very good.</step>
+    <step id="8.1">Feeling Graph: it has a scale from -2 to +2, and the personal score should be above the yellow line.</step>
+    <step id="8.2">Time Graph: it is shown in a range bar, where the elapsed time is the lower end and the time for the Task is in the upper side, the elapsed time should remain below the yellow line.</step>
+    <step id="8.3">Correctness Graph: it is shown as an bar chart, the score should be above the yellow line.
+To display the different Graphs (Results, Time and Feeling), you have to tap at the statistics.</step>
+  <step id="Impressum:">People involved in the app development: Tobias Kutzner, Christian Steinert, Abdellah Azendour, Carlos Trujillo, Lando Eisenmann, Prof. Dr.-Ing. Ingrid Bönninger, Prof. Dr. habil. Olga Wälder, Prof. Dr. Annemarie Jost</step>
   <step id=" Kontakt:    "> Tobias.Kutzner@b-tu.de</step>
 </instruction>

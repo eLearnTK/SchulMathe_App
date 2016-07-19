@@ -3,7 +3,7 @@
 <test id="1" lang="deutsch">
 	<aufgaben>
 		<aufgabe id="1">
-			<text>Formen Sie die folgenden Terme in moeglichst einfache Ausdrücken:</text>
+			<text>Formen Sie die folgenden Terme in möglichst einfache Ausdrücke um:</text>
 			<bild>test02aufgabe001</bild>
 		  	<hilfe>
 				<value>http://www.mathe-online.at/mathint/var/i.html</value>
@@ -55,6 +55,7 @@
 			<bild>test02aufgabe004</bild>
 			<hilfe>
 				<value>http://www.frustfrei-lernen.de/mathematik/nullstellen-berechnen.html</value>
+                <value>http://www.mathebibel.de/nullstellen-berechnen</value>
 			</hilfe>
 			<loesung>test02loesung004</loesung>
             <time>7.0</time>

@@ -3,7 +3,7 @@
 <test id="1" lang="deutsch">
 	<aufgaben>
 		<aufgabe id="1">
-			<text>Geben Sie die Lösung für diese Aufgabe:</text>
+			<text>Geben Sie die Lösung für diese Aufgabe an:</text>
 			<bild>test03aufgabe001</bild>
 			<hilfe>
 				<value>http://schulnetz.nibis.de/db/mk-mail/n001/formelsammlung.pdf</value>
@@ -19,7 +19,7 @@
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="2">
-			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<text>Geben Sie eine Lösung für diese Aufgabe an:</text>
 			<bild>test03aufgabe002</bild>
 			<hilfe>
 				<value>http://www.frustfrei-lernen.de/mathematik/geometrie-flaeche-umfang-kreis-dreieck.html</value>
@@ -35,7 +35,7 @@
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="3">
-			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<text>Geben Sie eine Lösung für diese Aufgabe an:</text>
 			<bild>test03aufgabe003</bild>
 			<hilfe>
 				<value>https://de.answers.yahoo.com/question/index?qid=20071125045352AAsOy6D</value>

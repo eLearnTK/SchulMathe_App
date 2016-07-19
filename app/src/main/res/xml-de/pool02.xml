@@ -3,7 +3,7 @@
 <test id="1" lang="deutsch">
 	<aufgaben>
 		<aufgabe id="1">
-			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<text>Geben Sie eine Lösung für diese Aufgabe an:</text>
 			<bild>pool02aufgabe001</bild>
 			<hilfe>
 				<value>http://de.wikipedia.org/wiki/W%C3%BCrfel_%28Geometrie%29</value>
@@ -19,7 +19,7 @@
             <avgdt></avgdt>
 		</aufgabe>
 		<aufgabe id="2">
-			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<text>Geben Sie eine Lösung für diese Aufgabe an:</text>
 			<bild>pool02aufgabe002</bild>
 			<hilfe>
 				<value>http://www.mathe-lexikon.at/geometrie/ebene-figuren/dreiecke/satz-des-pythagoras/seitenlaengen-berechnen/kathete-berechnen.html</value>
@@ -35,7 +35,7 @@
             <avgdt></avgdt>
 		</aufgabe>
 	    <aufgabe id="3">
-			<text>Geben Sie eine Lösung für diese Aufgabe:</text>
+			<text>Geben Sie eine Lösung für diese Aufgabe an:</text>
 			<bild>pool02aufgabe003</bild>
 			<hilfe>
 				<value>http://de.wikipedia.org/wiki/Sehne_%28Geometrie%29</value>
@@ -52,7 +52,7 @@
             <avgdt></avgdt>
 		</aufgabe>
         <aufgabe id="4">
-            <text>Geben Sie eine Lösung für diese Aufgabe:</text>
+            <text>Geben Sie eine Lösung für diese Aufgabe an:</text>
             <bild>pool02aufgabe004</bild>
             <hilfe>
                 <value>https://de.wikipedia.org/wiki/Tetraeder</value>
@@ -68,7 +68,7 @@
             <avgdt></avgdt>
         </aufgabe>
         <aufgabe id="5">
-            <text>Geben Sie eine Lösung für diese Aufgabe:</text>
+            <text>Geben Sie eine Lösung für diese Aufgabe an:</text>
             <bild>pool02aufgabe005</bild>
             <hilfe>
                 <value>https://de.wikipedia.org/wiki/Quadratwurzel</value>

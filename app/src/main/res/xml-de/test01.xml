@@ -3,7 +3,7 @@
 <test id="1" lang="deutsch">
 	<aufgaben>
 		<aufgabe id="1">
-			<text>Loesen Sie die folgenden quadratischen Gleichungen:</text>
+			<text>Lösen Sie die folgenden quadratischen Gleichungen:</text>
 			<bild>test01aufgabe001</bild>
 			<hilfe>
 				<value>http://de.wikipedia.org/wiki/Quadratische_Gleichung</value>
@@ -42,6 +42,7 @@
 			<bild>test01aufgabe003</bild>
 			<hilfe>
 				<value>http://www.youtube.com/watch?v=T47OKx-R-Fs</value>
+                <value>http://www.mathematik.de/ger/fragenantworten/erstehilfe/potenzrechnung/potenzrechnung.html</value>
 			</hilfe>
 			<loesung>test01loesung003</loesung>
             <time>7.0</time>

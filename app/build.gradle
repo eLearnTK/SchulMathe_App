@@ -8,8 +8,8 @@ android {
         applicationId "com.lern.schulmathe_app"
         minSdkVersion 15
         targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
+        versionCode 8 // This number should increase every time the APK is created
+        versionName "1.4"  // The name for the user
     }
     buildTypes {
         release {

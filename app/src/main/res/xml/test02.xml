@@ -26,8 +26,6 @@
 			<hilfe>
 				<value>http://www.wikihow.com/Find-the-Equation-of-a-Tangent-Line</value>
                 <value>https://www.youtube.com/watch?v=b6I6RlyL_jA</value>
-                <value>https://www.khanacademy.org/math/differential-calculus/taking-derivatives/product_rule/v/equation-of-a-tangent-line</value>
-
             </hilfe>
 			<loesung>test02loesung002</loesung>
 			<time>8.0</time>
@@ -43,6 +41,7 @@
 			<bild>test02aufgabe003</bild>
 			<hilfe>
 				<value>http://calculator.tutorvista.com/point-of-intersection-calculator.html</value>
+                <value>http://zonalandeducation.com/mmts/intersections/intersectionOfTwoLines1/intersectionOfTwoLines1.html</value>
 			</hilfe>
 			<loesung>test02loesung003</loesung>
 			<time>7.0</time>
