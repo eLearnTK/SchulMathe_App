@@ -44,9 +44,10 @@
                     </LinearLayout>
 
                     <View
+                        android:id="@+id/BlackLine"
                         android:layout_width="wrap_content"
                         android:layout_height="5dp"
-                        android:background="@drawable/gradient" >
+                        android:background="@drawable/gradient2" >
                     </View>
 
                     <TextView
@@ -84,6 +85,7 @@
                             android:layout_height="wrap_content"
                             android:scaleType="fitCenter"
                             android:minHeight="100dp"
+                            android:src="@drawable/logos"
                             android:adjustViewBounds="true"/>
                     </LinearLayout>
                 </ScrollView>
@@ -164,6 +166,68 @@
                         android:onClick="openHilfe" />
                 </LinearLayout>
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/EndText"
+                style="@android:style/ButtonBar"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/black"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/congratulations"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/congratulation"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/taskFinished"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:text="@string/taskfinished"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=""
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/endTextOne"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:text="@string/endTextOne"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=""
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/endTextTwo"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:text="@string/endTextTwo"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text=""
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/endTextThree"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:text="@string/endTextThree"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
@@ -198,6 +262,7 @@
             android:textColor="@color/white"
             android:layout_weight="1"
             android:layout_gravity="center_vertical|center_horizontal"
+            android:enabled="false"
             android:text="" />
     </LinearLayout>
 </RelativeLayout>

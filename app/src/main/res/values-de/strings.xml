@@ -53,4 +53,10 @@
     <string name="xTimeTitle">Zeit Übrig</string>
     <string name="xFeelTitle">Empfindung</string>
     <string name="xResultTitle">Ergebniss</string>
+
+    <string name="congratulation">Herzlichen Glückwunsch !</string>
+    <string name="taskfinished">Du hast alle Tests erfolgreich beendet.</string>
+    <string name="endTextOne">Um nochmals alle Tests durchzuführen, bitte den „Neu“ Button auf dem Startbild drücken. Achtung! Alle alten Ergebnisse werden dann gelöscht.</string>
+    <string name="endTextTwo">Um die Statistik erneut anzuschauen, bitte den „Statistik“ Button drücken.</string>
+    <string name="endTextThree">Um zum Startbild zur gelangen, bitte den „Zurück zum Start“ Button drücken.</string>
 </resources>

@@ -63,4 +63,10 @@
     <string name="xTimeTitle">Time Left</string>
     <string name="xFeelTitle">Feeling</string>
     <string name="xResultTitle">Results</string>
+
+    <string name="congratulation">Congratulations !</string>
+    <string name="taskfinished">You have finished all the tasks.</string>
+    <string name="endTextOne">For starting again press the button „new“ in the main screen.  All the results will be deleted.</string>
+    <string name="endTextTwo">For looking to your results again, press the button „Statistic“ in the main screen.</string>
+    <string name="endTextThree">To go to the Main Screen press the button bellow „Back to the start“.</string>
 </resources>
