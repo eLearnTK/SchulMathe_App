@@ -9,11 +9,11 @@
 	<step id="5">Persöhnliche Einschätzung: Beurteile selbst auf einer ganzzahligen fünf-stufigen Skala, ob du dich bei der Lösung der Aufgabe völlig unsicher (-2) bis völlig sicher (+2) gefühlt hast.</step>
 	<step id="6">Vergleiche deine Lösung mit der Musterlösung.</step>
 	<step id="7">Richtigkeit: Wähle hier in Prozent die Übereinstimmung mit der Musterlösung aus.</step>
-	<step id="8">Statistik: Die Gesamtergebnisse werden für jede Aufgabe der Tests in Form eines Diagrammes ausgegeben. Die gelbe Linie kennzeichnet wo die Ergebnisse liegen sollten.
+	<step id="8">Statistik: Die Gesamtergebnisse werden für jede Aufgabe der Tests in Form eines Diagrammes ausgegeben. Die gelbe Linie kennzeichnet, wo die Ergebnisse liegen sollten.
 Unterhalb der Linie solltest du noch etwas tun, und oberhalb der Linie ist dein Ergebnis gut bzw. sehr gut.</step>
-    <step id="8.1">Bei dem Gefühl geht die Skala von -2 bis +2, und man sollte oberhalb der gelben Linie liegen.</step>
-    <step id="8.2">Bei der Zeit wird die verstrichene Zeit als unteres und die maximale Zeit als oberes ende des Balkens genutzt, man sollte unterhalb der gelben Linie bleiben.</step>
-    <step id="8.3">Bei der Richtigkeit sollte man oberhalb der gelben Linie sein. Mit einem tippen auf die Statistik werden die verschiedenen Diagramme angezeigt.</step>
+    <step id="8.1">Bei dem Gefühl geht die Skala von -2 bis +2 und dein Ergebnis sollte oberhalb der gelben Linie liegen.</step>
+    <step id="8.2">Die verstrichene Zeit wird im unteren und die maximale Zeit im oberen Ende des Balkens angezeigt, man sollte unterhalb der gelben Linie bleiben.</step>
+    <step id="8.3">Bei der Richtigkeit solltest du oberhalb der gelben Linie sein. Mit einem Tippen auf die Statistik werden dir verschiedenen Diagramme angezeigt.</step>
   <step id="Impressum:">An der App-Entwicklung beteiligte Personen: Tobias Kutzner, Christian Steinert, Abdellah Azendour, Carlos Trujillo, Lando Eisenmann, Prof. Dr.-Ing. Ingrid Bönninger, Prof. Dr. habil. Olga Wälder, Prof. Dr. Annemarie Jost</step>
   <step id=" Kontakt:    "> Tobias.Kutzner@b-tu.de</step>
 </instruction>

@@ -41,7 +41,7 @@
 
     <string name="chartResultTitle">Ergebniss für</string>
     <string name="yResultTitle">Ergebniss</string>
-    <string name="yTimeTitle_1">Zeit für Ausgabe (min)</string>
+    <string name="yTimeTitle_1">Zeit für Aufgabe (min)</string>
     <string name="yTimeTitle_2">Verfügbare Zeit</string>
     <string name="chartTimeTitle">Restzeit für</string>
     <string name="chartTitle">Ergebniss für</string>
@@ -59,4 +59,13 @@
     <string name="endTextOne">Um nochmals alle Tests durchzuführen, bitte den „Neu“ Button auf dem Startbild drücken. Achtung! Alle alten Ergebnisse werden dann gelöscht.</string>
     <string name="endTextTwo">Um die Statistik erneut anzuschauen, bitte den „Statistik“ Button drücken.</string>
     <string name="endTextThree">Um zum Startbild zur gelangen, bitte den „Zurück zum Start“ Button drücken.</string>
+
+    <string name="test">Test</string>
+    <string name="StartingTest">Beginne Test</string>
+    <string name="Message2Test">wurde erfolgreich beendet</string>
+    <string name="secondMessage2Test">Starte mit dem nächsten Test</string>
+
+    <string name="StartingPool">Beginne Pool</string>
+    <string name="secondMessage2Pool">Bitte löse die Aufgaben aus dem Pool.</string>
+    <string name="Message2Pool">Minimum-Leistung wurde nicht erreicht</string>
 </resources>

@@ -11,7 +11,7 @@
     <string name="hello"> Description of the program</string>
     <string name="title_activity_test_aufgabe">SchoolMath App</string>
     <string name="chk_ios">OK</string>
-    <string name="title_activity_graph_view" translatable="false">GraphView</string>
+
     <string name="title_activity_statistic">Statistic</string>
     <string name="button_next_task">Next</string>
     <string name="button_prev_task">Back</string>
@@ -59,7 +59,6 @@
     <string name="chartLineLegend">Recomendation</string>
     <string name="chartBarLegend">Result</string>
 
-
     <string name="xTimeTitle">Time Left</string>
     <string name="xFeelTitle">Feeling</string>
     <string name="xResultTitle">Results</string>
@@ -69,4 +68,13 @@
     <string name="endTextOne">For starting again press the button „new“ in the main screen.  All the results will be deleted.</string>
     <string name="endTextTwo">For looking to your results again, press the button „Statistic“ in the main screen.</string>
     <string name="endTextThree">To go to the Main Screen press the button bellow „Back to the start“.</string>
+
+    <string name="test">Test</string>
+    <string name="StartingTest">Starting with the Test</string>
+    <string name="Message2Test">completed successfully</string>
+    <string name="secondMessage2Test">Please continue with the next Test</string>
+
+    <string name="StartingPool">Starting with the Pool</string>
+    <string name="Message2Pool">Minimum performance has not been reached</string>
+    <string name="secondMessage2Pool">Please complete the tasks from the Pool</string>
 </resources>
